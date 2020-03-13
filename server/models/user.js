@@ -15,6 +15,10 @@ const schema = new mongoose.Schema({
   },
   passwordHash: {
     type: String
+  },
+  wallet: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Wallet'
   }
 });
 
