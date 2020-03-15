@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
   name: {
+    type: String
+  },
+  type: {
     type: String,
     enum: ['Stock', 'Crypto']
   },
@@ -15,14 +18,14 @@ const schema = new mongoose.Schema({
   },
   currency: {
     type: String,
-    default: 'EUR'
+    default: 'USD'
   },
   wallet: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Wallet'
   },
   date_of_purchase: {
-    type: String
+    type: Date
   }
 });
 

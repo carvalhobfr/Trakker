@@ -4,6 +4,7 @@ const { Router } = require('express');
 
 const bcryptjs = require('bcryptjs');
 const User = require('./../models/user');
+const Wallet = require('./../models/wallet');
 
 const router = new Router();
 
@@ -17,6 +18,14 @@ router.post('/sign-up', (req, res, next) => {
         email,
         passwordHash: hash
       });
+    })
+    .then(user => {
+      return Wallet.create({
+        user
+      });
+    })
+    .then(wallet => {
+      return User.findByIdAndUpdate(wallet.user, { wallet: wallet._id });
     })
     .then(user => {
       req.session.user = user._id;

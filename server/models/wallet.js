@@ -10,6 +10,12 @@ const schema = new mongoose.Schema({
   stocks: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Stock'
+  },
+  starting_balance: {
+    type: Number
+  },
+  current_balance: {
+    type: Number
   }
 });
 
