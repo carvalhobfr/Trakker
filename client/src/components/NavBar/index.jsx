@@ -19,6 +19,7 @@ const NavBar = props => {
       <Link to="/">Home</Link>
       {(props.user && (
         <Fragment>
+          <span>{props.user.name}</span>
           <button onClick={handleSignOut}>Sign Out</button>
         </Fragment>
       )) || (

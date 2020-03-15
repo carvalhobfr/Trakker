@@ -52,6 +52,10 @@ router.post('/sign-in', (req, res, next) => {
     });
 });
 
+router.get('/user-information', (req, res, next) => {
+  res.json({ user: req.user || null });
+});
+
 router.post('/sign-out', (req, res, next) => {
   req.session.destroy();
   res.json({});
