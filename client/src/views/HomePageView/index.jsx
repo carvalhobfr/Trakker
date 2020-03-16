@@ -27,9 +27,9 @@ class HomePageView extends Component {
             </h2>
             <div className="imageAndText">
               <h4>
-                Fatback excepteur est sed nulla nisi. Swine eu pariatur shoulder ut culpa. In ut anim
-                salami. Ullamco flank elit veniam lorem boudin.
-            </h4>
+                Fatback excepteur est sed nulla nisi. Swine eu pariatur shoulder ut culpa. In ut
+                anim salami. Ullamco flank elit veniam lorem boudin.
+              </h4>
               <img src="/kinvo_bg.png" alt="" />
             </div>
           </div>

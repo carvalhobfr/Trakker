@@ -32,6 +32,7 @@ router.post('/add-stock', async (req, res, next) => {
       date_of_purchase,
       wallet
     });
+    res.json({ stock });
   } catch (error) {
     console.log(error);
     next(error);
