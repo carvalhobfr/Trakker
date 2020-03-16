@@ -1,27 +1,27 @@
 .nav-bar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 4vh 1.5vw;
-	font-size: large;
-	background-color: #fd2881;
-	color: white;
-	font-family: 'Noto Sans', sans-serif;
-	font-weight: 400;
-	width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vh 1.5vw;
+  font-size: large;
+  background-color: #fd2881;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  width: 100vw;
 }
 
 a:-webkit-any-link {
-	margin: 0.6em;
-	text-decoration: none;
-	color: white;
+  margin: 0.6em;
+  text-decoration: none;
+  color: white;
 }
 
 .menu-navbar > a:last-child {
-	border: solid 0.04em;
-	border-radius: 1em;
-	padding: 0.5em;
-	color: #fd2881;
-	background-color: white;
-	border-color: black;
+  border: solid 0.04em;
+  border-radius: 1em;
+  padding: 0.5em;
+  color: #fd2881;
+  background-color: white;
+  border-color: black;
 }
