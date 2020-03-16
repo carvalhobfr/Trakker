@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { addStock } from './../../services/addstocks';
+import './style.scss';
 
 class AddStockView extends Component {
   constructor(props) {
@@ -7,8 +8,8 @@ class AddStockView extends Component {
     this.state = {
       name: '',
       type: 'Stock',
-      quantity: 0,
-      buying_price: 0,
+      quantity: '',
+      buying_price: '',
       currency: 'USD',
       wallet: '',
       date_of_purchase: ''
@@ -23,7 +24,7 @@ class AddStockView extends Component {
     const user = this.props.user;
     const wallet = this.props.user.wallet;
     const { name, type, quantity, buying_price, currency, date_of_purchase } = this.state;
-    console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
+    //console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
     try {
       const stock = await addStock({
         user: user._id,
@@ -35,7 +36,7 @@ class AddStockView extends Component {
         date_of_purchase,
         wallet
       });
-      //console.log(stock);
+      this.props.history.push('/');
     } catch (error) {
       console.log(error);
     }
@@ -50,29 +51,31 @@ class AddStockView extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmission}>
-          <label htmlFor="name">Name</label>
+      <section className="page__add-stock">
+        <h2>Trakker</h2>
+        <h4>Add asset to your wallet</h4>
+        <form className="form__add-stock" onSubmit={this.handleFormSubmission}>
+          <label htmlFor="name">Name:</label>
           <input
             id="name"
             name="name"
             type="text"
-            placeholder="Name"
+            placeholder="...AMZN, GOOGL, TSLA"
             onChange={this.handleInputChange}
             value={this.state.name}
           />
-          <label htmlFor="type">
-            <select
-              id="type"
-              name="type"
-              type="select"
-              onChange={this.handleInputChange}
-              value={this.state.type}
-            >
-              <option value="Stock">Stock</option>
-              <option value="Crypto">Crypto</option>
-            </select>
-          </label>
+          <label htmlFor="type">Type:</label>
+          <select
+            id="type"
+            name="type"
+            type="select"
+            onChange={this.handleInputChange}
+            value={this.state.type}
+          >
+            <option value="Stock">Stock</option>
+            <option value="Crypto">Crypto</option>
+          </select>
+
           <label htmlFor="quantity">Quantity:</label>
           <input
             onChange={this.handleInputChange}
@@ -81,6 +84,7 @@ class AddStockView extends Component {
             id="quantity"
             name="quantity"
             min="1"
+            placeholder="...50, 100, 500"
           />
           <label htmlFor="buying_price">Buying Price:</label>
           <input
@@ -90,6 +94,8 @@ class AddStockView extends Component {
             id="buying_price"
             name="buying_price"
             min="0"
+            step="0.0001"
+            placeholder="e.g: 154.25$"
           />
           <label htmlFor="date_of_purchase">Purchase Date:</label>
           <input
@@ -99,9 +105,9 @@ class AddStockView extends Component {
             id="date_of_purchase"
             name="date_of_purchase"
           ></input>
-          <button>Add Stock</button>
+          <button>Add to wallet</button>
         </form>
-      </div>
+      </section>
     );
   }
 }
