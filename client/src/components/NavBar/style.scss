@@ -2,11 +2,12 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-  padding: 4vh 1.5vw;
-  font-size: large;
+	padding: 4vh 1.5vw;
+	font-size: large;
 	background-color: #fd2881;
 	color: white;
-	font-family: Noto Sans serif;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
 }
 
 a:-webkit-any-link {

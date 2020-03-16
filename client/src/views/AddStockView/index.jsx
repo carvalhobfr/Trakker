@@ -55,26 +55,23 @@ class AddStockView extends Component {
             placeholder="Name"
             onChange={this.handleInputChange}
             value={this.state.name}
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Email"
-            onChange={this.handleInputChange}
-            value={this.state.email}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Password"
-            onChange={this.handleInputChange}
-            value={this.state.password}
-          />
-          <button disabled={this.state.password.length < 5}>Sign Up</button>
+          />´
+          <label htmlFor="type">
+            <div>
+              <input type="checkbox" id="Crypto" name="Crypto" />
+              <label for="Stocks">Stocks</label>
+            </div>
+            <div>
+              <input type="checkbox" id="Crypto" name="Crypto" />
+              <label for="Crypto">Crypto</label>
+            </div>
+          </label>
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" />
+          <label for="buying_price">Buying Price:</label>
+          <input type="number" id="buying_price" name="buying_price" min="0" />
+          <label for="date_of_purchase">Purchase Date:</label>
+          <input type="date" id="date_of_purchase" name="date_of_purchase"></input>
         </form>
       </div>
     );

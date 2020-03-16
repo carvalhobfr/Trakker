@@ -16,6 +16,9 @@ const NavBar = props => {
 
   return (
     <nav className="nav-bar">
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+    </style>
       <div className="logo-navbar">
         <Link to="/">TRAKKER</Link>
       </div>
