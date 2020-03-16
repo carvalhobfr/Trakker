@@ -6,7 +6,7 @@ class SingleOwnedStockView extends Component {
     constructor(props);
     this.state = {
       buying_price: 0,
-      date_of_purchase
+      date_of_purchase: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
@@ -14,22 +14,9 @@ class SingleOwnedStockView extends Component {
 
   componentDidMount() {
     const id = this.props.match.params.stockid;
-    loadStockInformation(id).then(stockData => {}).catch;
-  }
-
-  handleFormSubmission(event) {
-    event.preventDefault();
-    const { buying_price, total_amount, date_of_purchase } = this.state;
-    addStock({
-      buying_price,
-      date_of_purchase
-    })
-      .then(stock => {
-        this.props.history.push('/');
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    loadStockInformation(id).then(stockData => {
+      console.log(stockData);
+    }).catch;
   }
 
   render() {

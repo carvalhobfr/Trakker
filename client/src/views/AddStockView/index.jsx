@@ -59,10 +59,6 @@ class AddStockView extends Component {
             onChange={this.handleInputChange}
             value={this.state.name}
           />
-<<<<<<< HEAD
-          ´
-=======
->>>>>>> 6d2ef935ac44fcc52da528e780cebadf9abb317b
           <label htmlFor="type">
             <div>
               <input type="checkbox" id="Crypto" name="Crypto" />
