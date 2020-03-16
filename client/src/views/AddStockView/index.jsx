@@ -6,7 +6,7 @@ class AddStockView extends Component {
     super(props);
     this.state = {
       name: '',
-      type: '',
+      type: 'Stock',
       quantity: 0,
       buying_price: 0,
       currency: 'USD',
@@ -23,10 +23,10 @@ class AddStockView extends Component {
     const user = this.props.user;
     const wallet = this.props.user.wallet;
     const { name, type, quantity, buying_price, currency, date_of_purchase } = this.state;
-    //console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
+    console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
     try {
       const stock = await addStock({
-        user,
+        user: user._id,
         name,
         type,
         quantity,
@@ -35,7 +35,7 @@ class AddStockView extends Component {
         date_of_purchase,
         wallet
       });
-      console.log(stock);
+      //console.log(stock);
     } catch (error) {
       console.log(error);
     }
@@ -62,26 +62,16 @@ class AddStockView extends Component {
             value={this.state.name}
           />
           <label htmlFor="type">
-            <div>
-              <input
-                onChange={this.handleInputChange}
-                value={this.state.type}
-                type="checkbox"
-                id="stocks"
-                name="stocks"
-              />
-              <label htmlFor="Stocks">Stocks</label>
-            </div>
-            <div>
-              <input
-                onChange={this.handleInputChange}
-                value={this.state.type}
-                type="checkbox"
-                id="Crypto"
-                name="crypto"
-              />
-              <label htmlFor="Crypto">Crypto</label>
-            </div>
+            <select
+              id="type"
+              name="type"
+              type="select"
+              onChange={this.handleInputChange}
+              value={this.state.type}
+            >
+              <option value="Stock">Stock</option>
+              <option value="Crypto">Crypto</option>
+            </select>
           </label>
           <label htmlFor="quantity">Quantity:</label>
           <input

@@ -9,11 +9,37 @@ const alpha = require('alphavantage')({ key: '{{RWIQ5QDC9KY8INZG}}' });
 
 const router = new Router();
 
-router.post('/add-stock', (req, res, next) => {
-  const user = req.params;
-  const { name, type, quantity, buying_price, currency, date_of_purchase } = req.body;
+router.post('/add-stock', async (req, res, next) => {
   console.log(req.body);
-  Wallet.findOne({ user: user._id })
+  const {
+    name,
+    type,
+    quantity,
+    buying_price,
+    currency,
+    date_of_purchase,
+    user,
+    wallet
+  } = req.body.data;
+  console.log('REQ.BODY', req.body);
+  console.log('USER_ID', user._id);
+  try {
+    //const wallet = await Wallet.findOne({ user: user._id });
+    const stock = await Stock.create({
+      name,
+      type,
+      quantity,
+      buying_price,
+      currency,
+      date_of_purchase,
+      wallet
+    });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+
+  /*   Wallet.findOne({ user: user._id })
     .then(wallet => {
       return Stock.create({
         name,
@@ -31,7 +57,7 @@ router.post('/add-stock', (req, res, next) => {
     })
     .catch(error => {
       next(error);
-    });
+    }); */
 });
 
 router.get('/stock-information/:id', (req, res, next) => {
