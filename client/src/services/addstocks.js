@@ -10,9 +10,20 @@ const addStock = data =>
       .post('/add-stock', data)
       .then(result => {
         const stock = result.data.stock;
-        resolve(user);
+        resolve(stock);
       })
       .catch(reject);
   });
 
-export { addStock };
+const loadStockInformation = () =>
+  new Promise((resolve, reject) => {
+    instance
+      .get('/stock-information')
+      .then(result => {
+        const stock = result.data.stock;
+        resolve(stock);
+      })
+      .catch(reject);
+  });
+
+export { addStock, loadStockInformation };

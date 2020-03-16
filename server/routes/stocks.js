@@ -2,8 +2,7 @@
 
 const { Router } = require('express');
 
-const bcryptjs = require('bcryptjs');
-const User = require('./../models/user');
+//const User = require('./../models/user');
 const Wallet = require('./../models/wallet');
 const Stock = require('./../models/stock');
 
@@ -26,6 +25,17 @@ router.post('/add-stock', (req, res, next) => {
     })
     .then(() => {
       res.redirect('/');
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
+router.get('/stock-information/:id', (req, res, next) => {
+  const stockId = req.params.id;
+  Stock.findById(stockId)
+    .then(stock => {
+      res.json({ stock });
     })
     .catch(error => {
       next(error);
