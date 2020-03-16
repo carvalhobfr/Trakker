@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 //Component imports
 import NavBar from './components/NavBar';
+/* import TabBar from './components/TabBar'; */
 import ProtectedRoute from './components/ProtectedRoute';
 //Views imports
 import SignInView from './views/SignInView';
@@ -11,7 +12,6 @@ import SignUpView from './views/SignUpView';
 import HomePageView from './views/HomePageView';
 import AddStockView from './views/AddStockView';
 import SingleOwnedStockView from './views/SingleOwnedStockView';
-
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
@@ -50,6 +50,7 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <NavBar user={this.state.user} updateUserInformation={this.updateUserInformation} />
+          {/*  <TabBar /> */}
           <Switch>
             <Route path="/" exact component={HomePageView} />
             <ProtectedRoute
