@@ -15,10 +15,10 @@ const addStock = data =>
       .catch(reject);
   });
 
-const loadStockInformation = () =>
+const loadStockInformation = id =>
   new Promise((resolve, reject) => {
     instance
-      .get('/stock-information')
+      .get(`/stock-information/${id}`)
       .then(result => {
         const stock = result.data.stock;
         resolve(stock);

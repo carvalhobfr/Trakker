@@ -12,6 +12,7 @@ import HomePageView from './views/HomePageView';
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
+import SingleOwnedStockView from './views/SingleOwnedStockView';
 
 class App extends Component {
   constructor() {
@@ -65,7 +66,18 @@ class App extends Component {
                 <SignInView {...props} updateUserInformation={this.updateUserInformation} />
               )}
             />
-            
+            <ProtectedRoute
+              path="/singlestock/:stockid"
+              authorized={!this.state.user}
+              redirect={'/'}
+              render={props => (
+                <SingleOwnedStockView
+                  {...props}
+                  updateUserInformation={this.updateUserInformation}
+                />
+              )}
+            />
+
             {/* <Route path="/error" component={ErrorView} />
                 <Redirect to="/error" /> */}
           </Switch>
