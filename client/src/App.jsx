@@ -11,6 +11,7 @@ import SignUpView from './views/SignUpView';
 import HomePageView from './views/HomePageView';
 import AddStockView from './views/AddStockView';
 
+
 //Services imports
 import { loadUserInformation } from './services/authentication';
 import SingleOwnedStockView from './views/SingleOwnedStockView';
