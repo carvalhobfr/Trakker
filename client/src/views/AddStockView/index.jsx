@@ -62,26 +62,16 @@ class AddStockView extends Component {
             value={this.state.name}
           />
           <label htmlFor="type">
-            <div>
-              <input
-                onChange={this.handleInputChange}
-                value="Stock"
-                type="checkbox"
-                id="stocks"
-                name="stocks"
-              />
-              <label htmlFor="Stocks">Stocks</label>
-            </div>
-            <div>
-              <input
-                onChange={this.handleInputChange}
-                value="Crypto"
-                type="checkbox"
-                id="Crypto"
-                name="crypto"
-              />
-              <label htmlFor="Crypto">Crypto</label>
-            </div>
+            <select
+              id="type"
+              name="type"
+              type="select"
+              onChange={this.handleInputChange}
+              value={this.state.type}
+            >
+              <option value="Stock">Stock</option>
+              <option value="Crypto">Crypto</option>
+            </select>
           </label>
           <label htmlFor="quantity">Quantity:</label>
           <input
