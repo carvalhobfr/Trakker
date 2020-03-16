@@ -12,12 +12,16 @@ class SingleOwnedStockView extends Component {
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
   }
 
-  componentDidMount() {
+  /* componentDidMount() {
     const id = this.props.match.params.stockid;
-    loadStockInformation(id).then(stockData => {
-      console.log(stockData);
-    }).catch;
-  }
+    loadStockInformation(id)
+      .then(stockData => {
+        console.log(stockData);
+      })
+      .catch(error => {
+        next(error);
+      });
+  } */
 
   render() {
     return <div></div>;
