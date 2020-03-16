@@ -6,7 +6,7 @@ class AddStockView extends Component {
     super(props);
     this.state = {
       name: '',
-      type: '',
+      type: 'Stock',
       quantity: 0,
       buying_price: 0,
       currency: 'USD',
@@ -35,7 +35,7 @@ class AddStockView extends Component {
         date_of_purchase,
         wallet
       });
-      console.log(stock);
+      //console.log(stock);
     } catch (error) {
       console.log(error);
     }

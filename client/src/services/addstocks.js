@@ -5,6 +5,7 @@ const instance = axios.create({
 });
 
 const addStock = async data => {
+  console.log('service ', data);
   await instance.post('/add-stock', { data });
 };
 
