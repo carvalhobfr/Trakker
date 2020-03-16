@@ -6,15 +6,15 @@ class HomePageView extends Component {
   render() {
     return (
       <body>
-        <header className="header">
+        <header>
           <div>
             <h1>
               <strong>Control all your assets in one place</strong>
             </h1>
-            <h4 className="secondary-text">
+            <h3 className="secondary-text">
               Trakker is a portfolio manager that unifies all your crypto and stocks shares in one
               place.
-            </h4>
+            </h3>
             <button className="signin-button">
               <Link to="/sign-in">Sign In</Link>
             </button>
@@ -22,13 +22,16 @@ class HomePageView extends Component {
         </header>
         <section className="mockups">
           <div className="mockup1">
-            <h3>
+            <h2>
               <strong>Manage your portfolio like never before</strong>
-            </h3>
-            <h5>
-              Fatback excepteur est sed nulla nisi. Swine eu pariatur shoulder ut culpa. In ut anim
-              salami. Ullamco flank elit veniam lorem boudin.
-            </h5>
+            </h2>
+            <div className="imageAndText">
+              <h4>
+                Fatback excepteur est sed nulla nisi. Swine eu pariatur shoulder ut culpa. In ut anim
+                salami. Ullamco flank elit veniam lorem boudin.
+            </h4>
+              <img src="/kinvo_bg.png" alt="" />
+            </div>
           </div>
           <div className="mockup2">
             <h3>
@@ -38,9 +41,10 @@ class HomePageView extends Component {
               Fatback excepteur est sed nulla nisi. Swine eu pariatur shoulder ut culpa. In ut anim
               salami. pariatur shoulder ut culpa
             </h5>
+            <img src="/stocksview.png" alt="" />
           </div>
         </section>
-        <footer class="footer">
+        <footer>
           Trakker
           <ul>
             <li>Help Center</li>
