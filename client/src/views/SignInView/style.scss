@@ -1,0 +1,48 @@
+.page__sign-in {
+  h1,
+  h4 {
+    font-weight: 200;
+  }
+
+  h1 {
+    margin-bottom: 3em;
+  }
+}
+
+.form__sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+  input {
+    width: 20em;
+    margin-bottom: 2em;
+    padding: 0.8em;
+    background-color: #eff2f4;
+    border: 1px solid #eff2f4;
+    border-radius: 2em;
+  }
+
+  button {
+    width: 12em;
+    padding: 0.8em;
+    background-color: #fd2881;
+    border: 1px solid #fd2881;
+    border-radius: 2em;
+    color: white;
+  }
+}
+
+.or {
+  color: #777b80;
+}
+
+.sign-up {
+  width: 12em;
+  padding: 0.8em;
+  background-color: #ffffff;
+  border: 1px solid black;
+  border-radius: 2em;
+  color: #fd2881;
+  box-shadow: 9px 10px 21px -7px rgba(0, 0, 0, 0.75);
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { signUp } from './../../services/authentication';
+import './style.scss';
 
 class SignUpView extends Component {
   constructor(props) {
@@ -39,9 +40,10 @@ class SignUpView extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmission}>
-          <label htmlFor="name">Name</label>
+      <section className="page__sign-up">
+        <h1>Trakker</h1>
+        <h4>Create a new account</h4>
+        <form className="form__sign-up" onSubmit={this.handleFormSubmission}>
           <input
             id="name"
             name="name"
@@ -50,16 +52,14 @@ class SignUpView extends Component {
             onChange={this.handleInputChange}
             value={this.state.name}
           />
-          <label htmlFor="email">Email</label>
           <input
             id="email"
             name="email"
             type="email"
-            placeholder="Email"
+            placeholder="Email address"
             onChange={this.handleInputChange}
             value={this.state.email}
           />
-          <label htmlFor="password">Password</label>
           <input
             id="password"
             name="password"
@@ -70,7 +70,7 @@ class SignUpView extends Component {
           />
           <button disabled={this.state.password.length < 5}>Sign Up</button>
         </form>
-      </div>
+      </section>
     );
   }
 }

@@ -21,8 +21,6 @@ router.post('/add-stock', async (req, res, next) => {
     user,
     wallet
   } = req.body.data;
-  console.log('REQ.BODY', req.body);
-  console.log('USER_ID', user._id);
   try {
     //const wallet = await Wallet.findOne({ user: user._id });
     const stock = await Stock.create({
