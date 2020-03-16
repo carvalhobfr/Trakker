@@ -1,10 +1,10 @@
 header {
 	justify-content: center;
 	align-content: flex-start;
-	color: white;
+	color: black;
 	background-image: url('/bg1.jpg');
-	background-color: rgba(198, 194, 194, 0.673);
-	background-blend-mode: multiply;
+	background-color: rgba(255, 255, 255, 0.5);
+	background-blend-mode: screen;
 	background-size: cover;
 	width: 100vw;
 	height: 95vh;
