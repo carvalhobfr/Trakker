@@ -3,13 +3,11 @@ header {
 	align-content: flex-start;
 	color: black;
 	background-image: url('/bg1.jpg');
-	background-color: #ffffff;
+  background-color: rgba(245, 103, 221, 0.007);
 	background-blend-mode: multiply;
 	background-size: cover;
 	width: 100%;
 	padding: 5vw 15vw 50px;
-	opacity: 0.8;
-
 	div {
 		opacity: 1;
 	}
