@@ -72,7 +72,11 @@ class App extends Component {
               authorized={this.state.user}
               redirect={'/'}
               render={props => (
-                <AddStockView {...props} updateUserInformation={this.updateUserInformation} />
+                <AddStockView
+                  {...props}
+                  user={this.state.user}
+                  updateUserInformation={this.updateUserInformation}
+                />
               )}
             />
             <ProtectedRoute

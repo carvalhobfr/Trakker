@@ -25,7 +25,7 @@ router.post('/sign-up', (req, res, next) => {
       });
     })
     .then(wallet => {
-      return User.findByIdAndUpdate(wallet.user, { wallet: wallet._id });
+      return User.findByIdAndUpdate(wallet.user, { wallet });
     })
     .then(user => {
       req.session.user = user._id;

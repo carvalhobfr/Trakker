@@ -10,7 +10,7 @@ class AddStockView extends Component {
       quantity: 0,
       buying_price: 0,
       currency: 'USD',
-      wallet: {},
+      wallet: '',
       date_of_purchase: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -19,8 +19,8 @@ class AddStockView extends Component {
 
   handleFormSubmission(event) {
     event.preventDefault();
+    console.log(this.props.user);
     const user = this.props.user;
-    console.log(user);
     const { name, type, quantity, buying_price, currency, date_of_purchase } = this.state;
     addStock({
       user,
