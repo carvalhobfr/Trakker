@@ -9,6 +9,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import SignInView from './views/SignInView';
 import SignUpView from './views/SignUpView';
 import HomePageView from './views/HomePageView';
+import AddStockView from './views/AddStockView';
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
@@ -65,7 +66,15 @@ class App extends Component {
                 <SignInView {...props} updateUserInformation={this.updateUserInformation} />
               )}
             />
-            
+            <ProtectedRoute
+              path="/add-stock"
+              authorized={this.state.user}
+              redirect={'/'}
+              render={props => (
+                <AddStockView {...props} updateUserInformation={this.updateUserInformation} />
+              )}
+            />
+
             {/* <Route path="/error" component={ErrorView} />
                 <Redirect to="/error" /> */}
           </Switch>

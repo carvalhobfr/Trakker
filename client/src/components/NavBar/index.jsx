@@ -16,9 +16,7 @@ const NavBar = props => {
 
   return (
     <nav className="nav-bar">
-      <style>
-        @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
-    </style>
+      <style>@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');</style>
       <div className="logo-navbar">
         <Link to="/">TRAKKER</Link>
       </div>
@@ -27,13 +25,14 @@ const NavBar = props => {
           <Fragment>
             <span>{props.user.name}</span>
             <button onClick={handleSignOut}>Sign Out</button>
+            <Link to="/add-stock">Add Stock</Link>
           </Fragment>
         )) || (
-            <Fragment>
-              <Link to="/sign-in">Sign In</Link>
-              <Link to="/sign-up">Sign Up</Link>
-            </Fragment>
-          )}
+          <Fragment>
+            <Link to="/sign-in">Sign In</Link>
+            <Link to="/sign-up">Sign Up</Link>
+          </Fragment>
+        )}
       </div>
     </nav>
   );

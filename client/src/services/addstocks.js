@@ -10,6 +10,7 @@ const addStock = data =>
       .post('/add-stock', data)
       .then(result => {
         const stock = result.data.stock;
+        console.log(stock);
         resolve(stock);
       })
       .catch(reject);
