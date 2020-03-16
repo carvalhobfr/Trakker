@@ -5,8 +5,8 @@ import './style.scss';
 class HomePageView extends Component {
   render() {
     return (
-      <div>
-        <h1>Trakker App</h1>
+      <div className="Homepage">
+        <h1>Control all your assets in one place</h1>
       </div>
     );
   }
