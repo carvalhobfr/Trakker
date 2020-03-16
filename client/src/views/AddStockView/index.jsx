@@ -17,31 +17,28 @@ class AddStockView extends Component {
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
   }
 
-  handleFormSubmission(event) {
+  async handleFormSubmission(event) {
     event.preventDefault();
 
     const user = this.props.user;
     const wallet = this.props.user.wallet;
-    console.log(wallet);
     const { name, type, quantity, buying_price, currency, date_of_purchase } = this.state;
-    console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
-    addStock({
-      user,
-      name,
-      type,
-      quantity,
-      buying_price,
-      currency,
-      date_of_purchase,
-      wallet
-    })
-      .then(stock => {
-        console.log(stock);
-        //this.props.history.push('/');
-      })
-      .catch(error => {
-        console.log(error);
+    //console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
+    try {
+      const stock = await addStock({
+        user,
+        name,
+        type,
+        quantity,
+        buying_price,
+        currency,
+        date_of_purchase,
+        wallet
       });
+      console.log(stock);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   handleInputChange(event) {

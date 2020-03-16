@@ -11,8 +11,8 @@ const router = new Router();
 
 router.post('/add-stock', (req, res, next) => {
   const user = req.params;
-  console.log(user);
   const { name, type, quantity, buying_price, currency, date_of_purchase } = req.body;
+  console.log(req.body);
   Wallet.findOne({ user: user._id })
     .then(wallet => {
       return Stock.create({
