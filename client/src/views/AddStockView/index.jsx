@@ -19,9 +19,12 @@ class AddStockView extends Component {
 
   handleFormSubmission(event) {
     event.preventDefault();
-    console.log(this.props.user);
+
     const user = this.props.user;
+    const wallet = this.props.user.wallet;
+    console.log(wallet);
     const { name, type, quantity, buying_price, currency, date_of_purchase } = this.state;
+    console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
     addStock({
       user,
       name,
@@ -29,10 +32,12 @@ class AddStockView extends Component {
       quantity,
       buying_price,
       currency,
-      date_of_purchase
+      date_of_purchase,
+      wallet
     })
       .then(stock => {
-        this.props.history.push('/');
+        console.log(stock);
+        //this.props.history.push('/');
       })
       .catch(error => {
         console.log(error);
@@ -61,20 +66,52 @@ class AddStockView extends Component {
           />
           <label htmlFor="type">
             <div>
-              <input type="checkbox" id="Crypto" name="Crypto" />
+              <input
+                onChange={this.handleInputChange}
+                value={this.state.type}
+                type="checkbox"
+                id="stocks"
+                name="stocks"
+              />
               <label htmlFor="Stocks">Stocks</label>
             </div>
             <div>
-              <input type="checkbox" id="Crypto" name="Crypto" />
+              <input
+                onChange={this.handleInputChange}
+                value={this.state.type}
+                type="checkbox"
+                id="Crypto"
+                name="crypto"
+              />
               <label htmlFor="Crypto">Crypto</label>
             </div>
           </label>
           <label htmlFor="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" min="1" />
+          <input
+            onChange={this.handleInputChange}
+            value={this.state.quantity}
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+          />
           <label htmlFor="buying_price">Buying Price:</label>
-          <input type="number" id="buying_price" name="buying_price" min="0" />
+          <input
+            onChange={this.handleInputChange}
+            value={this.state.buying_price}
+            type="number"
+            id="buying_price"
+            name="buying_price"
+            min="0"
+          />
           <label htmlFor="date_of_purchase">Purchase Date:</label>
-          <input type="date" id="date_of_purchase" name="date_of_purchase"></input>
+          <input
+            onChange={this.handleInputChange}
+            value={this.state.date_of_purchase}
+            type="date"
+            id="date_of_purchase"
+            name="date_of_purchase"
+          ></input>
           <button>Add Stock</button>
         </form>
       </div>
