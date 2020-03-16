@@ -65,6 +65,7 @@ class App extends Component {
                 <SignInView {...props} updateUserInformation={this.updateUserInformation} />
               )}
             />
+            
             {/* <Route path="/error" component={ErrorView} />
                 <Redirect to="/error" /> */}
           </Switch>
