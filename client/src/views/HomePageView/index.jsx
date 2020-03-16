@@ -30,7 +30,27 @@ class HomePageView extends Component {
               salami. Ullamco flank elit veniam lorem boudin.
             </h5>
           </div>
+          <div className="mockup2">
+            <h3>
+              <strong>Monitor stocks and crypto in real time.</strong>
+            </h3>
+            <h5>
+              Fatback excepteur est sed nulla nisi. Swine eu pariatur shoulder ut culpa. In ut anim
+              salami. pariatur shoulder ut culpa
+            </h5>
+          </div>
         </section>
+        <footer class="footer">
+          Trakker
+          <ul>
+            <li>Help Center</li>
+            <li>About Us</li>
+            <hr></hr>
+            <li>Privacy</li>
+            <li>Accessibility</li>
+            <li>Terms</li>
+          </ul>
+        </footer>
       </body>
     );
   }
