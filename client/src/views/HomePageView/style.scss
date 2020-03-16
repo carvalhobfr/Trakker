@@ -3,13 +3,13 @@ header {
 	align-content: flex-start;
 	color: white;
 	background-image: url('/bg1.jpg');
-  background-color: rgba(245, 103, 221, 1);
+	background-color: rgba(245, 103, 221, 1);
 	background-blend-mode: multiply;
 	background-size: cover;
-  width: 100vw;
-  height: 95vh;
-  padding: 5vw 15vw 50px;
-  
+	width: 100vw;
+	height: 95vh;
+	padding: 5vw 15vw 50px;
+
 	div {
 		opacity: 1;
 	}
@@ -19,75 +19,76 @@ header {
 }
 
 .mockup1 {
-  h2 {
-    color: #fd2881;
-  }
-  h4 {
-    font-weight: 400;
-    margin-left: 3em;
-  }
-  .imageAndText {
-    display: flex;
+	h2 {
+		color: #fd2881;
+	}
+	h4 {
+		font-weight: 400;
+		margin-left: 3em;
+	}
+	.imageAndText {
+		display: flex;
 
-    img {
-      max-width: 50%;
-    }
-  }
+		img {
+			max-width: 50%;
+		}
+	}
 }
 
 .mockup2 {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  padding: 1vw;
-  background-color: #fd2881;
-  color: white;
-  height: 80vh;
-  
-  h3 {
-    margin: 3vh;
-  }
-  img {
-    max-height: 70%;
-    max-width: 70%;
-  }
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	padding: 1vw;
+	background-color: #fd2881;
+	color: white;
+	height: 80vh;
+
+	h3 {
+		margin: 3vh;
+	}
+	img {
+		max-height: 70%;
+		max-width: 70%;
+	}
 }
 
 button {
-  border-radius: 1em;
-  padding: 0.5em 5em;
-  font-size: larger;
+	border-radius: 1em;
+	padding: 0.5em 5em;
+	font-size: larger;
+	border-color: #fd2881;
 }
 
 .headerBg {
-  background: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.1);
 }
 
 .secondary-text {
-  padding-top: 4em;
+	padding-top: 4em;
 }
 
 .signin-button {
-  background-color: #fd2881;
+	background-color: #fd2881;
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
-  font-size: 14px;
-  justify-content: left;
-  align-self: left;
-  align-items: left;
+	list-style-type: none;
+	padding: 0;
+	font-size: 14px;
+	justify-content: left;
+	align-self: left;
+	align-items: left;
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: white;
-  background-color: black;
-  ul {
-    width: 100%;
-  }
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	color: white;
+	background-color: black;
+	ul {
+		width: 100%;
+	}
 }
