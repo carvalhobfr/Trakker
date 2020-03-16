@@ -6,13 +6,24 @@
   }
 }
 
-body {
-  margin: 0;
-  font-family: 'Noto Sans', sans-serif;
+html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  max-width: 100em;
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 1.5;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@media (min-width: 600px) {
+  body {
+    background: #c9e1ff;
+  }
 }

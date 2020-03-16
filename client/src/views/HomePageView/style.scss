@@ -1,4 +1,15 @@
-.Homepage {
-  display: flex;
+.header {
   justify-content: center;
+  padding-top: 6em;
+  background-image: url('/public/bg1.jpg');
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+.secondary-text {
+  padding-top: 4em;
+}
+
+.signin-button {
+  background-color: #fd2881;
 }
