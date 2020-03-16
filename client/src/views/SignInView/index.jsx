@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { signIn } from './../../services/authentication';
+import { Link } from 'react-router-dom';
+import './style.scss';
 
 class SignInView extends Component {
   constructor(props) {
@@ -36,18 +38,18 @@ class SignInView extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmission}>
-          <label htmlFor="email">Email</label>
+      <section className="page__sign-in">
+        <h1>Trakker</h1>
+        <h4>Sign in to your account</h4>
+        <form className="form__sign-in" onSubmit={this.handleFormSubmission}>
           <input
             id="email"
             name="email"
             type="email"
-            placeholder="Email"
+            placeholder="Email address"
             onChange={this.handleInputChange}
             value={this.state.email}
           />
-          <label htmlFor="password">Password</label>
           <input
             id="password"
             name="password"
@@ -58,7 +60,13 @@ class SignInView extends Component {
           />
           <button>Sign In</button>
         </form>
-      </div>
+
+        <p className="or">or</p>
+
+        <form action="/sign-up">
+          <button className="sign-up">Sign Up</button>
+        </form>
+      </section>
     );
   }
 }
