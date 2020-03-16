@@ -10,10 +10,11 @@ import SignInView from './views/SignInView';
 import SignUpView from './views/SignUpView';
 import HomePageView from './views/HomePageView';
 import AddStockView from './views/AddStockView';
+import SingleOwnedStockView from './views/SingleOwnedStockView';
+
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
-import SingleOwnedStockView from './views/SingleOwnedStockView';
 
 class App extends Component {
   constructor() {
@@ -81,7 +82,7 @@ class App extends Component {
             />
             <ProtectedRoute
               path="/singlestock/:stockid"
-              authorized={!this.state.user}
+              authorized={this.state.user}
               redirect={'/'}
               render={props => (
                 <SingleOwnedStockView
