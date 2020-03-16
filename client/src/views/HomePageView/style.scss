@@ -1,15 +1,17 @@
 .header {
-  justify-content: center;
-  padding-top: 6em;
-  background-image: url('/public/bg1.jpg');
-  background-blend-mode: multiply;
-  background-size: cover;
+	justify-content: center;
+	padding-top: 6em;
+	background-image: url('/bg1.jpg');
+	background-color: #ffffff;
+	background-size: cover;
+	background-blend-mode: multiply;
+	width: 100%;
 }
 
 .secondary-text {
-  padding-top: 4em;
+	padding-top: 4em;
 }
 
 .signin-button {
-  background-color: #fd2881;
+	background-color: #fd2881;
 }
