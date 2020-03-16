@@ -1,13 +1,15 @@
 header {
 	justify-content: center;
 	align-content: flex-start;
-	color: black;
+	color: white;
 	background-image: url('/bg1.jpg');
-  background-color: rgba(245, 103, 221, 0.007);
+  background-color: rgba(245, 103, 221, 1);
 	background-blend-mode: multiply;
 	background-size: cover;
-	width: 100%;
-	padding: 5vw 15vw 50px;
+  width: 100vw;
+  height: 95vh;
+  padding: 5vw 15vw 50px;
+  
 	div {
 		opacity: 1;
 	}
@@ -42,6 +44,7 @@ header {
   background-color: #fd2881;
   color: white;
   height: 80vh;
+  
   h3 {
     margin: 3vh;
   }
