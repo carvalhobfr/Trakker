@@ -4,19 +4,9 @@ const instance = axios.create({
   baseURL: '/api/wallet'
 });
 
-const addStock = data =>
-  new Promise((resolve, reject) => {
-    console.log('data', data);
-    instance
-      .post('/add-stock', data)
-      .then(result => {
-        console.log(result);
-        const stock = result.data.stock;
-        //console.log(stock);
-        resolve(stock);
-      })
-      .catch(reject);
-  });
+const addStock = async data => {
+  await instance.post('/add-stock', { data });
+};
 
 const loadStockInformation = id =>
   new Promise((resolve, reject) => {

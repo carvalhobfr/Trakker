@@ -16,8 +16,8 @@ const authenticationRouter = require('./routes/authentication');
 const stockRouter = require('./routes/stocks');
 const cors = require('cors');
 
-app.use(cors());
 const app = express();
+app.use(cors());
 
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));

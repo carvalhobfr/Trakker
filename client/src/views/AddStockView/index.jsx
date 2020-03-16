@@ -23,10 +23,10 @@ class AddStockView extends Component {
     const user = this.props.user;
     const wallet = this.props.user.wallet;
     const { name, type, quantity, buying_price, currency, date_of_purchase } = this.state;
-    //console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
+    console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
     try {
       const stock = await addStock({
-        user,
+        user: user._id,
         name,
         type,
         quantity,
@@ -65,7 +65,7 @@ class AddStockView extends Component {
             <div>
               <input
                 onChange={this.handleInputChange}
-                value={this.state.type}
+                value="Stock"
                 type="checkbox"
                 id="stocks"
                 name="stocks"
@@ -75,7 +75,7 @@ class AddStockView extends Component {
             <div>
               <input
                 onChange={this.handleInputChange}
-                value={this.state.type}
+                value="Crypto"
                 type="checkbox"
                 id="Crypto"
                 name="crypto"
