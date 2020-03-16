@@ -11,7 +11,7 @@ class AddStockView extends Component {
       buying_price: 0,
       currency: 'USD',
       wallet: {},
-      date_of_purchase
+      date_of_purchase: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
@@ -19,8 +19,11 @@ class AddStockView extends Component {
 
   handleFormSubmission(event) {
     event.preventDefault();
+    const user = this.props.user;
+    console.log(user);
     const { name, type, quantity, buying_price, currency, date_of_purchase } = this.state;
     addStock({
+      user,
       name,
       type,
       quantity,
@@ -56,22 +59,27 @@ class AddStockView extends Component {
             onChange={this.handleInputChange}
             value={this.state.name}
           />
+<<<<<<< HEAD
+          ´
+=======
+>>>>>>> 6d2ef935ac44fcc52da528e780cebadf9abb317b
           <label htmlFor="type">
             <div>
               <input type="checkbox" id="Crypto" name="Crypto" />
-              <label for="Stocks">Stocks</label>
+              <label htmlFor="Stocks">Stocks</label>
             </div>
             <div>
               <input type="checkbox" id="Crypto" name="Crypto" />
-              <label for="Crypto">Crypto</label>
+              <label htmlFor="Crypto">Crypto</label>
             </div>
           </label>
-          <label for="quantity">Quantity:</label>
+          <label htmlFor="quantity">Quantity:</label>
           <input type="number" id="quantity" name="quantity" min="1" />
-          <label for="buying_price">Buying Price:</label>
+          <label htmlFor="buying_price">Buying Price:</label>
           <input type="number" id="buying_price" name="buying_price" min="0" />
-          <label for="date_of_purchase">Purchase Date:</label>
+          <label htmlFor="date_of_purchase">Purchase Date:</label>
           <input type="date" id="date_of_purchase" name="date_of_purchase"></input>
+          <button>Add Stock</button>
         </form>
       </div>
     );

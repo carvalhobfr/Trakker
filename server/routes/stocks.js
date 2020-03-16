@@ -10,9 +10,9 @@ const alpha = require('alphavantage')({ key: '{{RWIQ5QDC9KY8INZG}}' });
 const router = new Router();
 
 router.post('/add-stock', (req, res, next) => {
-	const userID = req.user._id;
+	const user = req.params;
 	const { name, type, quantity, buying_price, currency, date_of_purchase } = req.body;
-	Wallet.findOne({ user: userID })
+	Wallet.findOne({ user })
 		.then(wallet => {
 			return Stock.create({
 				name,
@@ -24,7 +24,8 @@ router.post('/add-stock', (req, res, next) => {
 				wallet
 			});
 		})
-		.then(() => {
+		.then(stock => {
+			console.log(stock);
 			res.redirect('/');
 		})
 		.catch(error => {
