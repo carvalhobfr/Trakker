@@ -13,6 +13,7 @@ import AddStockView from './views/AddStockView';
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
+import SingleOwnedStockView from './views/SingleOwnedStockView';
 
 class App extends Component {
   constructor() {
@@ -72,6 +73,17 @@ class App extends Component {
               redirect={'/'}
               render={props => (
                 <AddStockView {...props} updateUserInformation={this.updateUserInformation} />
+              )}
+            />
+            <ProtectedRoute
+              path="/singlestock/:stockid"
+              authorized={!this.state.user}
+              redirect={'/'}
+              render={props => (
+                <SingleOwnedStockView
+                  {...props}
+                  updateUserInformation={this.updateUserInformation}
+                />
               )}
             />
 
