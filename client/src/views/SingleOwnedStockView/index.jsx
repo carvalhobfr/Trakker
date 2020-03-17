@@ -13,15 +13,18 @@ class OwnedStock extends Component {
     };
   }
 
-  async componentDidMount() {
-    await this.fetchData();
-    //console.log(this.state.ownedStock);
-  }
+  //async componentDidMount() {
+  //console.log(this.props.location);
+  //await this.fetchData();
+  //console.log('SEARCH INPUTS', searchInputs);
+  //console.log(this.state.ownedStock);
+  //}
 
   async fetchData() {
-    const ownedStock = await loadStockInformation(this.state.wallet);
-    this.setState({ ownedStock });
-    console.log(this.props);
+    const { searchInputs } = await this.props.location.state;
+    //const ownedStock = await loadStockInformation(this.state.wallet);
+    //this.setState({ ownedStock });
+    //console.log(this.props);
     //const name;
     //const currentValue = await requestDaily(name);
     //this.setState({ currentValue });
