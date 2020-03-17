@@ -38,10 +38,10 @@ router.post('/add-stock', async (req, res, next) => {
   }
 });
 
-router.get('/singlestock/:name', async (req, res, next) => {
-  const stockName = req.params.name;
+router.get('/singlestock/:id', async (req, res, next) => {
+  const stockID = req.params.id;
   try {
-    const stock = await Stock.findOne({ name: stockName });
+    const stock = await Stock.findById({ stockID });
     res.json({ stock });
     console.log('BACKEND ', stock);
   } catch (error) {
@@ -50,4 +50,16 @@ router.get('/singlestock/:name', async (req, res, next) => {
   }
 });
 
+router.get('/:id', async (req, res, next) => {
+  console.log(req.params.id);
+  const walletID = req.params.id;
+  console.log(walletID);
+  try {
+    const wallet = await Wallet.findById({ walletID });
+    res.json({ wallet });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
 module.exports = router;

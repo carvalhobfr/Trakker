@@ -93,6 +93,20 @@ class App extends Component {
                 />
               )}
             />
+
+            <ProtectedRoute
+              path="/dashboard"
+              authorized={this.state.user}
+              redirect={'/dashboard'}
+              render={props => (
+                <DashboardView
+                  {...props}
+                  user={this.state.user}
+                  updateUserInformation={this.updateUserInformation}
+                />
+              )}
+            />
+
             <Route
               path="/singlestock/:name"
               //authorized={this.state.user}
