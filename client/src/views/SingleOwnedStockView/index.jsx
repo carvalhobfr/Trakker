@@ -12,17 +12,17 @@ class OwnedStock extends Component {
     };
   }
 
-  async componentDidMount() {
-    await this.fetchData();
-    console.log(this.state.ownedStock);
-  }
+  // async componentDidMount() {
+  //   await this.fetchData();
+  //   console.log(this.state.ownedStock);
+  // }
 
-  async fetchData() {
-    //const name;
-    const currentValue = await requestDaily(name);
-    this.setState({ currentValue });
-    console.log(this.state.currentValue);
-  }
+  // async fetchData() {
+  //   //const name;
+  //   const currentValue = await requestDaily(name);
+  //   this.setState({ currentValue });
+  //   console.log(this.state.currentValue);
+  // }
 
   render() {
     return (

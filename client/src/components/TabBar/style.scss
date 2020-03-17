@@ -1,76 +1,49 @@
 @import url('https://use.fontawesome.com/releases/v5.0.9/css/all.css');
 
-.tab-nav-container{
+.tab-nav-container {
 	background-color: #fff;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	display: flex;
-  justify-content: space-between;
-  align-self: flex-end;
-	padding: 1vw 2vw;
-  width: 96vw;
-  height: 5vw;
-  box-sizing: initial;
-  margin: 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+	justify-content: space-around;
+	align-self: flex-end;
+	padding: 2vw 2vw;
+	width: 96vw;
+  height: 4vw;
+  max-height: 40px;
+	box-sizing: initial;
+	margin: 0;
+	position: fixed;
+	bottom: 0;
 }
 
-.tab{
+.tab {
 	background: #ffffff;
-	border-radius:50px;
+	border-radius: 1em;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-	justify-content:center;
-	padding: 0 20px;
-  margin: 0 10px;
+	justify-content: center;
 }
 
-.tab i{
+.tab i {
 	font-size: 1.2em;
 }
 
-.tab p{
-	font-weight:bold;
-	overflow: hidden;
-	max-width:0;
-}
 
-.tab.active p{
-	margin-left:10px;
-	max-width: 200px;
-	transition: max-width 0.4s linear;
-}
-.tab.active.purple{
-	background-color: rgba(91, 55, 183, 0.2);
-	color: rgba(91,55,183,1);
-}
-.tab.active.pink{
-	background-color: rgba(201, 55, 157, 0.2);
-	color: rgba(201, 55, 157, 1);
-}
-.tab.active.yellow{
-	background-color: rgba(230, 169, 25, 0.2);
-	color: rgba(230, 169, 25, 1);
-}
-.tab.active.teal{
-	background-color: rgba(28, 150, 162, 0.2);
-	color: rgba(28, 150, 162, 1);
-}
+// .tab-purple {
+// 	background-color: rgba(91, 55, 183, 0.2);
+// 	color: rgba(91, 55, 183, 1);
+// }
+// .tab-pink {
+// 	background-color: rgba(201, 55, 157, 0.2);
+// 	color: rgba(201, 55, 157, 1);
+// }
+// .tab-yellow {
+// 	background-color: rgba(230, 169, 25, 0.2);
+// 	color: rgba(230, 169, 25, 1);
+// }
+// .tab-teal {
+// 	background-color: rgba(28, 150, 162, 0.2);
+// 	color: rgba(28, 150, 162, 1);
+// }
 
-@media (max-width: 450px){
-	.tab-nav-container{
-		padding: 20px;
-		width: 350px;
-	}
-	
-	.tab {
-		padding: 0 10px;
-		margin: 0;
-	}
-	
-	.tab i{
-		font-size: 1em;
-	}
-}
