@@ -1,19 +1,31 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import { requestDaily } from './../../services/getapidata';
+import { loadStockInformation } from './../../services/addstocks';
 
 class OwnedStock extends Component {
-  state = {
-    ownedStock: {}
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      ownedStock: {},
+      currentValue: {}
+    };
+  }
 
   componentDidMount() {
-    axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=${this.props.match.params.id}&apikey=RWIQ5QDC9KY8INZG`
-    )
-      .then(response => {
-        console.log(response.data);
-        this.setState({
-          ownedStock: response.data
-        });
+    this.fetchData();
+  }
+
+  fetchData() {
+    const name = this.props.match.params.name;
+    console.log(this.props);
+    console.log(name);
+    loadStockInformation(name)
+      .then(stock => {
+        this.setState({ ownedStock: stock });
+        console.log('LOADED', this.state.ownedStock);
+      })
+      .catch(error => {
+        console.log(error);
       });
   }
 
@@ -24,9 +36,11 @@ class OwnedStock extends Component {
           <div className="ownedStock-info-detail">
             <div className="headline-container">
               <h4>{this.state.ownedStock.name}</h4>
+              {/* 
               <h4>{this.state.ownedStock.type}</h4>
+            
+    <p>{this.state.ownedStock.symbol}</p> */}
             </div>
-            <p>{this.state.ownedStock.symbol}</p>
           </div>
         </div>
       </div>
