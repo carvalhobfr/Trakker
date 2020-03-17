@@ -4,11 +4,13 @@ import './style.scss';
 import { loadStockInformation } from '../../services/addstocks';
 
 const SingleStock = props => {
-  loadStockInformation(props._id);
+  console.log(props);
   return (
-    <div>
-      <h4>{props.name}</h4>
-    </div>
+    <section className="stock__single-button">
+      <h4>{props.props.name}</h4>
+      <p>{props.props.buying_price}$</p>
+      <p>{props.props.quantity}</p>
+    </section>
   );
 };
 
