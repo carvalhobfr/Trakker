@@ -47,12 +47,11 @@ class HomePageView extends Component {
         <footer>
           Trakker
           <ul>
-            <li>Help Center</li>
-            <li>About Us</li>
-            <hr></hr>
-            <li>Privacy</li>
-            <li>Accessibility</li>
-            <li>Terms</li>
+            <li>❔ Help Center</li>
+            <li>💬About Us</li>
+            <li>🔒Privacy</li>
+            <li>🤝Accessibility</li>
+            <li>📜Terms</li>
           </ul>
         </footer>
       </body>

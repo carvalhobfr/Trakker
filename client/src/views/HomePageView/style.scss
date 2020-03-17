@@ -88,7 +88,15 @@ footer {
 	align-items: flex-start;
 	color: white;
 	background-color: black;
+	height: 20vh;
 	ul {
+		display: flex;
+		flex-direction: column;
 		width: 100%;
+		justify-content: space-between;
+	}
+	li {
+		display: flex;
+		align-self: flex-start;
 	}
 }
