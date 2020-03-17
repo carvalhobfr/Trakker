@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import { signOut } from '../../services/authentication';
+import TabBar from '../../components/TabBar';
 
 const Settings = props => {
   const handleSignOut = () => {
@@ -20,13 +21,14 @@ const Settings = props => {
       <div className="logo-navbar">
         <Link to="/">Trakker</Link>
       </div>
+      <div>Trakker</div>
       <div className="menu-navbar">
         {props.user && (
           <Fragment>
-            <span>{props.user.name}</span>
             <button onClick={handleSignOut}>Sign Out</button>
           </Fragment>
         )}
+        <TabBar />
       </div>
     </nav>
   );
