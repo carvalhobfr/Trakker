@@ -28,11 +28,11 @@ const NavBar = props => {
             <Link to="/add-stock">Add Stock</Link>
           </Fragment>
         )) || (
-          <Fragment>
-            <Link to="/sign-in">Sign In</Link>
-            <Link to="/sign-up">Sign Up</Link>
-          </Fragment>
-        )}
+            <Fragment>
+              <Link to="/sign-in">Sign In</Link>
+              <Link to="/sign-up">Sign Up</Link>
+            </Fragment>
+          )}
       </div>
     </nav>
   );

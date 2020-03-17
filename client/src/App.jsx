@@ -98,7 +98,7 @@ class App extends Component {
             <ProtectedRoute
               path="/dashboard"
               authorized={this.state.user}
-              redirect={'/dashboard'}
+              redirect={'/'}
               render={props => (
                 <DashboardView
                   {...props}
