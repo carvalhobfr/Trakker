@@ -54,8 +54,8 @@ class App extends Component {
           <NavBar user={this.state.user} updateUserInformation={this.updateUserInformation} />
           <Switch>
             {/* <Route path="/" exact component={HomePageView} /> */}
-            <ProtectedRoute exact
-              path="/"
+            <ProtectedRoute
+              path="/" exact
               authorized={!this.state.user}
               redirect={'/dashboard'}
               render={props => (
@@ -104,7 +104,7 @@ class App extends Component {
             /> */}
 
             <ProtectedRoute
-              path="/"
+              path="/dashboard"
               authorized={this.state.user}
               redirect={'/dashboard'}
               render={props => (
@@ -132,7 +132,7 @@ class App extends Component {
             />
 
             <ProtectedRoute
-              path="/settings"
+              path="/settings" exact
               authorized={this.state.user}
               redirect={'/settings'}
               render={props => (
