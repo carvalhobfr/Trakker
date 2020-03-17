@@ -72,7 +72,7 @@ class App extends Component {
             <ProtectedRoute
               path="/add-stock"
               authorized={this.state.user}
-              redirect={'/'}
+              redirect={'/add-stock'}
               render={props => (
                 <AddStockView
                   {...props}
