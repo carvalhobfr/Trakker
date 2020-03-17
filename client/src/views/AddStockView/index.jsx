@@ -3,7 +3,6 @@ import { addStock } from './../../services/addstocks';
 import './style.scss';
 import TabBar from './../../components/TabBar';
 
-
 class AddStockView extends Component {
   constructor(props) {
     super(props);
@@ -53,65 +52,66 @@ class AddStockView extends Component {
 
   render() {
     return (
-      <section className="page__add-stock">
-        <h2>Trakker</h2>
-        <h4>Add asset to your wallet</h4>
-        <form className="form__add-stock" onSubmit={this.handleFormSubmission}>
-          <label htmlFor="name">Name:</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="...AMZN, GOOGL, TSLA"
-            onChange={this.handleInputChange}
-            value={this.state.name}
-          />
-          <label htmlFor="type">Type:</label>
-          <select
-            id="type"
-            name="type"
-            type="select"
-            onChange={this.handleInputChange}
-            value={this.state.type}
-          >
-            <option value="Stock">Stock</option>
-            <option value="Crypto">Crypto</option>
-          </select>
+      <div className="page-and-tab-bar">
+        <section className="page__add-stock">
+          <h2>Trakker</h2>
+          <h4>Add asset to your wallet</h4>
+          <form className="form__add-stock" onSubmit={this.handleFormSubmission}>
+            <label htmlFor="name">Name:</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="...AMZN, GOOGL, TSLA"
+              onChange={this.handleInputChange}
+              value={this.state.name}
+            />
+            <label htmlFor="type">Type:</label>
+            <select
+              id="type"
+              name="type"
+              type="select"
+              onChange={this.handleInputChange}
+              value={this.state.type}
+            >
+              <option value="Stock">Stock</option>
+              <option value="Crypto">Crypto</option>
+            </select>
 
-          <label htmlFor="quantity">Quantity:</label>
-          <input
-            onChange={this.handleInputChange}
-            value={this.state.quantity}
-            type="number"
-            id="quantity"
-            name="quantity"
-            min="1"
-            placeholder="...50, 100, 500"
-          />
-          <label htmlFor="buying_price">Buying Price:</label>
-          <input
-            onChange={this.handleInputChange}
-            value={this.state.buying_price}
-            type="number"
-            id="buying_price"
-            name="buying_price"
-            min="0"
-            step="0.0001"
-            placeholder="e.g: 154.25$"
-          />
-          <label htmlFor="date_of_purchase">Purchase Date:</label>
-          <input
-            onChange={this.handleInputChange}
-            value={this.state.date_of_purchase}
-            type="date"
-            id="date_of_purchase"
-            name="date_of_purchase"
-          ></input>
-          <button>Add to wallet</button>
-        </form>
+            <label htmlFor="quantity">Quantity:</label>
+            <input
+              onChange={this.handleInputChange}
+              value={this.state.quantity}
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              placeholder="...50, 100, 500"
+            />
+            <label htmlFor="buying_price">Buying Price:</label>
+            <input
+              onChange={this.handleInputChange}
+              value={this.state.buying_price}
+              type="number"
+              id="buying_price"
+              name="buying_price"
+              min="0"
+              step="0.0001"
+              placeholder="e.g: 154.25$"
+            />
+            <label htmlFor="date_of_purchase">Purchase Date:</label>
+            <input
+              onChange={this.handleInputChange}
+              value={this.state.date_of_purchase}
+              type="date"
+              id="date_of_purchase"
+              name="date_of_purchase"
+            ></input>
+            <button>Add to wallet</button>
+          </form>
+        </section>
         <TabBar />
-      </section>
-
+      </div>
     );
   }
 }
