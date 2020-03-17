@@ -3,7 +3,6 @@ import { addStock } from './../../services/addstocks';
 import './style.scss';
 import TabBar from './../../components/TabBar';
 
-
 class AddStockView extends Component {
   constructor(props) {
     super(props);
@@ -111,7 +110,6 @@ class AddStockView extends Component {
         </form>
         <TabBar />
       </section>
-
     );
   }
 }

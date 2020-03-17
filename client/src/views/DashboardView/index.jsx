@@ -17,7 +17,7 @@ export class DashboardView extends Component {
   }
   render() {
     return (
-      <section className="page__add-stock">
+      <section className="page__dashboard">
         <h2>Trakker</h2>
         <h4>Good afternoon</h4>
         <h6>Here's the summary of your account</h6>
