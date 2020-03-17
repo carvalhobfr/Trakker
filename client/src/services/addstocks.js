@@ -11,7 +11,7 @@ const addStock = async data => {
 
 const loadWalletInformation = async id => {
   const result = await instance.get(`/${id}`);
-  console.log(wallet);
+  //console.log(wallet);
   const wallet = result.data.id;
   return wallet;
 };
