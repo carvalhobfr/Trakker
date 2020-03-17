@@ -10,6 +10,9 @@ const TabBar = props => {
       <a href="/dashboard" class="linkIcon">
         <i class="fas fa-home" />
       </a>
+      {/* <span style="font-size: 48px; color: Dodgerblue;">
+        <i class="fas fa-camera"></i>
+      </span> */}
       <Link to="/wallet" class="linkIcon">
         <i class="fas fa-euro-sign"></i>
       </Link>
