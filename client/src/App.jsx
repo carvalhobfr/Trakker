@@ -12,6 +12,7 @@ import SignUpView from './views/SignUpView';
 import HomePageView from './views/HomePageView';
 import AddStockView from './views/AddStockView';
 import SingleOwnedStockView from './views/SingleOwnedStockView';
+import DashboardView from './views/DashboardView';
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
