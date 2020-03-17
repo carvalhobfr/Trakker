@@ -6,8 +6,12 @@ import { loadStockInformation } from '../../services/addstocks';
 const SingleStock = props => {
   console.log(props);
   return (
+    /* <a href={`singlestock/${props.props.wallet}/${props.props.name}`}> */
     <section className="stock__single-button">
-      <h4>{props.props.name}</h4>
+      <a href={`singlestock/${props.props.wallet}/${props.props.name}`}>
+        {' '}
+        <h4>{props.props.name}</h4>{' '}
+      </a>
       <p>{props.props.buying_price}$</p>
       <p>{props.props.quantity}</p>
     </section>
@@ -15,3 +19,4 @@ const SingleStock = props => {
 };
 
 export default SingleStock;
+/* `singlestock/${props.props.wallet}/${props.props.name}` */
