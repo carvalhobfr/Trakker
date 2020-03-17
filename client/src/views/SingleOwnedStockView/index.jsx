@@ -18,7 +18,7 @@ class OwnedStock extends Component {
   }
 
   async fetchData() {
-    const name = 'TSLA';
+    //const name;
     const currentValue = await requestDaily(name);
     this.setState({ currentValue });
     console.log(this.state.currentValue);
