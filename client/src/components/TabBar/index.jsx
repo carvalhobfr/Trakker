@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
+//tive que adicionar a classe dentro de <i> dentro de <Link> pra funcionar
+
 const TabBar = props => {
   return (
     <div class="tab-nav-container">

@@ -1,38 +1,48 @@
-import React, { Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import { signOut } from '../../services/authentication';
 import TabBar from '../../components/TabBar';
 
-const Settings = props => {
-  const handleSignOut = () => {
+class Settings extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSignOut = this.handleSignOut.bind(this);
+  }
+
+  handleSignOut = () => {
     signOut()
       .then(() => {
-        props.updateUserInformation(null);
+        this.props.updateUserInformation(null);
+        this.props.history.push('/');
       })
       .catch(error => {
         console.log(error);
       });
   };
 
-  return (
-    <nav className="Logout">
-      <style>@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');</style>
-      <div className="logo-navbar">
-        <Link to="/">Trakker</Link>
-      </div>
-      <div>Trakker</div>
-      <div className="menu-navbar">
-        {props.user && (
-          <Fragment>
-            <span>{props.user.name}</span>
-            <button onClick={handleSignOut}>Sign Out</button>
-          </Fragment>
-        )}
-        <TabBar />
-      </div>
-    </nav>
-  );
-};
+  render() {
+    return (
+      <nav className="Logout">
+        <style>
+          @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+        </style>
+        <div className="logo-navbar">
+          <Link to="/">Trakker</Link>
+        </div>
+        <div>Trakker</div>
+        <div className="menu-navbar">
+          {this.props.user && (
+            <Fragment>
+              <span>{this.props.user.name}</span>
+              <button onClick={this.handleSignOut}>Sign Out</button>
+            </Fragment>
+          )}
+          <TabBar />
+        </div>
+      </nav>
+    );
+  }
+}
 
 export default Settings;

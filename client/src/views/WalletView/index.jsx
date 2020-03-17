@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './style.scss';
+import TabBar from '../../components/TabBar';
 
 class Wallet extends Component {
   render() {
-    return <div>Wallet View</div>;
+    return <TabBar />;
   }
 }
 

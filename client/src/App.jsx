@@ -14,6 +14,7 @@ import AddStockView from './views/AddStockView';
 import SingleOwnedStockView from './views/SingleOwnedStockView';
 import DashboardView from './views/DashboardView';
 import SettingsView from './views/SettingsView';
+import WalletView from './views/WalletView';
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
@@ -55,12 +56,11 @@ class App extends Component {
           <Switch>
             {/* <Route path="/" exact component={HomePageView} /> */}
             <ProtectedRoute
-              path="/" exact
+              path="/"
+              exact
               authorized={!this.state.user}
               redirect={'/dashboard'}
-              render={props => (
-                <HomePageView />
-              )}
+              render={props => <HomePageView />}
             />
             <ProtectedRoute
               path="/sign-up"
@@ -132,7 +132,22 @@ class App extends Component {
             />
 
             <ProtectedRoute
-              path="/settings" exact
+              path="/wallet"
+              exact
+              authorized={this.state.user}
+              redirect={'/wallet'}
+              render={props => (
+                <WalletView
+                  {...props}
+                  user={this.state.user}
+                  updateUserInformation={this.updateUserInformation}
+                />
+              )}
+            />
+
+            <ProtectedRoute
+              path="/settings"
+              exact
               authorized={this.state.user}
               redirect={'/settings'}
               render={props => (
