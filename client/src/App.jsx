@@ -110,14 +110,14 @@ class App extends Component {
             />
 
             <Route
-              path="/singlestock/:name"
+              path="/singlestock/name/:name"
               //authorized={this.state.user}
               //redirect={'/'}
               render={props => (
                 <SingleOwnedStockView
                   {...props}
                   user={this.state.user}
-                  wallet={this.state.user.wallet}
+                  // wallet={this.state.user.wallet}
                   updateUserInformation={this.updateUserInformation}
                 />
               )}
