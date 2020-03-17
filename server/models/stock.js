@@ -15,7 +15,8 @@ const schema = new mongoose.Schema({
 		type: Number
 	},
 	buying_price: {
-		type: Number
+		type: Number,
+		min: 0
 	},
 	currency: {
 		type: String,

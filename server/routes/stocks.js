@@ -22,11 +22,12 @@ router.post('/add-stock', async (req, res, next) => {
   } = req.body.data;
   try {
     //const wallet = await Wallet.findOne({ user: user._id });
+    const totalAmount = buying_price.reduce((total, buying_price) => total + buying_price, 0);
     const stock = await Stock.create({
       name,
       type,
       quantity,
-      buying_price,
+      buying_price: totalAmount / stock.length,
       currency,
       date_of_purchase,
       wallet
@@ -55,7 +56,7 @@ router.get('/singlestock/:id', async (req, res, next) => {
   try {
     const stock = await Stock.findById({ stockID });
     res.json({ stock });
-    //console.log('BACKEND ', stock);
+    console.log('BACKEND ', stock);
   } catch (error) {
     console.log(error);
     next(error);
