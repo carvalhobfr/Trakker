@@ -81,7 +81,7 @@ class App extends Component {
                 />
               )}
             />
-            <ProtectedRoute
+            {/*  <ProtectedRoute
               path="/add-stock"
               authorized={this.state.user}
               redirect={'/dashboard'}
@@ -92,7 +92,7 @@ class App extends Component {
                   updateUserInformation={this.updateUserInformation}
                 />
               )}
-            />
+            /> */}
 
             <ProtectedRoute
               path="/dashboard"
@@ -115,6 +115,8 @@ class App extends Component {
               render={props => (
                 <SingleOwnedStockView
                   {...props}
+                  user={this.state.user}
+                  wallet={this.state.user.wallet}
                   updateUserInformation={this.updateUserInformation}
                 />
               )}

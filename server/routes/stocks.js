@@ -55,7 +55,7 @@ router.get('/singlestock/:id', async (req, res, next) => {
   try {
     const stock = await Stock.findById({ stockID });
     res.json({ stock });
-    console.log('BACKEND ', stock);
+    //console.log('BACKEND ', stock);
   } catch (error) {
     console.log(error);
     next(error);

@@ -6,27 +6,20 @@ class OwnedStock extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      wallet: this.props.wallet,
       ownedStock: {},
       currentValue: {}
     };
   }
 
-  componentDidMount() {
-    this.fetchData();
+  async componentDidMount() {
+    await this.fetchData();
+    console.log(this.state.ownedStock);
   }
 
-  fetchData() {
-    const name = this.props.match.params.name;
-    console.log(this.props);
-    console.log(name);
-    loadStockInformation(name)
-      .then(stock => {
-        this.setState({ ownedStock: stock });
-        console.log('LOADED', this.state.ownedStock);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  async fetchData() {
+    const currentValue = await requestDaily('TSLA');
+    this.setState({ currentValue });
   }
 
   render() {
