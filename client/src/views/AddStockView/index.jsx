@@ -3,7 +3,6 @@ import { addStock } from './../../services/addstocks';
 import './style.scss';
 import TabBar from './../../components/TabBar';
 
-
 class AddStockView extends Component {
   constructor(props) {
     super(props);
@@ -19,8 +18,6 @@ class AddStockView extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
   }
-
-
 
   async handleFormSubmission(event) {
     event.preventDefault();
@@ -113,7 +110,7 @@ class AddStockView extends Component {
             <button>Add to wallet</button>
           </form>
         </section>
-        <TabBar />
+        {/* <TabBar /> */}
       </div>
     );
   }
