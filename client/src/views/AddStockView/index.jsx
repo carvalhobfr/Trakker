@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { addStock } from './../../services/addstocks';
 import './style.scss';
+import TabBar from './../../components/TabBar';
+
 
 class AddStockView extends Component {
   constructor(props) {
@@ -107,7 +109,9 @@ class AddStockView extends Component {
           ></input>
           <button>Add to wallet</button>
         </form>
+        <TabBar />
       </section>
+
     );
   }
 }
