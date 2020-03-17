@@ -9,7 +9,7 @@ const Stock = require('./../models/stock');
 const router = new Router();
 
 router.post('/add-stock', async (req, res, next) => {
-	console.log(req.body);
+	console.log("Req.body",req.body);
 	const {
 		name,
 		type,
@@ -22,7 +22,7 @@ router.post('/add-stock', async (req, res, next) => {
 	} = req.body.data;
 	try {
 		//const wallet = await Wallet.findOne({ user: user._id });
-		const totalAmount = buying_price.reduce((total, buying_price) => total + buying_price, 0);
+    const totalAmount = req.body.buying_price.reduce((total, buying_price) => total + buying_price, 0);
 		const stock = await Stock.create({
 			name,
 			type,
@@ -33,6 +33,7 @@ router.post('/add-stock', async (req, res, next) => {
 			wallet
 		});
 		res.json({ stock });
+		console.log('totalAMount', totalAmount);
 	} catch (error) {
 		console.log(error);
 		next(error);
