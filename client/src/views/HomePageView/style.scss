@@ -88,12 +88,16 @@ footer {
 	align-items: flex-start;
 	color: white;
 	background-color: black;
-	height: 20vh;
+	padding: 5vh 5vw;
 	ul {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		justify-content: space-between;
+
+		hr {
+			margin: 1em 0;
+		}
 	}
 	li {
 		display: flex;

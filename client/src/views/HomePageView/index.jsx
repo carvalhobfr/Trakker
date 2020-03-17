@@ -50,6 +50,7 @@ class HomePageView extends Component {
             <li>❔ Help Center</li>
             <li>💬About Us</li>
             <li>🔒Privacy</li>
+              <hr />
             <li>🤝Accessibility</li>
             <li>📜Terms</li>
           </ul>
