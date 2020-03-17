@@ -32,10 +32,19 @@ const loadAllStockInformation = id =>
   return { stocks }; */
   });
 
-const loadStockInformation = async id => {
-  const result = await instance.get(`/singlestock/${id}`);
+const loadStockInformation = async (id, name) =>
+  /* const result = await instance.get(`/singlestock/${id}/${name}`);
   const stock = result.data.id;
   console.log(stock);
-  return stock;
-};
+  return stock; */
+  new Promise((resolve, reject) => {
+    instance
+      .get(`/singlestock/${id}/${name}`)
+      .then(result => {
+        console.log(result);
+        const stocks = result.data.stocks;
+        resolve(stocks);
+      })
+      .catch(reject);
+  });
 export { addStock, loadStockInformation, loadAllStockInformation };

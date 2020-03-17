@@ -55,19 +55,19 @@ router.get('/allstocks/:id', async (req, res, next) => {
   }
 });
 
-router.get('/singlestock/name/:name', async (req, res, next) => {
+router.get('/singlestock/:id/:name', async (req, res, next) => {
+  const walletID = req.params.id;
   const stockName = req.params.name;
   try {
-    const stock = await Stock.find({ stockName });
+    const stock = await Stock.find({ wallet: walletID, name: stockName });
     res.json({ stock });
-    //console.log('BACKEND ', stock);
   } catch (error) {
     console.log(error);
     next(error);
   }
 });
 
-router.get('/singlestock/:id', async (req, res, next) => {
+/* router.get('/singlestock/:id', async (req, res, next) => {
   const stockID = req.params.id;
   try {
     const stock = await Stock.findById({ stockID });
@@ -77,7 +77,7 @@ router.get('/singlestock/:id', async (req, res, next) => {
     console.log(error);
     next(error);
   }
-});
+}); */
 
 router.get('/:id', async (req, res, next) => {
   console.log(req.params.id);
