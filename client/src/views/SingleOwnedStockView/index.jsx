@@ -15,12 +15,11 @@ class OwnedStock extends Component {
 
   async componentDidMount() {
     await this.fetchData();
-    console.log(this.state.ownedStock);
+    //console.log(this.state.ownedStock);
   }
 
   async fetchData() {
-    const name = 'TSLA';
-    const ownedStock = await loadStockInformation(this.state.wallet, name);
+    const ownedStock = await loadStockInformation(this.state.wallet);
     this.setState({ ownedStock });
     console.log(this.props);
     //const name;
