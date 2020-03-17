@@ -30,7 +30,7 @@ class DashboardView extends Component {
         <h6>Here's the summary of your account</h6>
         <h6>Wallet id: {this.state.wallet}</h6>
         {this.state.stocks.map(element => {
-          return <SingleStock props={element} />;
+          return <SingleStock single={element} {...this.props} />;
         })}
         <TabBar />
       </section>

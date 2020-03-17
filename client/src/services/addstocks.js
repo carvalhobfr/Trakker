@@ -21,7 +21,7 @@ const loadAllStockInformation = id =>
     instance
       .get(`/allstocks/${id}`)
       .then(result => {
-        console.log(result);
+        //console.log(result);
         const stocks = result.data.stocks;
         resolve(stocks);
       })
@@ -42,8 +42,8 @@ const loadStockInformation = async (id, name) =>
       .get(`/singlestock/${id}/${name}`)
       .then(result => {
         console.log(result);
-        const stocks = result.data.stocks;
-        resolve(stocks);
+        const stock = result.data.stock;
+        resolve(stock);
       })
       .catch(reject);
   });
