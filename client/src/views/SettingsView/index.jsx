@@ -23,7 +23,6 @@ const Settings = props => {
       <div className="menu-navbar">
         {props.user && (
           <Fragment>
-            <span>{props.user.name}</span>
             <button onClick={handleSignOut}>Sign Out</button>
           </Fragment>
         )}
