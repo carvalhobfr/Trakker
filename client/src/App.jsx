@@ -13,6 +13,7 @@ import HomePageView from './views/HomePageView';
 import AddStockView from './views/AddStockView';
 import SingleOwnedStockView from './views/SingleOwnedStockView';
 import DashboardView from './views/DashboardView';
+import SettingsView from './views/SettingsView';
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
@@ -117,6 +118,19 @@ class App extends Component {
                   {...props}
                   user={this.state.user}
                   wallet={this.state.user.wallet}
+                  updateUserInformation={this.updateUserInformation}
+                />
+              )}
+            />
+
+            <ProtectedRoute
+              path="/settings"
+              authorized={this.state.user}
+              redirect={'/settings'}
+              render={props => (
+                <SettingsView
+                  {...props}
+                  user={this.state.user}
                   updateUserInformation={this.updateUserInformation}
                 />
               )}
