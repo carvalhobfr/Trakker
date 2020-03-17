@@ -110,7 +110,8 @@ class AddStockView extends Component {
             <button>Add to wallet</button>
           </form>
         </section>
-        {/* <TabBar /> */}
+
+        <TabBar />
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { loadAllStockInformation } from './../../services/addstocks';
+import TabBar from '../../components/TabBar';
 
 class DashboardView extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class DashboardView extends Component {
         {this.state.stocks.map(element => {
           return <p>{element.name}</p>;
         })}
+        <TabBar />
       </section>
     );
   }
