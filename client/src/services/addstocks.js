@@ -9,15 +9,10 @@ const addStock = async data => {
   await instance.post('/add-stock', { data });
 };
 
-const loadStockInformation = id =>
-  new Promise((resolve, reject) => {
-    instance
-      .get(`/stock-information/${id}`)
-      .then(result => {
-        const stock = result.data.stock;
-        resolve(stock);
-      })
-      .catch(reject);
-  });
-
+const loadStockInformation = async name => {
+  const result = await instance.get(`/stock-information/${name}`);
+  const stock = result.data.name;
+  console.log(stock);
+  return stock;
+};
 export { addStock, loadStockInformation };
