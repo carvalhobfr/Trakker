@@ -7,19 +7,19 @@ import './style.scss';
 const TabBar = props => {
   return (
     <div class="tab-nav-container">
-      <div class="tab-purple">
+      <div class="tabIcon">
         <i class="fas fa-home"></i>
         <Link to="/dashboard" class="fas fa-home"></Link>
       </div>
-      <div class="tab-pink">
+      <div class="tabIcon">
         <i class="fas fa-euro-sign"></i>
         <Link to="/wallet" class="fas fa-cog"></Link>
       </div>
-      <div class="tab-yellow">
+      <div class="tabIcon">
         <i class="fas fa-chart-bar"></i>
         <Link to="/allstocks" class="fas fa-cog"></Link>
       </div>
-      <div class="tab-teal">
+      <div class="tabIcon">
         <i class="fas fa-cog"></i>
         <Link to="/settings" class="fas fa-cog"></Link>
       </div>

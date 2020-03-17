@@ -4,7 +4,7 @@ import TabBar from '../../components/TabBar';
 
 class Wallet extends Component {
   render() {
-    return <TabBar />;
+    return <div><TabBar /></div>;
   }
 }
 

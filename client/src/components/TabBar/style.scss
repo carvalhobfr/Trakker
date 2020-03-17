@@ -9,7 +9,7 @@
 	align-self: center;
 	padding: 1em;
 	width: 100vw;
-	height: 4vw;
+	// height: 4vw;
 	max-height: 40px;
 	box-sizing: initial;
 	margin: 10vw 0 0 0;
@@ -17,13 +17,13 @@
 	bottom: 0;
 }
 
-.tab {
+.tabIcon {
 	background: #ffffff;
-	border-radius: 1em;
+	border-radius: 0.5em;
 	cursor: pointer;
 	display: flex;
-	align-self: center;
-	justify-self: center;
+	align-items: center;
+	justify-items: center;
 }
 
 // .tab-purple {
