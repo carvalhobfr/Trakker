@@ -109,15 +109,15 @@ class App extends Component {
               )}
             />
 
-            <Route
-              path="/singlestock/name/:name"
-              //authorized={this.state.user}
-              //redirect={'/'}
+            <ProtectedRoute
+              path="/singlestock"
+              authorized={this.state.user}
+              redirect={'/singlestock'}
               render={props => (
                 <SingleOwnedStockView
                   {...props}
                   user={this.state.user}
-                  // wallet={this.state.user.wallet}
+                  wallet={this.state.user.wallet}
                   updateUserInformation={this.updateUserInformation}
                 />
               )}

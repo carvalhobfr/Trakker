@@ -7,22 +7,27 @@ class OwnedStock extends Component {
     super(props);
     this.state = {
       wallet: this.props.wallet,
+      name: this.props.history,
       ownedStock: {},
       currentValue: {}
     };
   }
 
-  /*   async componentDidMount() {
+  async componentDidMount() {
     await this.fetchData();
     console.log(this.state.ownedStock);
   }
 
   async fetchData() {
+    const name = 'TSLA';
+    const ownedStock = await loadStockInformation(this.state.wallet, name);
+    this.setState({ ownedStock });
+    console.log(this.props);
     //const name;
-    const currentValue = await requestDaily(name);
-    this.setState({ currentValue });
-    console.log(this.state.currentValue);
-  } */
+    //const currentValue = await requestDaily(name);
+    //this.setState({ currentValue });
+    //console.log(this.state.currentValue);
+  }
 
   render() {
     return (
