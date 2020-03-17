@@ -5,16 +5,16 @@ import './style.scss';
 const TabBar = props => {
 	return (
 		<div class="tab-nav-container">
-			<div class="tab-purple">
+			<div class="tab">
 				<i class="fas fa-home"></i>
 			</div>
-			<div class="tab-pink">
+			<div class="tab">
 				<i class="fas fa-euro-sign"></i>
 			</div>
-			<div class="tab-yellow">
+			<div class="tab">
 				<i class="fas fa-chart-bar"></i>
 			</div>
-			<div class="tab-teal">
+			<div class="tab">
 				<i class="fas fa-cog"></i>
 			</div>
 		</div >
