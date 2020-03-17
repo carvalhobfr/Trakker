@@ -18,8 +18,10 @@ class OwnedStock extends Component {
   }
 
   async fetchData() {
-    const currentValue = await requestDaily('TSLA');
+    const name = 'TSLA';
+    const currentValue = await requestDaily(name);
     this.setState({ currentValue });
+    console.log(this.state.currentValue);
   }
 
   render() {
@@ -28,8 +30,7 @@ class OwnedStock extends Component {
         <div className="single-ownedStock-container">
           <div className="ownedStock-info-detail">
             <div className="headline-container">
-              <h4>{this.state.ownedStock.name}</h4>
-              {/* 
+              {/* <h4>{this.state.currentValue.name}</h4>
               <h4>{this.state.ownedStock.type}</h4>
             
     <p>{this.state.ownedStock.symbol}</p> */}

@@ -1,13 +1,15 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://www.alphavantage.co/query?function='
+  baseURL: 'https://www.alphavantage.co/query?'
 });
 
 const requestDaily = async name => {
-  const data = await instance.get(
-    `TIME_SERIES_DAILY&symbol=${name}&apikey=${process.env.STOCK_API}`
+  const result = await instance.get(
+    `function=TIME_SERIES_DAILY&symbol=${name}&apikey=${process.env.STOCK_API}`
   );
+  const dailyStock = result.data;
+  console.log(dailyStock);
 };
 
 export { requestDaily };

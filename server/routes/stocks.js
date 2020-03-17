@@ -51,12 +51,24 @@ router.get('/allstocks/:id', async (req, res, next) => {
   }
 });
 
+router.get('/singlestock/name/:name', async (req, res, next) => {
+  const stockName = req.params.name;
+  try {
+    const stock = await Stock.findOne({ stockName });
+    res.json({ stock });
+    //console.log('BACKEND ', stock);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
 router.get('/singlestock/:id', async (req, res, next) => {
   const stockID = req.params.id;
   try {
     const stock = await Stock.findById({ stockID });
     res.json({ stock });
-    console.log('BACKEND ', stock);
+    //console.log('BACKEND ', stock);
   } catch (error) {
     console.log(error);
     next(error);
