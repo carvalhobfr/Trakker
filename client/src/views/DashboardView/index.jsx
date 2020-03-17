@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { loadAllStockInformation } from './../../services/addstocks';
 import TabBar from '../../components/TabBar';
+import SingleStock from '../../components/SingleStock';
 
 class DashboardView extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class DashboardView extends Component {
         <h6>Here's the summary of your account</h6>
         <h6>Wallet id: {this.state.wallet}</h6>
         {this.state.stocks.map(element => {
-          return <p>{element.name}</p>;
+          return <SingleStock props={element} />;
         })}
         <TabBar />
       </section>
