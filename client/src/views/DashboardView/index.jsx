@@ -9,8 +9,11 @@ class DashboardView extends Component {
     };
   }
 
-  async componentDidMount() {
-    console.log(this.props);
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  async fetchData() {
     const wallet = await loadWalletInformation(this.props.user.wallet);
     this.setState({ wallet });
   }
