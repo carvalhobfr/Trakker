@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import { loadWalletInformation } from './../../services/addstocks';
+import { loadAllStockInformation } from './../../services/addstocks';
 
 class DashboardView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wallet: {}
+      wallet: this.props.wallet,
+      stocks: []
     };
   }
 
-  componentDidMount() {
-    this.fetchData();
+  async componentDidMount() {
+    await this.fetchData();
+    console.log(this.state.stocks);
   }
 
   async fetchData() {
-    const wallet = await loadWalletInformation(this.props.user.wallet);
-    this.setState({ wallet });
+    const stocks = await loadAllStockInformation(this.props.wallet);
+    this.setState({ stocks });
   }
 
   render() {
@@ -24,6 +26,10 @@ class DashboardView extends Component {
         <h2>Trakker</h2>
         <h4>Good afternoon</h4>
         <h6>Here's the summary of your account</h6>
+        <h6>Wallet id: {this.state.wallet}</h6>
+        {this.state.stocks.map(element => {
+          return <p>{element.name}</p>;
+        })}
       </section>
     );
   }

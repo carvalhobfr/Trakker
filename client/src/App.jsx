@@ -102,6 +102,7 @@ class App extends Component {
                 <DashboardView
                   {...props}
                   user={this.state.user}
+                  wallet={this.state.user.wallet}
                   updateUserInformation={this.updateUserInformation}
                 />
               )}

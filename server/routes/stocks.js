@@ -38,6 +38,18 @@ router.post('/add-stock', async (req, res, next) => {
   }
 });
 
+router.get('/allstocks/:id', async (req, res, next) => {
+  const walletID = req.params.id;
+  try {
+    const stocks = await Stock.find({ wallet: walletID });
+    res.json({ stocks });
+    console.log('BACKEND ', stocks);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
 router.get('/singlestock/:id', async (req, res, next) => {
   const stockID = req.params.id;
   try {
@@ -55,7 +67,7 @@ router.get('/:id', async (req, res, next) => {
   const walletID = req.params.id;
   console.log(walletID);
   try {
-    const wallet = await Wallet.findById({ walletID });
+    const wallet = await Wallet.findById({ _id: walletID });
     res.json({ wallet });
   } catch (error) {
     console.log(error);
