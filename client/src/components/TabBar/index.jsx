@@ -6,6 +6,16 @@ import './style.scss';
 
 
 const TabBar = props => {
+  const tabs = document.querySelectorAll('.tab');
+
+  tabs.forEach(clickedTab => {
+    clickedTab.addEventListener('click', () => {
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+      clickedTab.classList.add('active');
+    });
+  });
   return (
 
 
@@ -28,6 +38,7 @@ const TabBar = props => {
       </div>
     </div>
   )
+
 };
 
 export default TabBar;
