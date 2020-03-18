@@ -16,11 +16,11 @@ const requestDaily = async name => {
       })
       .catch(reject);
   });
-   const result = await axios.get(
+  const result = await axios.get(
     `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${name}&apikey=${process.env.STOCK_API}`
   );
   const dailyStock = result.data;
-  console.log("dailyStock",dailyStock);
+  console.log(dailyStock);
 };
 
- export { requestDaily };
+export { requestDaily };
