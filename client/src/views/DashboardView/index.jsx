@@ -3,6 +3,7 @@ import { loadAllStockInformation, loadWalletInformation } from './../../services
 import TabBar from '../../components/TabBar';
 import LineGraph from '../../components/DashboardGraph';
 import SingleStock from '../../components/SingleStock';
+import './style.scss';
 
 class DashboardView extends Component {
   constructor(props) {
@@ -17,7 +18,6 @@ class DashboardView extends Component {
 
   async componentDidMount() {
     await this.fetchData();
-    //this.getTotals();
     console.log(this.state.wallet);
   }
 
@@ -31,27 +31,20 @@ class DashboardView extends Component {
     });
   }
 
-  /* async getTotals() {
-    const totalQuantity = this.state.stocks.reduce((acc, value) => {
-      return acc + value.quantity;
-    }, 0);
-    const totalBalance = this.state.stocks.reduce((acc, value) => {
-      return acc + value.buying_price;
-    }, 0);
-
-    await this.setState({ totalQuantity, totalBalance });
-  } */
-
   render() {
     return (
       <section className="page__dashboard">
-        <h2>Trakker</h2>
+        <h1>Trakker</h1>
         <h4>Good afternoon</h4>
-        <h3>Summary</h3>
+        <h4>Summary</h4>
         <LineGraph />
 
-        <h6>Your current number of stocks: {this.state.totalQuantity}</h6>
-        <h6>The current value of your stocks: {this.state.totalBalance}</h6>
+        <h4>Your current number of stocks: {this.state.totalQuantity}</h4>
+        <h4>The current value of your stocks: {this.state.totalBalance}</h4>
+
+        <form action="/add-stock">
+          <button className="button__add-stock">Add Stock</button>
+        </form>
         <TabBar />
       </section>
     );
