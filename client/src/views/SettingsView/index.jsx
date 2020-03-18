@@ -34,7 +34,7 @@ class Settings extends Component {
         <div className="menu-navbar">
           {this.props.user && (
             <Fragment>
-              <span>{this.props.user.name}</span>
+              {/*  <span>{this.props.user.name}</span> */}
               <button className="signout" onClick={this.handleSignOut}>
                 Sign Out
               </button>
