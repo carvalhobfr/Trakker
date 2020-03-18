@@ -40,8 +40,8 @@ class DashboardView extends Component {
         <h4>Summary</h4>
         <LineGraph />
 
-        <h4>Your current number of stocks: {this.state.totalQuantity}</h4>
-        <h4>The current value of your stocks: {this.state.totalBalance}</h4>
+        {/* <h4>Your current number of stocks: {this.state.stocks.length}</h4> */}
+        <h4>The current value of your stocks: ${this.state.totalBalance}</h4>
 
         <form action="/add-stock">
           <button className="button__add-stock">Add Stock</button>
