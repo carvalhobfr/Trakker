@@ -23,7 +23,7 @@ class Wallet extends Component {
 
   render() {
     return (
-      <section className="page__dashboard">
+      <section className="page__wallet">
         <h2>Trakker</h2>
         <h4>Good afternoon</h4>
         <h6>Here's the summary of your account</h6>
