@@ -15,7 +15,7 @@ import SingleOwnedStockView from './views/SingleOwnedStockView';
 import DashboardView from './views/DashboardView';
 import SettingsView from './views/SettingsView';
 import WalletView from './views/WalletView';
-import AllStocks from './views/AllStocks';
+import AllStocks from './views/allStocks';
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
