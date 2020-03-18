@@ -139,6 +139,7 @@ class App extends Component {
               render={props => (
                 <WalletView
                   {...props}
+                  wallet={this.state.user.wallet}
                   user={this.state.user}
                   updateUserInformation={this.updateUserInformation}
                 />
