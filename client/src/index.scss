@@ -9,6 +9,7 @@
 html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 	line-height: 1.5;
 }
 
-.App{
+.App {
 	display: flex;
 	align-content: space-between;
 	flex-direction: column;

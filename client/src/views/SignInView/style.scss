@@ -1,49 +1,52 @@
 .page__sign-in {
-  h1,
-  h4 {
-    font-weight: 200;
-  }
+	h1,
+	h4 {
+		font-weight: 200;
+		font-family: 'Noto Sans', sans-serif;
+	}
 
-  h1 {
-    margin-bottom: 3em;
-    padding-top: 3em;
-  }
+	h1 {
+		margin-bottom: 3em;
+		padding-top: 3em;
+	}
 }
 
 .form__sign-in {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2em;
-  input {
-    width: 20em;
-    margin-bottom: 2em;
-    padding: 0.8em;
-    background-color: #eff2f4;
-    border: 1px solid #eff2f4;
-    border-radius: 2em;
-  }
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 2em;
+	font-family: 'Noto Sans', sans-serif;
 
-  button {
-    width: 12em;
-    padding: 0.8em;
-    background-color: RGB(220, 67, 96);
-    border: 1px solid RGB(220, 67, 96);
-    border-radius: 2em;
-    color: white;
-  }
+	input {
+		width: 20em;
+		margin-bottom: 2em;
+		padding: 0.8em;
+		background-color: #eff2f4;
+		border: 1px solid #eff2f4;
+		border-radius: 2em;
+	}
+
+	button {
+		width: 12em;
+		padding: 0.8em;
+		background-color: RGB(220, 67, 96);
+		border: 1px solid RGB(220, 67, 96);
+		border-radius: 2em;
+		color: white;
+	}
 }
 
 .or {
-  color: #777b80;
+	color: #777b80;
 }
 
 .sign-up {
-  width: 12em;
-  padding: 0.8em;
-  background-color: #ffffff;
-  border: 1px solid black;
-  border-radius: 2em;
-  color: #fd2881;
-  box-shadow: 9px 10px 21px -7px rgba(0, 0, 0, 0.75);
+	width: 12em;
+	padding: 0.8em;
+	background-color: #ffffff;
+	border: 1px solid black;
+	border-radius: 2em;
+	color: #fd2881;
+	box-shadow: 9px 10px 21px -7px rgba(0, 0, 0, 0.75);
 }

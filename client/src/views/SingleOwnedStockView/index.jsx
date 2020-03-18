@@ -18,9 +18,9 @@ class OwnedStock extends Component {
   async componentDidMount() {
     await this.fetchData();
     this.getTotals();
-    console.log("this.state", this.state)
-    console.log("Total Price", this.state.totalPrice)
-    console.log("Total Price", this.state.totalQuantity)
+    // console.log("this.state", this.state)
+    // console.log("Total Price", this.state.totalPrice)
+    // console.log("Total Price", this.state.totalQuantity)
   }
 
   async fetchData() {
