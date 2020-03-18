@@ -23,4 +23,4 @@ const requestDaily = async name => {
   console.log(dailyStock); */
 };
 
-export { requestDaily };
+// export { requestDaily };
