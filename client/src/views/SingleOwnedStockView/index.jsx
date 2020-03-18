@@ -18,6 +18,9 @@ class OwnedStock extends Component {
   async componentDidMount() {
     await this.fetchData();
     this.getTotals();
+    console.log("this.state", this.state)
+    console.log("Total Price", this.state.totalPrice)
+    console.log("Total Price", this.state.totalQuantity)
   }
 
   async fetchData() {
@@ -43,6 +46,8 @@ class OwnedStock extends Component {
         <h4>{this.state.name}</h4>
         <p>Quantity: {this.state.totalQuantity}</p>
         <p>Price: {this.state.totalPrice}$</p>
+        <p>AvgPrice: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)}$</p>
+
       </div>
     );
   }
