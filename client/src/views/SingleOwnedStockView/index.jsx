@@ -12,7 +12,7 @@ class OwnedStock extends Component {
       ownedStock: [],
       totalQuantity: 0,
       totalPrice: 0,
-      currentValue: 0,
+      currentValue: 0
     };
   }
 
@@ -27,8 +27,8 @@ class OwnedStock extends Component {
   async fetchData() {
     const ownedStock = await loadStockInformation(this.state.wallet, this.state.name);
     const currentValue = await requestDaily(this.state.name);
-    // console.log("aloaoaoa",this.state.currentValue)
     this.setState({ ownedStock, currentValue });
+    console.log('aloaoaoa', this.state.currentValue);
   }
 
   async getTotals() {
@@ -52,17 +52,18 @@ class OwnedStock extends Component {
         <hr />
 
         {this.state.ownedStock.map(stock => {
-          return <p>
-            Data of Purchase: {stock.date_of_purchase}<br />
-            Quantity: {stock.quantity}<br />
-            BuyingPrice: {stock.buying_price} <br />
-            current value : {stock.currentValue}
-            <hr />
-          </p>
-
+          return (
+            <p>
+              Data of Purchase: {stock.date_of_purchase}
+              <br />
+              Quantity: {stock.quantity}
+              <br />
+              BuyingPrice: {stock.buying_price} <br />
+              current value : {Number(this.state.currentValue).toFixed(2)}
+              <hr />
+            </p>
+          );
         })}
-
-
       </div>
     );
   }
