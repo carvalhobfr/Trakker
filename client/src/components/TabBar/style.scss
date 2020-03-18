@@ -1,28 +1,28 @@
 @import url('https://use.fontawesome.com/releases/v5.0.9/css/all.css');
 
 .tab-nav-container {
-	align-self: center;
-	background-color: rgb(99, 155, 169);
-	// background-color: #fff;
-	display: flex;
-	justify-items: center;
-	justify-content: space-between;
-	padding: 1em 1em 3em;
-	width: 100vw;
-	max-height: 30px;
-	margin: 100vw 0 0 0;
-	// position: -webkit-sticky; 
-	position: fixed;
-	bottom: 0;
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
-	color: green;
-	// justify-content: space-between;
-	// box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  align-self: center;
+  background-color: RGB(220, 67, 96);
+  // background-color: #fff;
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  padding: 1em 1em 3em;
+  width: 100vw;
+  max-height: 30px;
+  margin: 100vw 0 0 0;
+  // position: -webkit-sticky;
+  position: fixed;
+  bottom: 0;
+  /* 	border-top-right-radius: 10px;
+	border-top-left-radius: 10px; */
+  color: green;
+  // justify-content: space-between;
+  // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .linkIcon {
-	width: 10em;
+  width: 10em;
 }
 
 // .tab-purple {

@@ -9,11 +9,14 @@ class HomePageView extends Component {
         <header>
           <div>
             <h1>
-              <strong>Control all your assets in one place</strong>
+              <strong>
+                Control all your assets in <span className="place">one place</span>
+              </strong>
             </h1>
             <h3 className="secondary-text">
-              Trakker is a portfolio manager that unifies all your crypto and stocks shares in one
-              place.
+              <span className="place">Trakker</span> is a portfolio manager that unifies and updates
+              in real time <br></br>
+              <span className="place"> all your stocks and crypto </span> in one single application.
             </h3>
             <button className="signin-button">
               <Link to="/sign-in">Sign In</Link>
@@ -50,7 +53,7 @@ class HomePageView extends Component {
             <li>❔ Help Center</li>
             <li>💬About Us</li>
             <li>🔒Privacy</li>
-              <hr />
+            <hr />
             <li>🤝Accessibility</li>
             <li>📜Terms</li>
           </ul>
