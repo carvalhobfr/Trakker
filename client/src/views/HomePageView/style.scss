@@ -11,6 +11,10 @@ header {
 	padding: 5vw 15vw 50px;
 	font-family: 'Noto Sans', sans-serif;
 
+body{
+	background-color: black;}
+
+
 	div {
 		opacity: 1;
 	}
@@ -94,6 +98,7 @@ footer {
 	color: white;
 	background-color: black;
 	padding: 5vh 5vw;
+	width: 100%;
 	ul {
 		display: flex;
 		flex-direction: column;
