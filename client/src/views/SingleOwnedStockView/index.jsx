@@ -12,7 +12,8 @@ class OwnedStock extends Component {
       ownedStock: [],
       totalQuantity: 0,
       totalPrice: 0,
-      currentValue: 0
+      currentValue: 0,
+      profit: 0,
     };
   }
 
@@ -46,7 +47,7 @@ class OwnedStock extends Component {
         <p>Stock quantity: {this.state.totalQuantity}</p>
         <p>Total investment: {this.state.totalPrice}$</p>
         <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)}$</p>
-        <hr />
+        <p>Profit: {((this.state.currentValue * this.state.totalQuantity) - (this.state.totalPrice)).toFixed(2)}$ </p>
 
         {this.state.ownedStock.map(stock => {
           return (
@@ -56,7 +57,6 @@ class OwnedStock extends Component {
               <p> Quantity: {stock.quantity}</p>
               <p> Bought for: {stock.buying_price} $</p>
               <p>
-                {' '}
                 Current value :
                 <span
                   className={
@@ -68,6 +68,7 @@ class OwnedStock extends Component {
                   {Number(this.state.currentValue).toFixed(2)}
                 </span>
               </p>
+              <hr />
             </section>
           );
         })}

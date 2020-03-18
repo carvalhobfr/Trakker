@@ -13,6 +13,7 @@ class SingleStock extends Component {
   }
 
   render() {
+    let totalPrice = this.props.single.buying_price * this.props.single.quantity
     return (
       <Link
         to={{
@@ -24,10 +25,10 @@ class SingleStock extends Component {
         }}
       >
         <section className="stock__single-button">
-          {' '}
           <h4>{this.props.single.name}</h4>
           <p>{this.props.single.buying_price}$</p>
           <p>{this.props.single.quantity}</p>
+          <p>{totalPrice.toFixed(2)}$</p>
         </section>
       </Link>
     );
