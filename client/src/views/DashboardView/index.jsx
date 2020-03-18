@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { loadAllStockInformation, loadWalletInformation } from './../../services/addstocks';
 import TabBar from '../../components/TabBar';
+import LineGraph from '../../components/DashboardGraph';
 import SingleStock from '../../components/SingleStock';
 
 class DashboardView extends Component {
@@ -46,7 +47,9 @@ class DashboardView extends Component {
       <section className="page__dashboard">
         <h2>Trakker</h2>
         <h4>Good afternoon</h4>
-        <h6>Here's the summary of your account</h6>
+        <h3>Summary</h3>
+        <LineGraph />
+
         <h6>Your current number of stocks: {this.state.totalQuantity}</h6>
         <h6>The current value of your stocks: {this.state.totalBalance}</h6>
         <TabBar />
