@@ -11,6 +11,9 @@ const schema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Stock'
   },
+  number_of_stocks: {
+    type: Number
+  },
   starting_balance: {
     type: Number
   },

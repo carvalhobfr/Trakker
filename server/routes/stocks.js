@@ -30,6 +30,12 @@ router.post('/add-stock', async (req, res, next) => {
       date_of_purchase,
       wallet
     });
+    await Wallet.findByIdAndUpdate(wallet, {
+      starting_balance: +buying_price
+    });
+    await Wallet.findByIdAndUpdate(wallet, {
+      number_of_stocks: +quantity
+    });
     res.json({ stock });
   } catch (error) {
     console.log(error);
@@ -73,9 +79,9 @@ router.get('/singlestock/:id/:name', async (req, res, next) => {
 }); */
 
 router.get('/:id', async (req, res, next) => {
-  console.log(req.params.id);
+  //console.log(req.params.id);
   const walletID = req.params.id;
-  console.log(walletID);
+  //console.log(walletID);
   try {
     const wallet = await Wallet.findById({ _id: walletID });
     res.json({ wallet });
