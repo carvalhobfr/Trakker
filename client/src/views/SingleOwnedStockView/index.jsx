@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { requestDaily } from './../../services/getapidata';
 import { loadStockInformation } from './../../services/addstocks';
-// import { Stock, getPrice } from './../../components/Stock/Stock';
+import './style.scss';
 
 class OwnedStock extends Component {
   constructor(props) {
@@ -19,9 +19,6 @@ class OwnedStock extends Component {
   async componentDidMount() {
     await this.fetchData();
     this.getTotals();
-    // console.log("this.state", this.state)
-    // console.log("Total Price", this.state.totalPrice)
-    // console.log("Total Price", this.state.totalQuantity)
   }
 
   async fetchData() {
@@ -44,27 +41,37 @@ class OwnedStock extends Component {
 
   render() {
     return (
-      <div className="container">
+      <section className="page__single-stock">
         <h4>{this.state.name}</h4>
-        <p>Quantity: {this.state.totalQuantity}</p>
-        <p>Price: {this.state.totalPrice}$</p>
-        <p>AvgPrice: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)}$</p>
+        <p>Stock quantity: {this.state.totalQuantity}</p>
+        <p>Total investment: {this.state.totalPrice}$</p>
+        <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)}$</p>
         <hr />
 
         {this.state.ownedStock.map(stock => {
           return (
-            <p>
-              Data of Purchase: {stock.date_of_purchase}
-              <br />
-              Quantity: {stock.quantity}
-              <br />
-              BuyingPrice: {stock.buying_price} <br />
-              current value : {Number(this.state.currentValue).toFixed(2)}
+            <section className="stock__purchases">
               <hr />
-            </p>
+              <p> Date of Purchase: {new Date(stock.date_of_purchase).toDateString()}</p>
+              <p> Quantity: {stock.quantity}</p>
+              <p> Bought for: {stock.buying_price} $</p>
+              <p>
+                {' '}
+                Current value :
+                <span
+                  className={
+                    stock.buying_price < this.state.currentValue
+                      ? 'price__increase'
+                      : 'price__decrease'
+                  }
+                >
+                  {Number(this.state.currentValue).toFixed(2)}
+                </span>
+              </p>
+            </section>
           );
         })}
-      </div>
+      </section>
     );
   }
 }
