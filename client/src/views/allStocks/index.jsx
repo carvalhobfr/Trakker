@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 import TabBar from '../../components/TabBar';
 // import MyFilteringComponent from "./search";
 
@@ -8,13 +10,12 @@ class AllStocks extends Component {
   };
 
   componentDidMount() {
-    axios.get("https://apiurl")
-      .then(response => {
-        console.log(response.data);
-        this.setState({
-          stockList: response.data
-        });
+    axios.get('https://apiurl').then(response => {
+      console.log(response.data);
+      this.setState({
+        stockList: response.data
       });
+    });
   }
 
   render() {
@@ -38,10 +39,10 @@ class AllStocks extends Component {
                   </p>
                   <p>
                     <Link to={`/stocks/${stock._id}`}>Details</Link>
+                    <TabBar />
                   </p>
                 </div>
               </div>
-              <TabBar />
             </div>
           );
         })}

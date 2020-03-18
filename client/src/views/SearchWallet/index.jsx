@@ -6,7 +6,7 @@ class SearchWallet extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      initialItems: [],
+      initialItems: [], //de onde vem isso?
       stockList: []
     };
     this.filterList = this.filterList.bind(this);
@@ -38,10 +38,12 @@ class SearchWallet extends Component {
         <div>
           {this.state.stockList.map(stock => {
             return (
-              <div classname="stock-item" key={stock._name}>
+              <div classname="stock-item" key={stock._id}>
+                {' '}
+                {/* confirmar os values do stock */}
                 <div className="stock-info">
                   <h4>{stock.name}</h4>
-                  <Link to={`/stocks/${stock._name}`}>Details</Link>
+                  <Link to={`/stocks/${stock._id}`}>Details</Link>
                 </div>
               </div>
             );

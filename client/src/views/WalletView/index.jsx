@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { loadAllStockInformation } from './../../services/addstocks';
 import TabBar from '../../components/TabBar';
 import SingleStock from '../../components/SingleStock';
+import SearchWallet from '../SearchWallet';
 
 class Wallet extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class Wallet extends Component {
         <h4>Good afternoon</h4>
         <h6>Here's the summary of your account</h6>
         <h6>Wallet id: {this.state.wallet}</h6>
+        <SearchWallet />
         {this.state.stocks.map(element => {
           return <SingleStock single={element} {...this.props} />;
         })}

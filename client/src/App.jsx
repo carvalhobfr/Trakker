@@ -15,6 +15,7 @@ import SingleOwnedStockView from './views/SingleOwnedStockView';
 import DashboardView from './views/DashboardView';
 import SettingsView from './views/SettingsView';
 import WalletView from './views/WalletView';
+import AllStocks from './views/AllStocks';
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
@@ -51,7 +52,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <NavBar user={this.state.user} updateUserInformation={this.updateUserInformation} />
         <Switch>
           {/* <Route path="/" exact component={HomePageView} /> */}
@@ -62,6 +62,7 @@ class App extends Component {
             redirect={'/dashboard'}
             render={props => <HomePageView />}
           />
+
           <ProtectedRoute
             path="/sign-up"
             authorized={!this.state.user}
@@ -70,6 +71,7 @@ class App extends Component {
               <SignUpView {...props} updateUserInformation={this.updateUserInformation} />
             )}
           />
+
           <ProtectedRoute
             path="/sign-in"
             authorized={!this.state.user}
@@ -78,6 +80,7 @@ class App extends Component {
               <SignInView {...props} updateUserInformation={this.updateUserInformation} />
             )}
           />
+
           <ProtectedRoute
             path="/add-stock"
             authorized={this.state.user}
@@ -123,6 +126,20 @@ class App extends Component {
             redirect={'/singlestock'}
             render={props => (
               <SingleOwnedStockView
+                {...props}
+                user={this.state.user}
+                wallet={this.state.user.wallet}
+                updateUserInformation={this.updateUserInformation}
+              />
+            )}
+          />
+
+          <ProtectedRoute
+            path="/allstocks"
+            authorized={this.state.user}
+            redirect={'/allstocks'}
+            render={props => (
+              <AllStocks
                 {...props}
                 user={this.state.user}
                 wallet={this.state.user.wallet}
