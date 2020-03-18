@@ -1,6 +1,6 @@
 import React from 'react';
 
-var alpha = require('alphavantage')({ key: 'JGVPFO4GLBB9BIUO' });
+// var alpha = require('alphavantage')({ key: 'JGVPFO4GLBB9BIUO' });
 
 const Stock = props => (
 	<div>
@@ -12,7 +12,7 @@ const Stock = props => (
 	</div>
 );
 
-getPrice = (name, num) => {
+const getPrice = (name, num) => {
 	alpha.data.daily(name).then(data => {
 		const imeSeries = data['Time Series (Daily)'];
 		const today = Object.values(imeSeries)[0];
@@ -25,4 +25,4 @@ getPrice = (name, num) => {
 	});
 };
 
-export default Stock;
+export { Stock, getPrice };

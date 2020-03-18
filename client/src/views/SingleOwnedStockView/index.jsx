@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { requestDaily } from './../../services/getapidata';
 import { loadStockInformation } from './../../services/addstocks';
+// import { Stock, getPrice } from './../../components/Stock/Stock';
 
 class OwnedStock extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class OwnedStock extends Component {
       ownedStock: [],
       totalQuantity: 0,
       totalPrice: 0,
-      currentValue: {}
+      currentValue: 0,
     };
   }
 
@@ -26,6 +27,7 @@ class OwnedStock extends Component {
   async fetchData() {
     const ownedStock = await loadStockInformation(this.state.wallet, this.state.name);
     const currentValue = await requestDaily(this.state.name);
+    // console.log("aloaoaoa",this.state.currentValue)
     this.setState({ ownedStock, currentValue });
   }
 
@@ -53,7 +55,8 @@ class OwnedStock extends Component {
           return <p>
             Data of Purchase: {stock.date_of_purchase}<br />
             Quantity: {stock.quantity}<br />
-            BuyingPrice: {stock.buying_price}
+            BuyingPrice: {stock.buying_price} <br />
+            current value : {stock.currentValue}
             <hr />
           </p>
 
