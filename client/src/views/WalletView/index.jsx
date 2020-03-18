@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { loadAllStockInformation } from './../../services/addstocks';
 import TabBar from '../../components/TabBar';
 import SingleStock from '../../components/SingleStock';
-import SearchWallet from '../SearchWallet';
+import SearchWallet from '../../components/SearchWallet';
 
 class Wallet extends Component {
   constructor(props) {

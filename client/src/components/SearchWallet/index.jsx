@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import companies from './../../services/assets';
 
 class SearchWallet extends Component {
   constructor(props) {
@@ -15,18 +16,17 @@ class SearchWallet extends Component {
   filterList = event => {
     let stockList = this.state.initialItems;
     stockList = stockList.filter(stock => {
-      return stock.name.search(event.target.value) !== -1;
+      return stock.toLowerCase().search(event.target.value.toLowerCase()) !== -1;
     });
     this.setState({ stockList: stockList });
   };
 
   componentDidMount = () => {
-    axios.get('https://apiurl').then(response => {
-      this.setState({
-        initialItems: response.data,
-        stockList: response.data
-      });
-    });
+    console.log(this.props);
+    /* this.setState({
+      initialItems: this.props,
+      stockList: this.props
+    }); */
   };
 
   render() {
@@ -38,7 +38,7 @@ class SearchWallet extends Component {
         <div>
           {this.state.stockList.map(stock => {
             return (
-              <div classname="stock-item" key={stock._id}>
+              <div classname="stock-item">
                 {' '}
                 {/* confirmar os values do stock */}
                 <div className="stock-info">

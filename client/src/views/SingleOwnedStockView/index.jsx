@@ -13,7 +13,7 @@ class OwnedStock extends Component {
       totalQuantity: 0,
       totalPrice: 0,
       currentValue: 0,
-      profit: 0,
+      profit: 0
     };
   }
 
@@ -47,9 +47,17 @@ class OwnedStock extends Component {
         <p>Stock quantity: {this.state.totalQuantity}</p>
         <p>Total investment: {this.state.totalPrice}$</p>
         <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)}$</p>
-        <p>Profit: {((this.state.currentValue * this.state.totalQuantity) - (this.state.totalPrice)).toFixed(2)}$ </p>
+        <p>
+          Gross Profit:{' '}
+          {(this.state.currentValue * this.state.totalQuantity - this.state.totalPrice).toFixed(2)}${' '}
+        </p>
 
         {this.state.ownedStock.map(stock => {
+          let profit_margin = (
+            ((Number(this.state.currentValue).toFixed(2) - stock.buying_price) /
+              stock.buying_price) *
+            100
+          ).toFixed(2);
           return (
             <section className="stock__purchases">
               <hr />
@@ -66,6 +74,13 @@ class OwnedStock extends Component {
                   }
                 >
                   {Number(this.state.currentValue).toFixed(2)}
+                </span>
+              </p>
+              <p>
+                {' '}
+                Profit margin:{' '}
+                <span className={profit_margin > 0 ? 'price__increase' : 'price__decrease'}>
+                  {profit_margin} %{' '}
                 </span>
               </p>
               <hr />
