@@ -47,6 +47,18 @@ class OwnedStock extends Component {
         <p>Quantity: {this.state.totalQuantity}</p>
         <p>Price: {this.state.totalPrice}$</p>
         <p>AvgPrice: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)}$</p>
+        <hr />
+
+        {this.state.ownedStock.map(stock => {
+          return <p>
+            Data of Purchase: {stock.date_of_purchase}<br />
+            Quantity: {stock.quantity}<br />
+            BuyingPrice: {stock.buying_price}
+            <hr />
+          </p>
+
+        })}
+
 
       </div>
     );
