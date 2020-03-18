@@ -25,4 +25,9 @@ const getPrice = (name, num) => {
 	});
 };
 
+
+
+
+
+
 export { Stock, getPrice };
