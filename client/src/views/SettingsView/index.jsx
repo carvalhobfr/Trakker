@@ -35,7 +35,9 @@ class Settings extends Component {
           {this.props.user && (
             <Fragment>
               <span>{this.props.user.name}</span>
-              <button onClick={this.handleSignOut}>Sign Out</button>
+              <button className="signout" onClick={this.handleSignOut}>
+                Sign Out
+              </button>
             </Fragment>
           )}
           <TabBar />
