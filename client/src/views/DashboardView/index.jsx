@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { loadAllStockInformation } from './../../services/addstocks';
+import { loadAllStockInformation, loadWalletInformation } from './../../services/addstocks';
 import TabBar from '../../components/TabBar';
 import SingleStock from '../../components/SingleStock';
 
@@ -16,15 +16,21 @@ class DashboardView extends Component {
 
   async componentDidMount() {
     await this.fetchData();
-    this.getTotals();
+    //this.getTotals();
+    console.log(this.state.wallet);
   }
 
   async fetchData() {
     const stocks = await loadAllStockInformation(this.props.wallet);
     this.setState({ stocks });
+    const wallet = await loadWalletInformation(this.props.wallet);
+    this.setState({
+      totalQuantity: wallet.number_of_stocks,
+      totalBalance: wallet.starting_balance
+    });
   }
 
-  async getTotals() {
+  /* async getTotals() {
     const totalQuantity = this.state.stocks.reduce((acc, value) => {
       return acc + value.quantity;
     }, 0);
@@ -33,7 +39,7 @@ class DashboardView extends Component {
     }, 0);
 
     await this.setState({ totalQuantity, totalBalance });
-  }
+  } */
 
   render() {
     return (

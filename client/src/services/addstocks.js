@@ -29,4 +29,17 @@ const loadStockInformation = async (id, name) =>
       })
       .catch(reject);
   });
-export { addStock, loadStockInformation, loadAllStockInformation };
+
+const loadWalletInformation = async id =>
+  new Promise((resolve, reject) => {
+    instance
+      .get(`/${id}`)
+      .then(result => {
+        const wallet = result.data.wallet;
+        console.log(wallet);
+        resolve(wallet);
+      })
+      .catch(reject);
+  });
+
+export { addStock, loadStockInformation, loadAllStockInformation, loadWalletInformation };
