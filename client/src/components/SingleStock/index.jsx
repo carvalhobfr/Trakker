@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import { Route, Link } from 'react-router-dom';
 import ProtectedRoute from './../ProtectedRoute';
 import './style.scss';
-import { loadStockInformation } from '../../services/addstocks';
 
 class SingleStock extends Component {
   constructor(props) {
@@ -13,16 +12,8 @@ class SingleStock extends Component {
     };
   }
 
-  componentDidMount() {
-    console.log('THIS ONE', this.props);
-  }
-
   render() {
     return (
-      /* <div>
-        <h4>Test</h4>
-      </div> */
-      /* <a href={`singlestock/${props.props.wallet}/${props.props.name}`}> */
       <Link
         to={{
           pathname: '/singlestock',
@@ -44,4 +35,3 @@ class SingleStock extends Component {
 }
 
 export default SingleStock;
-/* `singlestock/${props.props.wallet}/${props.props.name}` */

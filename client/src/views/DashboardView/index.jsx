@@ -14,7 +14,6 @@ class DashboardView extends Component {
 
   async componentDidMount() {
     await this.fetchData();
-    console.log(this.state.stocks);
   }
 
   async fetchData() {
