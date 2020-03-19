@@ -22,6 +22,7 @@ class DashboardView extends Component {
     await this.fetchData();
     console.log(this.state.wallet);
     console.log(this.state.graphDaily);
+    this.setState({ graphDaily: this.state.graphDaily });
   }
 
   async fetchData() {

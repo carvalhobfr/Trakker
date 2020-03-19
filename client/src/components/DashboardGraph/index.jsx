@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Chart from 'chart.js';
+import { loadDailyInfo } from './../../services/graphdata';
 //import classes from "./LineGraph.module.css";
 
 class LineGraph extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      graphDaily: this.props.data
+      graphDaily: {}
     };
   }
   chartRef = React.createRef();
@@ -20,23 +21,24 @@ class LineGraph extends Component {
       data: {
         //Bring in data
         labels: this.state.graphDaily.labels, //['Jan', 'Feb', 'March'],
-        data: this.state.graphDaily.data
-        /* [
+        datasets: [
           {
             label: 'Balance',
-            data: [54, 67, 91]
+            data: this.state.graphDaily.data
           }
-        ] */
+        ]
       },
       options: {
         //Customize chart options
       }
     });
-    console.log(this.state);
+    console.log(this.state.graphDaily);
   }
 
-  updateData() {
-    this.setState({ graphDaily: this.props.data });
+  async updateData() {
+    const graphDaily = await loadDailyInfo();
+    this.setState({ graphDaily });
+    console.log(this.state.graphDaily);
   }
 
   render() {
