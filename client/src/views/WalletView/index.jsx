@@ -43,7 +43,7 @@ class Wallet extends Component {
           .map(element => {
             return <SingleStock single={element} {...this.props} />;
           })}
-        <TabBar />
+        <TabBar {...this.props} />
       </section>
     );
   }

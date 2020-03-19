@@ -40,7 +40,7 @@ class Settings extends Component {
               </button>
             </Fragment>
           )}
-          <TabBar />
+          <TabBar {...this.props} />
         </div>
       </nav>
     );
