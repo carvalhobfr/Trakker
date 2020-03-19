@@ -1,42 +1,25 @@
 @import url('https://use.fontawesome.com/releases/v5.0.9/css/all.css');
 
 .tab-nav-container {
-	align-self: center;
+  align-self: center;
   background-color: RGB(220, 67, 96);
-	// background-color: #fff;
-	display: flex;
-	justify-items: center;
-	justify-content: space-between;
-	// padding: 1em 1em 3em;
-	width: 100vw;
-	max-height: 50px;
-	// position: -webkit-sticky;
-	position: fixed;
-	bottom: 0;
-	/* 	border-top-right-radius: 10px;
+  // background-color: #fff;
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  // padding: 1em 1em 3em;
+  width: 100vw;
+  max-height: 50px;
+  // position: -webkit-sticky;
+  position: fixed;
+  bottom: 0;
+  /* 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px; */
-	color: green;
-	// justify-content: space-between;
-	// box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: green;
+  // justify-content: space-between;
+  // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .linkIcon {
-	width: 10em;
+  width: 10em;
 }
-
-// .tab-purple {
-// 	background-color: rgba(91, 55, 183, 0.2);
-// 	color: rgba(91, 55, 183, 1);
-// }
-// .tab-pink {
-// 	background-color: rgba(201, 55, 157, 0.2);
-// 	color: rgba(201, 55, 157, 1);
-// }
-// .tab-yellow {
-// 	background-color: rgba(230, 169, 25, 0.2);
-// 	color: rgba(230, 169, 25, 1);
-// }
-// .tab-teal {
-// 	background-color: rgba(28, 150, 162, 0.2);
-// 	color: rgba(28, 150, 162, 1);
-// }

@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
+import TabBar from '../../components/TabBar';
+
+export class AllStocksView extends Component {
+  render() {
+    return (
+      <section className="page__allstocks">
+        <h1>Trakker</h1>
+
+        <TabBar />
+      </section>
+    );
+  }
+}
+
+export default AllStocksView;
+
+/* 
+import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import TabBar from '../../components/TabBar';
-// import MyFilteringComponent from "./search";
+
 
 class AllStocks extends Component {
   state = {
@@ -21,7 +39,7 @@ class AllStocks extends Component {
   render() {
     return (
       <div className="container">
-        {/* <MyFilteringComponent content={this.stockList} /> */}
+
 
         {this.state.stockList.map(stock => {
           return (
@@ -52,3 +70,4 @@ class AllStocks extends Component {
 }
 
 export default AllStocks;
+ */

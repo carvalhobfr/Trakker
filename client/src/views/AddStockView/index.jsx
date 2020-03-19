@@ -55,7 +55,7 @@ class AddStockView extends Component {
       <div className="page-and-tab-bar">
         <section className="page__add-stock">
           <h2>Trakker</h2>
-          <h4>Add asset to your wallet</h4>
+          <h4>Add an asset to your wallet</h4>
           <form className="form__add-stock" onSubmit={this.handleFormSubmission}>
             <label htmlFor="name">Name:</label>
             <input

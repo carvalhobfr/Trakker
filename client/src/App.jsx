@@ -15,7 +15,7 @@ import SingleOwnedStockView from './views/SingleOwnedStockView';
 import DashboardView from './views/DashboardView';
 import SettingsView from './views/SettingsView';
 import WalletView from './views/WalletView';
-import AllStocks from './views/AllStocks';
+import AllStocksView from './views/AllStocksView';
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
@@ -139,7 +139,7 @@ class App extends Component {
             authorized={this.state.user}
             redirect={'/allstocks'}
             render={props => (
-              <AllStocks
+              <AllStocksView
                 {...props}
                 user={this.state.user}
                 wallet={this.state.user.wallet}
