@@ -46,33 +46,12 @@ router.route('/daily-data').post((req, res, next) => {
     } else {
       let set = {};
       set.labels = result.map(key => {
-        return key.date.toLocaleDateString('pt-PT');
+        return key.date.toLocaleDateString('en-GB');
       });
       set.data = result.map(key => {
         return [key.total_daily_sum];
       });
       res.status(200).send(set);
-      /*  Wallet.populate(
-        result,
-        {
-          path: 'date',
-          select: 'name -_id'
-        },
-        (err, populatedResult) => {
-          if (err) {
-            return next(err);
-          } else {
-            let set = {};
-            set.labels = populatedResult.map(key => {
-              return key.date.name;
-            });
-            set.data = populatedResult.map(key => {
-              return [key.total_daily_sum];
-            });
-            res.status(200).send(set);
-          }
-        }
-      ); */
     }
   });
 });

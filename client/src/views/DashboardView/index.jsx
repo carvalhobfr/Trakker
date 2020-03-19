@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { loadAllStockInformation, loadWalletInformation } from './../../services/addstocks';
+import { loadDailyInfo } from './../../services/graphdata';
 import TabBar from '../../components/TabBar';
 import LineGraph from '../../components/DashboardGraph';
-import SingleStock from '../../components/SingleStock';
+
 import './style.scss';
 
 class DashboardView extends Component {
@@ -12,13 +13,15 @@ class DashboardView extends Component {
       wallet: this.props.wallet,
       stocks: [],
       totalQuantity: 0,
-      totalBalance: 0
+      totalBalance: 0,
+      graphDaily: {}
     };
   }
 
   async componentDidMount() {
     await this.fetchData();
     console.log(this.state.wallet);
+    console.log(this.state.graphDaily);
   }
 
   async fetchData() {
@@ -26,9 +29,11 @@ class DashboardView extends Component {
     this.setState({ stocks });
     const wallet = await loadWalletInformation(this.props.wallet);
     const totalBalance = wallet.number_of_stocks * wallet.starting_balance;
+    const graphDaily = await loadDailyInfo();
     this.setState({
       totalQuantity: wallet.number_of_stocks,
-      totalBalance
+      totalBalance,
+      graphDaily
     });
   }
 
@@ -38,7 +43,7 @@ class DashboardView extends Component {
         <h1>Trakker</h1>
         <h4>Good afternoon</h4>
         <h4>Summary</h4>
-        <LineGraph />
+        <LineGraph data={this.state.graphDaily} />
 
         {/* <h4>Your current number of stocks: {this.state.stocks.length}</h4> */}
         <h4>The current value of your stocks: ${this.state.totalBalance}</h4>
