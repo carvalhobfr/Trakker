@@ -68,6 +68,20 @@ class OwnedStock extends Component {
         <h4>{this.state.name}</h4>
         <p>Stock quantity: {this.state.totalQuantity}</p>
         <p>Total investment: {this.state.totalPrice} USD</p>
+        <button onClick={this.toggleButton}>Remove Stocks</button>
+        {this.state.buttonVisibility && (
+          <form onSubmit={this.deleteSubmission}>
+            <input
+              type="number"
+              name="deleteStocks"
+              max={this.state.totalQuantity}
+              placeholder="How many to remove?"
+              value={this.state.deleteStocks}
+              onChange={this.handleInputChange}
+            ></input>
+            <button>Confirm</button>
+          </form>
+        )}
 
         {/* <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)} USD</p>*/}
         {/*  <p>
@@ -104,21 +118,7 @@ class OwnedStock extends Component {
                   {profit_margin} %{' '}
                 </span>
               </p>
-              <button onClick={this.toggleButton}>Remove Stocks</button>
-              {this.state.buttonVisibility && (
-                <form onSubmit={this.deleteSubmission}>
-                  <input
-                    type="number"
-                    name="deleteStocks"
-                    min="1"
-                    placeholder="How many to remove?"
-                    value={this.state.deleteStocks}
-                    onChange={this.handleInputChange}
-                  ></input>
-                  <input type="text" value={stock._id}></input>
-                  <button>Confirm</button>
-                </form>
-              )}
+
               <hr />
             </section>
           );

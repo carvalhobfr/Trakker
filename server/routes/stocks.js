@@ -30,30 +30,35 @@ router.post('/add-stock', async (req, res, next) => {
   }
 });
 
-/* router.post('/remove-stock', async (req, res, next) => {
-  const {
-    deleteStocks,
-    name,
-    wallet
-  } = req.body.data;
+router.post('/remove-stock', async (req, res, next) => {
+  const { name, type, quantity, price, currency, date, wallet } = req.body.data;
   try {
     const stock = await Stock.create({
       name,
+      transaction: 'sold',
       type,
       quantity,
-      buying_price,
+      price,
       currency,
-      date_of_purchase,
+      date,
       wallet
     });
-    await Wallet.findByIdAndUpdate({ _id: wallet }, { $inc: { starting_balance: buying_price } });
-    await Wallet.findByIdAndUpdate({ _id: wallet }, { $inc: { number_of_stocks: quantity } });
+    await Wallet.findByIdAndUpdate(
+      { _id: wallet },
+      { $inc: { starting_balance: -Math.abs(price) } }
+    );
+    await Wallet.findByIdAndUpdate({ _id: wallet }, { $inc: { sold_balance: price } });
+    await Wallet.findByIdAndUpdate(
+      { _id: wallet },
+      { $inc: { number_of_stocks: -Math.abs(quantity) } }
+    );
+
     res.json({ stock });
   } catch (error) {
     console.log(error);
     next(error);
   }
-}); */
+});
 
 router.get('/allstocks/:id', async (req, res, next) => {
   const walletID = req.params.id;

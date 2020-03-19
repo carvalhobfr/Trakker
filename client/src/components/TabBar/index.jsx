@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
-import { happy } from 'ionicons/icons';
 
 //tive que adicionar a classe dentro de <i> dentro de <Link> pra funcionar
 

@@ -13,6 +13,10 @@ const schema = new mongoose.Schema({
   starting_balance: {
     type: Number
   },
+
+  sold_balance: {
+    type: Number
+  },
   current_balance: {
     type: Number
   }
