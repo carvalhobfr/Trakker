@@ -52,6 +52,9 @@ class DashboardView extends Component {
         <form action="/add-stock">
           <button className="button__add-stock">Add to Wallet</button>
         </form>
+        <form action="/remove-stock">
+          <button className="button__remove-stock">Remove from Wallet</button>
+        </form>
         <TabBar {...this.props} />
       </section>
     );

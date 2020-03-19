@@ -114,7 +114,7 @@ class RemoveStockView extends Component {
           </form>
         </section>
 
-        <TabBar />
+        <TabBar {...this.props} />
       </div>
     );
   }

@@ -13,16 +13,24 @@ const TabBar = props => {
         ></i>
       </Link>
 
-      <Link to="/wallet" className={props.match.path === '/wallet' ? 'linkIcon' : ''}>
-        <i class="las la-wallet"></i>
+      <Link to="/wallet">
+        <i
+          className={props.match.path === '/wallet' ? 'linkIcon las la-wallet' : 'las la-wallet'}
+        ></i>
       </Link>
 
-      <Link to="/allstocks" className={props.match.path === '/allstocks' ? 'linkIcon' : ''}>
-        <i class="las la-search-dollar"></i>
+      <Link to="/allstocks">
+        <i
+          className={
+            props.match.path === '/allstocks'
+              ? 'linkIcon las la-search-dollar'
+              : 'las la-search-dollar'
+          }
+        ></i>
       </Link>
 
-      <Link to="/settings" className={props.match.path === '/settings' ? 'linkIcon' : ''}>
-        <i class="las la-cog"></i>
+      <Link to="/settings">
+        <i className={props.match.path === '/settings' ? 'linkIcon las la-cog' : 'las la-cog'}></i>
       </Link>
     </div>
   );

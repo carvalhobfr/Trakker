@@ -9,7 +9,7 @@ class Wallet extends Component {
     super(props);
     this.state = {
       searchquery: '',
-      wallet: this.props.wallet,
+      wallet: this.props.user.wallet,
       stocks: []
     };
     this.updateSearch = this.updateSearch.bind(this);
@@ -24,7 +24,7 @@ class Wallet extends Component {
   }
 
   async fetchData() {
-    const stocks = await loadAllStockInformation(this.props.wallet);
+    const stocks = await loadAllStockInformation(this.state.wallet);
     this.setState({ stocks });
   }
 
@@ -34,7 +34,6 @@ class Wallet extends Component {
         <h2>Trakker</h2>
         <h4>Your current positions:</h4>
 
-        <h6>Wallet id: {this.state.wallet}</h6>
         <SearchWallet searchquery={this.state.searchquery} updateSearch={this.updateSearch} />
         {this.state.stocks
           .filter(search =>

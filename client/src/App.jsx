@@ -16,6 +16,7 @@ import DashboardView from './views/DashboardView';
 import SettingsView from './views/SettingsView';
 import WalletView from './views/WalletView';
 import AllStocksView from './views/AllStocksView';
+import RemoveStockView from './views/RemoveStockView';
 
 //Services imports
 import { loadUserInformation } from './services/authentication';
@@ -93,18 +94,18 @@ class App extends Component {
               />
             )}
           />
-          {/*  <ProtectedRoute
-              path="/add-stock"
-              authorized={this.state.user}
-              redirect={'/dashboard'}
-              render={props => (
-                <DashboardView
-                  {...props}
-                  user={this.state.user}
-                  updateUserInformation={this.updateUserInformation}
-                />
-              )}
-            /> */}
+          <ProtectedRoute
+            path="/remove-stock"
+            authorized={this.state.user}
+            redirect={'/remove-stock'}
+            render={props => (
+              <RemoveStockView
+                {...props}
+                user={this.state.user}
+                updateUserInformation={this.updateUserInformation}
+              />
+            )}
+          />
 
           <ProtectedRoute
             path="/dashboard"
@@ -156,7 +157,7 @@ class App extends Component {
             render={props => (
               <WalletView
                 {...props}
-                wallet={this.state.user.wallet}
+                //wallet={this.state.user.wallet}
                 user={this.state.user}
                 updateUserInformation={this.updateUserInformation}
               />

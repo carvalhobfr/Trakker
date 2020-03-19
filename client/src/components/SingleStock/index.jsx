@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route, Link } from 'react-router-dom';
-import ProtectedRoute from './../ProtectedRoute';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 class SingleStock extends Component {
