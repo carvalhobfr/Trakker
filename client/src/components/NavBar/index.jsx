@@ -24,7 +24,7 @@ const NavBar = props => {
         {(props.user && (
           <Fragment>
             <span>{props.user.name}</span>
-            <Link to="/add-stock">Add Stock</Link>
+            <Link to="/add-stock">Add to Wallet</Link>
           </Fragment>
         )) || (
           <Fragment>

@@ -43,14 +43,16 @@ class DashboardView extends Component {
       <section className="page__dashboard">
         <h1>Trakker</h1>
         <h4>Good afternoon</h4>
-        <h4>Summary</h4>
+        <h4>Here's the summary of your account:</h4>
+        <h4>
+          <strong>{this.state.totalBalance} USD</strong>
+        </h4>
         <LineGraph data={this.state.graphDaily} />
 
         {/* <h4>Your current number of stocks: {this.state.stocks.length}</h4> */}
-        <h4>The current value of your stocks: ${this.state.totalBalance}</h4>
 
         <form action="/add-stock">
-          <button className="button__add-stock">Add Assets</button>
+          <button className="button__add-stock">Add to Wallet</button>
         </form>
         <TabBar />
       </section>

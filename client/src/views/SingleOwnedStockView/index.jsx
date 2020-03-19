@@ -45,11 +45,12 @@ class OwnedStock extends Component {
       <section className="page__single-stock">
         <h4>{this.state.name}</h4>
         <p>Stock quantity: {this.state.totalQuantity}</p>
-        <p>Total investment: {this.state.totalPrice}$</p>
-        <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)}$</p>
+        <p>Total investment: {this.state.totalPrice} USD</p>
+        <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)} USD</p>
         <p>
           Gross Profit:{' '}
-          {(this.state.currentValue * this.state.totalQuantity - this.state.totalPrice).toFixed(2)}${' '}
+          {(this.state.currentValue * this.state.totalQuantity - this.state.totalPrice).toFixed(2)}{' '}
+          USD{' '}
         </p>
 
         {this.state.ownedStock.map(stock => {
@@ -63,7 +64,7 @@ class OwnedStock extends Component {
               <hr />
               <p> Date of Purchase: {new Date(stock.date_of_purchase).toDateString()}</p>
               <p> Quantity: {stock.quantity}</p>
-              <p> Bought for: {stock.buying_price} $</p>
+              <p> Bought for: {stock.buying_price} USD</p>
               <p>
                 Current value :
                 <span

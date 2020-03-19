@@ -85,7 +85,8 @@ class AddStockView extends Component {
               type="number"
               id="quantity"
               name="quantity"
-              min="1"
+              min="0"
+              step="0.0001"
               placeholder="...50, 100, 500"
             />
             <label htmlFor="buying_price">Buying Price:</label>
@@ -97,7 +98,7 @@ class AddStockView extends Component {
               name="buying_price"
               min="0"
               step="0.0001"
-              placeholder="e.g: 154.25$"
+              placeholder="e.g: 154.25 USD"
             />
             <label htmlFor="date_of_purchase">Purchase Date:</label>
             <input

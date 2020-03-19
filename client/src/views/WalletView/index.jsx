@@ -32,8 +32,8 @@ class Wallet extends Component {
     return (
       <section className="page__wallet">
         <h2>Trakker</h2>
-        <h4>Good afternoon</h4>
-        <h6>Here's the summary of your account</h6>
+        <h4>Your current positions:</h4>
+
         <h6>Wallet id: {this.state.wallet}</h6>
         <SearchWallet searchquery={this.state.searchquery} updateSearch={this.updateSearch} />
         {this.state.stocks
