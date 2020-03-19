@@ -5,6 +5,7 @@
   background-color: RGB(220, 67, 96);
   // background-color: #fff;
   display: flex;
+  font-size: larger;
   justify-items: center;
   justify-content: space-between;
   // padding: 1em 1em 3em;
@@ -17,15 +18,13 @@
 	border-top-left-radius: 10px; */
   color: green;
   // justify-content: space-between;
+
   // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .linkIcon {
-  font-size: 28px;
+  font-size: larger;
   color: RGB(220, 67, 96);
   background-color: white;
   border-radius: 100%;
-}
-
-.las {
 }

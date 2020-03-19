@@ -114,7 +114,7 @@ class AddStockView extends Component {
           </form>
         </section>
 
-        <TabBar />
+        <TabBar {...this.props} />
       </div>
     );
   }

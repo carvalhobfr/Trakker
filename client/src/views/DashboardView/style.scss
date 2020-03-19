@@ -8,8 +8,11 @@
 }
 
 .button__add-stock {
+  font-size: 1em;
+  white-space: nowrap;
   width: 12em;
-  padding: 0.8em;
+  font-size: 1em;
+  padding: 0.2em;
   background-color: RGB(89, 192, 120);
   border: 1px solid RGB(89, 192, 120);
   border-radius: 2em;
@@ -21,10 +24,10 @@
 .button__remove-stock {
   font-size: 1em;
   white-space: nowrap;
-  width: 10em;
+  width: 12em;
   padding: 0.2em;
-  background-color: RGB(89, 192, 120);
-  border: 1px solid RGB(89, 192, 120);
+  background-color: RGB(243, 69, 63);
+  border: 1px solid RGB(243, 69, 63);
   border-radius: 2em;
   color: white;
   margin-top: 1em;
