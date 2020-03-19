@@ -24,7 +24,7 @@ class LineGraph extends Component {
         datasets: [
           {
             label: 'Balance',
-            data: this.state.graphDaily.data
+            data: [...this.state.graphDaily.data].join('')
           }
         ]
       },
