@@ -8,9 +8,15 @@ class Wallet extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      searchquery: '',
       wallet: this.props.wallet,
       stocks: []
     };
+    this.updateSearch = this.updateSearch.bind(this);
+  }
+
+  updateSearch(searchquery) {
+    this.setState({ searchquery });
   }
 
   async componentDidMount() {
@@ -29,10 +35,14 @@ class Wallet extends Component {
         <h4>Good afternoon</h4>
         <h6>Here's the summary of your account</h6>
         <h6>Wallet id: {this.state.wallet}</h6>
-        <SearchWallet />
-        {this.state.stocks.map(element => {
-          return <SingleStock single={element} {...this.props} />;
-        })}
+        <SearchWallet searchquery={this.state.searchquery} updateSearch={this.updateSearch} />
+        {this.state.stocks
+          .filter(search =>
+            search.name.toLowerCase().includes(this.state.searchquery.toLowerCase())
+          )
+          .map(element => {
+            return <SingleStock single={element} {...this.props} />;
+          })}
         <TabBar />
       </section>
     );

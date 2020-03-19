@@ -1,11 +1,11 @@
 'use strict';
-const express = require('express'),
-  router = express.Router(),
-  moment = require('moment'),
-  Stock = require('./../models/stock'),
-  Wallet = require('./../models/wallet'),
-  User = require('./../models/user'),
-  Mongoose = require('mongoose');
+const express = require('express');
+const router = express.Router();
+const moment = require('moment');
+const Stock = require('./../models/stock');
+const Wallet = require('./../models/wallet');
+const User = require('./../models/user');
+const Mongoose = require('mongoose');
 
 router.route('/daily-data').post((req, res, next) => {
   let startDate = moment(req.body.currentDate)
@@ -46,7 +46,7 @@ router.route('/daily-data').post((req, res, next) => {
     } else {
       let set = {};
       set.labels = result.map(key => {
-        return key.date;
+        return key.date.toLocaleDateString('pt-PT');
       });
       set.data = result.map(key => {
         return [key.total_daily_sum];
