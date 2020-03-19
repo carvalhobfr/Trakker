@@ -44,7 +44,7 @@ class DashboardView extends Component {
         <h4>The current value of your stocks: ${this.state.totalBalance}</h4>
 
         <form action="/add-stock">
-          <button className="button__add-stock">Add Stock</button>
+          <button className="button__add-stock">Add Assets</button>
         </form>
         <TabBar />
       </section>
