@@ -7,7 +7,7 @@ export class AllStocksView extends Component {
       <section className="page__allstocks">
         <h1>Trakker</h1>
 
-        <TabBar />
+        <TabBar {...this.props} />
       </section>
     );
   }

@@ -1,5 +1,5 @@
 @import url('https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css');
-@import url('https://use.fontawesome.com/releases/v5.0.9/css/all.css');
+
 .tab-nav-container {
   align-self: center;
   background-color: RGB(220, 67, 96);
@@ -20,13 +20,12 @@
   // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.tab-nav-container :hover {
-  opacity: 0.9;
-}
 .linkIcon {
-  width: 10em;
+  font-size: 28px;
+  color: RGB(220, 67, 96);
+  background-color: white;
+  border-radius: 100%;
 }
 
 .las {
-  font-size: 28px;
 }
