@@ -8,6 +8,11 @@ const addStock = async data => {
   await instance.post('/add-stock', { data });
 };
 
+const removeStock = async data => {
+  await instance.post('remove-stock', { data });
+  console.log(data);
+};
+
 const loadAllStockInformation = id =>
   new Promise((resolve, reject) => {
     instance
@@ -42,4 +47,10 @@ const loadWalletInformation = async id =>
       .catch(reject);
   });
 
-export { addStock, loadStockInformation, loadAllStockInformation, loadWalletInformation };
+export {
+  addStock,
+  removeStock,
+  loadStockInformation,
+  loadAllStockInformation,
+  loadWalletInformation
+};

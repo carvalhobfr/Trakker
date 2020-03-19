@@ -7,10 +7,6 @@ const schema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
-  stocks: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Stock'
-  },
   number_of_stocks: {
     type: Number
   },

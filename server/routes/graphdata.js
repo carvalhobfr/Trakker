@@ -46,7 +46,7 @@ router.route('/daily-data').post((req, res, next) => {
     } else {
       let set = {};
       set.labels = result.map(key => {
-        return key.date.toLocaleDateString('en-GB');
+        return key.date.toLocaleDateString('pt-BR');
       });
       set.data = result.map(key => {
         return [key.total_daily_sum];

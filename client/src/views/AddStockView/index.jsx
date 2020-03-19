@@ -8,12 +8,13 @@ class AddStockView extends Component {
     super(props);
     this.state = {
       name: '',
+      transaction: 'bought',
       type: 'Stock',
       quantity: '',
-      buying_price: '',
+      price: '',
       currency: 'USD',
       wallet: '',
-      date_of_purchase: ''
+      date: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
@@ -22,19 +23,20 @@ class AddStockView extends Component {
   async handleFormSubmission(event) {
     event.preventDefault();
 
-    const user = this.props.user;
+    //const user = this.props.user;
     const wallet = this.props.user.wallet;
-    const { name, type, quantity, buying_price, currency, date_of_purchase } = this.state;
+    const { name, type, quantity, price, currency, date, transaction } = this.state;
     //console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
     try {
       const stock = await addStock({
-        user: user._id,
+        //user: user._id,
         name,
+        transaction,
         type,
         quantity,
-        buying_price,
+        price,
         currency,
-        date_of_purchase,
+        date,
         wallet
       });
       this.props.history.push('/');
@@ -89,24 +91,24 @@ class AddStockView extends Component {
               step="0.0001"
               placeholder="...50, 100, 500"
             />
-            <label htmlFor="buying_price">Buying Price:</label>
+            <label htmlFor="price">Price per stock:</label>
             <input
               onChange={this.handleInputChange}
               value={this.state.buying_price}
               type="number"
-              id="buying_price"
-              name="buying_price"
+              id="price"
+              name="price"
               min="0"
               step="0.0001"
               placeholder="e.g: 154.25 USD"
             />
-            <label htmlFor="date_of_purchase">Purchase Date:</label>
+            <label htmlFor="date">Purchase Date:</label>
             <input
               onChange={this.handleInputChange}
               value={this.state.date_of_purchase}
               type="date"
-              id="date_of_purchase"
-              name="date_of_purchase"
+              id="date"
+              name="date"
             ></input>
             <button>Add to wallet</button>
           </form>

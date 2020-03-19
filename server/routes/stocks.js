@@ -9,14 +9,31 @@ const Stock = require('./../models/stock');
 const router = new Router();
 
 router.post('/add-stock', async (req, res, next) => {
+  const { name, transaction, type, quantity, price, currency, date, wallet } = req.body.data;
+  try {
+    const stock = await Stock.create({
+      name,
+      transaction,
+      type,
+      quantity,
+      price,
+      currency,
+      date,
+      wallet
+    });
+    await Wallet.findByIdAndUpdate({ _id: wallet }, { $inc: { starting_balance: price } });
+    await Wallet.findByIdAndUpdate({ _id: wallet }, { $inc: { number_of_stocks: quantity } });
+    res.json({ stock });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+/* router.post('/remove-stock', async (req, res, next) => {
   const {
+    deleteStocks,
     name,
-    type,
-    quantity,
-    buying_price,
-    currency,
-    date_of_purchase,
-    user,
     wallet
   } = req.body.data;
   try {
@@ -36,7 +53,7 @@ router.post('/add-stock', async (req, res, next) => {
     console.log(error);
     next(error);
   }
-});
+}); */
 
 router.get('/allstocks/:id', async (req, res, next) => {
   const walletID = req.params.id;

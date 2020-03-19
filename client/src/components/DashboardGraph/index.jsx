@@ -23,8 +23,8 @@ class LineGraph extends Component {
         labels: this.state.graphDaily.labels, //['Jan', 'Feb', 'March'],
         datasets: [
           {
-            label: 'Balance',
-            data: [...this.state.graphDaily.data].join('')
+            label: 'Amount invested',
+            data: [...this.state.graphDaily.data].join(',')
           }
         ]
       },

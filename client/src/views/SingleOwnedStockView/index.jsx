@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { requestDaily } from './../../services/getapidata';
-import { loadStockInformation } from './../../services/addstocks';
+import { loadStockInformation, removeStock } from './../../services/addstocks';
 import './style.scss';
 
 class OwnedStock extends Component {
@@ -13,8 +13,12 @@ class OwnedStock extends Component {
       totalQuantity: 0,
       totalPrice: 0,
       currentValue: 0,
-      profit: 0
+      profit: 0,
+      buttonVisibility: false,
+      deleteStocks: ''
     };
+    this.toggleButton = this.toggleButton.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   async componentDidMount() {
@@ -26,7 +30,7 @@ class OwnedStock extends Component {
     const ownedStock = await loadStockInformation(this.state.wallet, this.state.name);
     const currentValue = await requestDaily(this.state.name);
     this.setState({ ownedStock, currentValue });
-    console.log('aloaoaoa', this.state.currentValue);
+    console.log('aloaoaoa', this.state.ownedStock);
   }
 
   async getTotals() {
@@ -34,44 +38,60 @@ class OwnedStock extends Component {
       return acc + value.quantity;
     }, 0);
     const totalPrice = this.state.ownedStock.reduce((acc, value) => {
-      return acc + value.buying_price;
+      return acc + value.price;
     }, 0);
 
     await this.setState({ totalQuantity, totalPrice });
   }
 
+  toggleButton() {
+    this.setState({ buttonVisibility: !this.state.buttonVisibility });
+  }
+
+  async deleteSubmission(event) {
+    event.preventDefault();
+    const { deleteStocks, wallet, name } = this.state;
+    await removeStock(deleteStocks, wallet, name);
+    this.setState({ deleteStocks: '' });
+  }
+
+  handleInputChange(event) {
+    const { value, name } = event.target;
+    this.setState({
+      [name]: value
+    });
+  }
+  //NEED TO RECALCULATE THE AVG AND PROFIT FUNCTIONS
   render() {
     return (
       <section className="page__single-stock">
         <h4>{this.state.name}</h4>
         <p>Stock quantity: {this.state.totalQuantity}</p>
         <p>Total investment: {this.state.totalPrice} USD</p>
-        <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)} USD</p>
-        <p>
+
+        {/* <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)} USD</p>*/}
+        {/*  <p>
           Gross Profit:{' '}
           {(this.state.currentValue * this.state.totalQuantity - this.state.totalPrice).toFixed(2)}{' '}
           USD{' '}
-        </p>
+        </p> */}
 
         {this.state.ownedStock.map(stock => {
           let profit_margin = (
-            ((Number(this.state.currentValue).toFixed(2) - stock.buying_price) /
-              stock.buying_price) *
+            ((Number(this.state.currentValue).toFixed(2) - stock.price) / stock.price) *
             100
           ).toFixed(2);
           return (
             <section className="stock__purchases">
               <hr />
-              <p> Date of Purchase: {new Date(stock.date_of_purchase).toDateString()}</p>
+              <p> Date of Purchase: {new Date(stock.date).toDateString()}</p>
               <p> Quantity: {stock.quantity}</p>
-              <p> Bought for: {stock.buying_price} USD</p>
+              <p> Bought for: {stock.price} USD</p>
               <p>
                 Current value :
                 <span
                   className={
-                    stock.buying_price < this.state.currentValue
-                      ? 'price__increase'
-                      : 'price__decrease'
+                    stock.price < this.state.currentValue ? 'price__increase' : 'price__decrease'
                   }
                 >
                   {Number(this.state.currentValue).toFixed(2)}
@@ -84,6 +104,21 @@ class OwnedStock extends Component {
                   {profit_margin} %{' '}
                 </span>
               </p>
+              <button onClick={this.toggleButton}>Remove Stocks</button>
+              {this.state.buttonVisibility && (
+                <form onSubmit={this.deleteSubmission}>
+                  <input
+                    type="number"
+                    name="deleteStocks"
+                    min="1"
+                    placeholder="How many to remove?"
+                    value={this.state.deleteStocks}
+                    onChange={this.handleInputChange}
+                  ></input>
+                  <input type="text" value={stock._id}></input>
+                  <button>Confirm</button>
+                </form>
+              )}
               <hr />
             </section>
           );
