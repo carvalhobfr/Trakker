@@ -38,17 +38,14 @@ const router = new Router();
 
 router.post('/add-daily', async (req, res, next) => {
   const { name } = req.body;
-  console.log(name);
   try {
     const exists = await History.findOne({ name: name }).count();
-    console.log('EXISTS IS HERE', exists);
     if (!exists) {
       const dailyClosingPrices = await NewrequestDaily(name);
       const history = await History.create({
         name,
         dailyClosingPrices
       });
-      console.log('HISTORY HERE', history);
       res.json({ history });
     }
   } catch (error) {
@@ -57,4 +54,14 @@ router.post('/add-daily', async (req, res, next) => {
   }
 });
 
+router.get('/daily/:name', async (req, res, next) => {
+  const dailyName = req.params.name;
+  try {
+    const historyDaily = await History.find({ name: dailyName });
+    res.json({ historyDaily });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
 module.exports = router;

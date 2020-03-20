@@ -27,7 +27,7 @@ class DashboardView extends Component {
     const stocks = await loadAllStockInformation(this.props.wallet);
     this.setState({ stocks });
     const wallet = await loadWalletInformation(this.props.wallet);
-    const totalBalance = wallet.number_of_stocks * wallet.starting_balance;
+    const totalBalance = wallet.starting_balance - wallet.sold_balance;
     const graphDaily = await loadDailyInfo();
     this.setState({
       totalQuantity: wallet.number_of_stocks,

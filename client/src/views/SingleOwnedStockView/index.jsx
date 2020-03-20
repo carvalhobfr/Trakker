@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { requestDaily, NewrequestDaily } from './../../services/getapidata';
 import { loadStockInformation, removeStock } from './../../services/addstocks';
+import { loadDailyHistory } from './../../services/addhistory';
 import './style.scss';
 
 class OwnedStock extends Component {
@@ -17,7 +18,6 @@ class OwnedStock extends Component {
       buttonVisibility: false,
       deleteStocks: ''
     };
-    this.toggleButton = this.toggleButton.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
@@ -30,7 +30,6 @@ class OwnedStock extends Component {
     const ownedStock = await loadStockInformation(this.state.wallet, this.state.name);
     const currentValue = await NewrequestDaily(this.state.name);
     this.setState({ ownedStock, currentValue });
-    console.log('aloaoaoa', this.state.ownedStock);
   }
 
   async getTotals() {
@@ -42,21 +41,6 @@ class OwnedStock extends Component {
     }, 0);
 
     await this.setState({ totalQuantity, totalPrice });
-  }
-
-  toggleButton() {
-    this.setState({ buttonVisibility: !this.state.buttonVisibility });
-  }
-
-
-
-
-
-  async deleteSubmission(event) {
-    event.preventDefault();
-    const { deleteStocks, wallet, name } = this.state;
-    await removeStock(deleteStocks, wallet, name);
-    this.setState({ deleteStocks: '' });
   }
 
   handleInputChange(event) {
@@ -72,20 +56,6 @@ class OwnedStock extends Component {
         <h4>{this.state.name}</h4>
         <p>Stock quantity: {this.state.totalQuantity}</p>
         <p>Total investment: {this.state.totalPrice} USD</p>
-        <button onClick={this.toggleButton}>Remove Stocks</button>
-        {this.state.buttonVisibility && (
-          <form onSubmit={this.deleteSubmission}>
-            <input
-              type="number"
-              name="deleteStocks"
-              max={this.state.totalQuantity}
-              placeholder="How many to remove?"
-              value={this.state.deleteStocks}
-              onChange={this.handleInputChange}
-            ></input>
-            <button>Confirm</button>
-          </form>
-        )}
 
         {/* <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)} USD</p>*/}
         {/*  <p>
@@ -93,9 +63,6 @@ class OwnedStock extends Component {
           {(this.state.currentValue * this.state.totalQuantity - this.state.totalPrice).toFixed(2)}{' '}
           USD{' '}
         </p> */}
-
-
-
 
         {this.state.ownedStock.map(stock => {
           let profit_margin = (
@@ -110,7 +77,7 @@ class OwnedStock extends Component {
               <p> Bought for: {stock.price} USD</p>
               <p>
                 Current value :
-            <span
+                <span
                   className={
                     stock.price < this.state.currentValue ? 'price__increase' : 'price__decrease'
                   }
@@ -120,7 +87,7 @@ class OwnedStock extends Component {
               </p>
               <p>
                 {' '}
-            Profit margin:{' '}
+                Profit margin:{' '}
                 <span className={profit_margin > 0 ? 'price__increase' : 'price__decrease'}>
                   {profit_margin} %{' '}
                 </span>
@@ -128,8 +95,7 @@ class OwnedStock extends Component {
 
               <hr />
             </section>
-
-          )
+          );
           let sectionSold = (
             <section className="stock__purchases">
               <hr />
@@ -138,7 +104,7 @@ class OwnedStock extends Component {
               <p> Sold for: {stock.price} USD</p>
               <p>
                 Current value :
-        <span
+                <span
                   className={
                     stock.price < this.state.currentValue ? 'price__increase' : 'price__decrease'
                   }
@@ -148,7 +114,7 @@ class OwnedStock extends Component {
               </p>
               <p>
                 {' '}
-        Profit margin:{' '}
+                Profit margin:{' '}
                 <span className={profit_margin > 0 ? 'price__increase' : 'price__decrease'}>
                   {profit_margin} %{' '}
                 </span>
@@ -156,15 +122,13 @@ class OwnedStock extends Component {
 
               <hr />
             </section>
-          )
+          );
 
-
-          if (stock.transaction === "bought") {
-            return sectionBought
+          if (stock.transaction === 'bought') {
+            return sectionBought;
           } else {
-            return sectionSold
+            return sectionSold;
           }
-
         })}
       </section>
     );
