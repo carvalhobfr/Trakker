@@ -15,7 +15,7 @@ class HomePageView extends Component {
             </h1>
             <h3 className="secondary-text">
               <span className="place">Trakker</span> is a portfolio manager that unifies and updates
-              in real time <br></br>
+              in real time
               <span className="place"> all your stocks and crypto </span> in one single application.
             </h3>
             <button className="signin-button">
@@ -29,19 +29,23 @@ class HomePageView extends Component {
               <strong>Monitor stocks and crypto in real time.</strong>
             </h3>
             <h5>
-              Fatback excepteur est sed nulla nisi. Swine eu pariatur shoulder ut culpa. In ut anim
-              salami. pariatur shoulder ut culpa
+              Trakker is a free platform that helps you to manage, analyse and track your
+              investments, even if you have assets in different exchanges or financial institutions.
             </h5>
             <img src="/stocksview.png" alt="" />
           </div>
           <div className="mockup1">
             <h2>
-              <strong>Manage your portfolio like never before</strong>
+              <strong>
+                Investing is <span className="noteasy">not</span> easy. We’re here to help you with
+                that.
+              </strong>
             </h2>
             <div className="imageAndText">
               <h4>
-                Fatback excepteur est sed nulla nisi. Swine eu pariatur shoulder ut culpa. In ut
-                anim salami. Ullamco flank elit veniam lorem boudin.
+                Manage your portfolio like never before. The more investments you make, the more
+                difficult it gets to track your assets and markets variations. Our{' '}
+                <strong>simple and intuitive tool</strong> gathers all you have in one place.
               </h4>
             </div>
           </div>
