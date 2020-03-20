@@ -27,11 +27,12 @@ class DashboardView extends Component {
     const stocks = await loadAllStockInformation(this.props.wallet);
     this.setState({ stocks });
     const wallet = await loadWalletInformation(this.props.wallet);
-    const totalQuantity = wallet.number_of_stocks;
     const graphDaily = await loadDailyInfo();
+    const totalQuantity = wallet.number_of_stocks;
+    const totalBalance = wallet.starting_balance * wallet.number_of_stocks;
     this.setState({
       totalQuantity,
-      // totalBalance,
+      totalBalance,
       graphDaily
     });
   }
@@ -43,9 +44,9 @@ class DashboardView extends Component {
         <h4>Good afternoon</h4>
         <h4>Here's the summary of your account:</h4>
         <h4>
-          <strong>{this.state.totalQuantity} USD</strong>
+          <strong>{this.state.totalBalance} USD</strong>
         </h4>
-        <LineGraph data={this.state.graphDaily} />
+        {/* <LineGraph data={this.state.graphDaily} /> */}
 
         {/* <h4>Your current number of stocks: {this.state.stocks.length}</h4> */}
 
