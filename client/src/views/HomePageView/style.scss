@@ -1,134 +1,133 @@
 header {
-  justify-content: center;
-  align-content: flex-start;
-  color: black;
-  background-image: url('/bg1.jpg');
-  background-color: rgba(255, 255, 255, 0.5);
-  background-blend-mode: screen;
-  background-size: cover;
-  width: 100vw;
-  height: 95vh;
-  padding: 5vw 15vw 50px;
-  font-family: 'Noto Sans', sans-serif;
+	justify-content: center;
+	align-content: flex-start;
+	color: black;
+	background-image: url('/bg1.jpg');
+	background-color: rgba(255, 255, 255, 0.5);
+	background-blend-mode: screen;
+	background-size: cover;
+	max-width: 100vw;
+	height: 95vh;
+	padding: 5vw 15vw 50px;
+	font-family: 'Noto Sans', sans-serif;
 
-  body {
-    background-color: black;
-  }
+	body {
+		background-color: black;
+	}
 
-  div {
-    opacity: 1;
-  }
-  button {
-    margin: 100px 0;
-  }
+	div {
+		opacity: 1;
+	}
+	button {
+		margin: 100px 0;
+	}
 }
 
 .place {
-  color: RGB(220, 67, 96);
+	color: RGB(220, 67, 96);
 }
 
 .noteasy {
-  color: black;
+	color: black;
 }
 
 .mockup1 {
-  background-image: url('/test3.jpeg');
-  background-blend-mode: screen;
-  background-size: cover no-repeat center fixed;
-  height: 100vh;
-  padding: 5vw 15vw 50px;
-  max-width: 100%;
-  background-repeat: no-repeat;
+	background-image: url('/test3.jpeg');
+	background-blend-mode: screen;
+	background-size: cover;
+	background-position: left;
+	background-repeat: no-repeat;
+	padding: 5vw 15vw 50px;
+	height: 80vh;
+	h2 {
+		justify-content: left;
+		align-content: flex-start;
+		color: RGB(220, 67, 96);
+	}
+	h4 {
+		justify-content: left;
+		align-content: flex-start;
+		font-weight: 400;
 
-  h2 {
-    justify-content: left;
-    align-content: flex-start;
-    color: RGB(220, 67, 96);
-  }
-  h4 {
-    justify-content: left;
-    align-content: flex-start;
-    font-weight: 400;
+		color: black;
+	}
+	.imageAndText {
+		display: flex;
 
-    color: black;
-  }
-  .imageAndText {
-    display: flex;
-
-    img {
-      background-size: 100%;
-      height: 80vh;
-    }
-  }
+		img {
+			background-size: 100%;
+			height: 80vh;
+		}
+	}
 }
 
 .mockup2 {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  padding: 1vw;
-  background-color: RGB(220, 67, 96);
-  color: white;
-  height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	padding: 1vw;
+	background-color: RGB(220, 67, 96);
+	color: white;
+	height: 90vh;
 
-  h3 {
-    margin: 3vh;
-  }
-  img {
-    max-height: 70%;
-    max-width: 70%;
-  }
+	h3 {
+		margin: 3vh;
+	}
+	img {
+		max-height: 70%;
+		max-width: 70%;
+	}
 }
 
 button {
-  border-radius: 1em;
-  padding: 0.5em 5em;
-  font-size: larger;
-  border-color: RGB(220, 67, 96);
+	border-radius: 1em;
+	padding: 0.5em 5em;
+	font-size: larger;
+	border-color: RGB(220, 67, 96);
 }
 
 .headerBg {
-  background: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.1);
 }
 
 .secondary-text {
-  padding-top: 4em;
+	padding-top: 4em;
 }
 
 .signin-button {
-  background-color: RGB(220, 67, 96);
+	background-color: RGB(220, 67, 96);
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
-  font-size: 14px;
-  justify-content: left;
-  align-self: left;
-  align-items: left;
+	list-style-type: none;
+	padding: 0;
+	font-size: 14px;
+	justify-content: left;
+	align-self: left;
+	align-items: left;
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: white;
-  background-color: black;
-  padding: 5vh 5vw;
-  width: 100%;
-  ul {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	color: white;
+	background-color: black;
+	padding: 5vh 5vw;
+	width: 100%;
+	ul {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: space-between;
 
-    hr {
-      margin: 1em 0;
-    }
-  }
-  li {
-    display: flex;
-    align-self: flex-start;
-  }
+		hr {
+			margin: 1em 0;
+		}
+	}
+	li {
+		display: flex;
+		align-self: flex-start;
+	}
 }
