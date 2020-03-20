@@ -20,9 +20,7 @@ const loadAllStockInformation = id =>
       .get(`/allstocks/${id}`)
       .then(result => {
         const stocks = result.data.stocks;
-        console.log('STOCKS', stocks);
         let unique = _.uniqBy(stocks, 'name');
-        console.log('UNIQUE---', unique);
         resolve(unique);
       })
       .catch(reject);

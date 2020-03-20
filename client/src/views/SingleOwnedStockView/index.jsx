@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { requestDaily } from './../../services/getapidata';
+import { requestDaily, NewrequestDaily } from './../../services/getapidata';
 import { loadStockInformation, removeStock } from './../../services/addstocks';
 import './style.scss';
 
@@ -28,7 +28,7 @@ class OwnedStock extends Component {
 
   async fetchData() {
     const ownedStock = await loadStockInformation(this.state.wallet, this.state.name);
-    const currentValue = await requestDaily(this.state.name);
+    const currentValue = await NewrequestDaily(this.state.name);
     this.setState({ ownedStock, currentValue });
     console.log('aloaoaoa', this.state.ownedStock);
   }

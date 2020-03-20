@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { addStock } from './../../services/addstocks';
+import { NewrequestDaily } from './../../services/getapidata';
 import './style.scss';
 import TabBar from './../../components/TabBar';
 
@@ -26,10 +27,8 @@ class AddStockView extends Component {
     //const user = this.props.user;
     const wallet = this.props.user.wallet;
     const { name, type, quantity, price, currency, date, transaction } = this.state;
-    //console.log(name, type, quantity, buying_price, currency, date_of_purchase, wallet);
     try {
       const stock = await addStock({
-        //user: user._id,
         name,
         transaction,
         type,

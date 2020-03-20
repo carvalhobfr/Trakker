@@ -14,6 +14,7 @@ const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js')
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
 const stockRouter = require('./routes/stocks');
+const historyRouter = require('./routes/history');
 const graphDataRouter = require('./routes/graphdata');
 const cors = require('cors');
 
@@ -48,6 +49,7 @@ app.use('/', indexRouter);
 app.use('/api/authentication', authenticationRouter);
 app.use('/api/wallet', stockRouter);
 app.use('/api/graph', graphDataRouter);
+app.use('/api/history', historyRouter);
 
 app.get('*', (req, res, next) => {
   res.sendFile(join(__dirname, './../client/build/index.html'));

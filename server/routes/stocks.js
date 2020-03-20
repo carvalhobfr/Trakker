@@ -83,22 +83,8 @@ router.get('/singlestock/:id/:name', async (req, res, next) => {
   }
 });
 
-/* router.get('/singlestock/:id', async (req, res, next) => {
-  const stockID = req.params.id;
-  try {
-    const stock = await Stock.findById({ stockID });
-    res.json({ stock });
-    //console.log('BACKEND ', stock);
-  } catch (error) {
-    console.log(error);
-    next(error);
-  }
-}); */
-
 router.get('/:id', async (req, res, next) => {
-  //console.log(req.params.id);
   const walletID = req.params.id;
-  //console.log(walletID);
   try {
     const wallet = await Wallet.findById({ _id: walletID });
     res.json({ wallet });
