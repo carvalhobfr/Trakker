@@ -48,7 +48,7 @@ class DashboardView extends Component {
         </h4>
         {/* <LineGraph data={this.state.graphDaily} /> */}
 
-        {/* <h4>Your current number of stocks: {this.state.stocks.length}</h4> */}
+        <h4>Your current number of stocks: {this.state.totalQuantity}</h4>
 
         <form action="/add-stock">
           <button className="button__add-stock">Add to Wallet</button>
