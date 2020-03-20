@@ -10,6 +10,7 @@ class OwnedStock extends Component {
     this.state = {
       wallet: this.props.location.state.wallet,
       name: this.props.location.state.name,
+      dailyData: [],
       ownedStock: [],
       totalQuantity: 0,
       totalPrice: 0,
@@ -27,9 +28,11 @@ class OwnedStock extends Component {
   }
 
   async fetchData() {
+    const dailyData = await loadDailyHistory(this.state.name);
     const ownedStock = await loadStockInformation(this.state.wallet, this.state.name);
     const currentValue = await NewrequestDaily(this.state.name);
-    this.setState({ ownedStock, currentValue });
+    this.setState({ ownedStock, currentValue, dailyData });
+    console.log(this.state);
   }
 
   async getTotals() {

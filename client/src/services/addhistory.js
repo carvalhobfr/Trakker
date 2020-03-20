@@ -13,7 +13,9 @@ const loadDailyHistory = async name =>
     instance
       .get(`/daily/${name}`)
       .then(result => {
-        const daily = result.data.daily;
+        console.log('RESULT HERE', result);
+        const daily = result.data;
+
         resolve(daily);
       })
       .catch(reject);

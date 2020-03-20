@@ -21,7 +21,10 @@ router.post('/add-stock', async (req, res, next) => {
       date,
       wallet
     });
-    await Wallet.findByIdAndUpdate({ _id: wallet }, { $inc: { starting_balance: price } });
+    await Wallet.findByIdAndUpdate(
+      { _id: wallet },
+      { $inc: { starting_balance: price * quantity } }
+    );
     await Wallet.findByIdAndUpdate({ _id: wallet }, { $inc: { number_of_stocks: quantity } });
     res.json({ stock });
   } catch (error) {
@@ -47,7 +50,7 @@ router.post('/remove-stock', async (req, res, next) => {
       { _id: wallet },
       { $inc: { starting_balance: -Math.abs(price) } }
     );
-    await Wallet.findByIdAndUpdate({ _id: wallet }, { $inc: { sold_balance: price } });
+    await Wallet.findByIdAndUpdate({ _id: wallet }, { $inc: { sold_balance: price * quantity } });
     await Wallet.findByIdAndUpdate(
       { _id: wallet },
       { $inc: { number_of_stocks: -Math.abs(quantity) } }
