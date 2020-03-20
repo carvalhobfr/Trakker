@@ -30,9 +30,10 @@ class OwnedStock extends Component {
   async fetchData() {
     const dailyData = await loadDailyHistory(this.state.name);
     const ownedStock = await loadStockInformation(this.state.wallet, this.state.name);
-    const currentValue = await NewrequestDaily(this.state.name);
+    //const currentValue = await NewrequestDaily(this.state.name);
+    const currentValue = dailyData[0].dailyClosingPrices[0][1];
+    console.log('DAILY DATA', dailyData[0].dailyClosingPrices[0][1]);
     this.setState({ ownedStock, currentValue, dailyData });
-    console.log(this.state);
   }
 
   async getTotals() {

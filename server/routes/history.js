@@ -55,9 +55,9 @@ router.post('/add-daily', async (req, res, next) => {
 });
 
 router.get('/daily/:name', async (req, res, next) => {
-  const dailyName = req.params.name;
+  const name = req.params.name;
   try {
-    const historyDaily = await History.find({ name: dailyName });
+    const historyDaily = await History.find({ name: name });
     res.json({ historyDaily });
   } catch (error) {
     console.log(error);
