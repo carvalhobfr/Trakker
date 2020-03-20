@@ -48,6 +48,10 @@ class OwnedStock extends Component {
     this.setState({ buttonVisibility: !this.state.buttonVisibility });
   }
 
+
+
+
+
   async deleteSubmission(event) {
     event.preventDefault();
     const { deleteStocks, wallet, name } = this.state;
@@ -90,13 +94,15 @@ class OwnedStock extends Component {
           USD{' '}
         </p> */}
 
+
+
+
         {this.state.ownedStock.map(stock => {
           let profit_margin = (
             ((Number(this.state.currentValue).toFixed(2) - stock.price) / stock.price) *
             100
           ).toFixed(2);
-          return (
-            //{stock.transaction === 'bought' ? section resultado para bought : section resultado para sell}
+          let sectionBought = (
             <section className="stock__purchases">
               <hr />
               <p> Date of Purchase: {new Date(stock.date).toDateString()}</p>
@@ -104,7 +110,7 @@ class OwnedStock extends Component {
               <p> Bought for: {stock.price} USD</p>
               <p>
                 Current value :
-                <span
+            <span
                   className={
                     stock.price < this.state.currentValue ? 'price__increase' : 'price__decrease'
                   }
@@ -114,7 +120,7 @@ class OwnedStock extends Component {
               </p>
               <p>
                 {' '}
-                Profit margin:{' '}
+            Profit margin:{' '}
                 <span className={profit_margin > 0 ? 'price__increase' : 'price__decrease'}>
                   {profit_margin} %{' '}
                 </span>
@@ -122,7 +128,43 @@ class OwnedStock extends Component {
 
               <hr />
             </section>
-          );
+
+          )
+          let sectionSold = (
+            <section className="stock__purchases">
+              <hr />
+              <p> Date of Sale: {new Date(stock.date).toDateString()}</p>
+              <p> Quantity: {stock.quantity}</p>
+              <p> Sold for: {stock.price} USD</p>
+              <p>
+                Current value :
+        <span
+                  className={
+                    stock.price < this.state.currentValue ? 'price__increase' : 'price__decrease'
+                  }
+                >
+                  {Number(this.state.currentValue).toFixed(2)}
+                </span>
+              </p>
+              <p>
+                {' '}
+        Profit margin:{' '}
+                <span className={profit_margin > 0 ? 'price__increase' : 'price__decrease'}>
+                  {profit_margin} %{' '}
+                </span>
+              </p>
+
+              <hr />
+            </section>
+          )
+
+
+          if (stock.transaction === "bought") {
+            return sectionBought
+          } else {
+            return sectionSold
+          }
+
         })}
       </section>
     );
