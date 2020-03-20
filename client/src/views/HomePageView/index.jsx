@@ -24,18 +24,6 @@ class HomePageView extends Component {
           </div>
         </header>
         <section className="mockups">
-          <div className="mockup1">
-            <h2>
-              <strong>Manage your portfolio like never before</strong>
-            </h2>
-            <div className="imageAndText">
-              <h4>
-                Fatback excepteur est sed nulla nisi. Swine eu pariatur shoulder ut culpa. In ut
-                anim salami. Ullamco flank elit veniam lorem boudin.
-              </h4>
-              <img src="/kinvo_bg.png" alt="" />
-            </div>
-          </div>
           <div className="mockup2">
             <h3>
               <strong>Monitor stocks and crypto in real time.</strong>
@@ -45,6 +33,17 @@ class HomePageView extends Component {
               salami. pariatur shoulder ut culpa
             </h5>
             <img src="/stocksview.png" alt="" />
+          </div>
+          <div className="mockup1">
+            <h2>
+              <strong>Manage your portfolio like never before</strong>
+            </h2>
+            <div className="imageAndText">
+              <h4>
+                Fatback excepteur est sed nulla nisi. Swine eu pariatur shoulder ut culpa. In ut
+                anim salami. Ullamco flank elit veniam lorem boudin.
+              </h4>
+            </div>
           </div>
         </section>
         <footer>
