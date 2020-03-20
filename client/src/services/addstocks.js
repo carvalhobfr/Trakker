@@ -1,4 +1,5 @@
 import axios from 'axios';
+const _ = require('lodash');
 
 const instance = axios.create({
   baseURL: '/api/wallet'
@@ -19,7 +20,10 @@ const loadAllStockInformation = id =>
       .get(`/allstocks/${id}`)
       .then(result => {
         const stocks = result.data.stocks;
-        resolve(stocks);
+        console.log('STOCKS', stocks);
+        let unique = _.uniqBy(stocks, 'name');
+        console.log('UNIQUE---', unique);
+        resolve(unique);
       })
       .catch(reject);
   });
