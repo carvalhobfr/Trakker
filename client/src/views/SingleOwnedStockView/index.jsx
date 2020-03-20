@@ -96,6 +96,7 @@ class OwnedStock extends Component {
             100
           ).toFixed(2);
           return (
+            //{stock.transaction === 'bought' ? section resultado para bought : section resultado para sell}
             <section className="stock__purchases">
               <hr />
               <p> Date of Purchase: {new Date(stock.date).toDateString()}</p>
