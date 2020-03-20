@@ -4,8 +4,8 @@ const instance = axios.create({
   baseURL: '/api/history'
 });
 
-const addDailyHistory = async data => {
-  await instance.post('/add-daily', { data });
+const addDailyHistory = async name => {
+  await instance.post('/add-daily', { name });
 };
 
 export { addDailyHistory };

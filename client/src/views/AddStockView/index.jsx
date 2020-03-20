@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { addStock } from './../../services/addstocks';
-import { NewrequestDaily } from './../../services/getapidata';
+import { addDailyHistory } from './../../services/addhistory';
 import './style.scss';
 import TabBar from './../../components/TabBar';
 
@@ -24,9 +24,9 @@ class AddStockView extends Component {
   async handleFormSubmission(event) {
     event.preventDefault();
 
-    //const user = this.props.user;
     const wallet = this.props.user.wallet;
     const { name, type, quantity, price, currency, date, transaction } = this.state;
+    addDailyHistory(name);
     try {
       const stock = await addStock({
         name,
