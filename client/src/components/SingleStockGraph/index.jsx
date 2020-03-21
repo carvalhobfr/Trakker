@@ -18,6 +18,7 @@ class SingleStockGraph extends Component {
   async componentDidMount() {
     await this.updateData();
     const myChartRef = this.chartRef.current.getContext('2d');
+    let color = Chart.helpers.color;
 
     new Chart(myChartRef, {
       type: 'line',
@@ -28,7 +29,9 @@ class SingleStockGraph extends Component {
           {
             label: `${this.state.name}`,
             data: this.state.dailyPrices,
-            fill: false
+            fill: false,
+            backgroundColor: '#ff0000',
+            borderColor: '#D46A6A'
           }
         ]
       },
@@ -44,11 +47,11 @@ class SingleStockGraph extends Component {
     const result = data[0].dailyClosingPrices;
     //console.log('DATA', data);
     console.log('RESULT', result);
-    const dailyLabels = result.map((item, i) => item[0][0]);
-    const dailyPrices = result.map((item, i) => item[1][1]);
+    const dailyLabels = result.map((item, i) => item[0]).reverse();
+    const dailyPrices = result.map((item, i) => item[1]).reverse();
     this.setState({ dailyLabels, dailyPrices });
     console.log('GRAPH PROPS', this.props);
-    console.log('GRAPH DATA', this.state.data);
+    console.log('GRAPH DATA', this.state.dailyPrices);
     /* const graphDaily = await loadDailyHistory(this.state.name);
     this.setState({ graphDaily });
     console.log(this.state.graphDaily); */
