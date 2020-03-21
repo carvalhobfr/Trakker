@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { requestDaily, NewrequestDaily } from './../../services/getapidata';
-import { loadStockInformation, removeStock } from './../../services/addstocks';
+import { loadStockInformation } from './../../services/addstocks';
 import { loadDailyHistory } from './../../services/addhistory';
+import SingleStockGraph from './../../components/SingleStockGraph';
 import './style.scss';
 
 class OwnedStock extends Component {
@@ -31,9 +32,7 @@ class OwnedStock extends Component {
   async fetchData() {
     const dailyData = await loadDailyHistory(this.state.name);
     const ownedStock = await loadStockInformation(this.state.wallet, this.state.name);
-    //const currentValue = await NewrequestDaily(this.state.name);
     const currentValue = dailyData[0].dailyClosingPrices[0][1];
-    //console.log('DAILY DATA', dailyData[0].dailyClosingPrices[0][1]);
     this.setState({ ownedStock, currentValue, dailyData });
   }
 
@@ -61,6 +60,7 @@ class OwnedStock extends Component {
         <h4>{this.state.name}</h4>
         <p>Stock quantity: {this.state.totalQuantity}</p>
         <p>Total investment: {this.state.totalPrice} USD</p>
+        <SingleStockGraph name={this.state.name} />
         <p>Current Value : {this.state.currentValue}</p>
 
         {/* <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)} USD</p>*/}
