@@ -26,7 +26,6 @@ class OwnedStock extends Component {
   async componentDidMount() {
     await this.fetchData();
     this.getTotals();
-    console.log(this.props);
   }
 
   async fetchData() {
@@ -37,11 +36,16 @@ class OwnedStock extends Component {
   }
 
   async getTotals() {
-    const totalQuantity = this.state.ownedStock.reduce((acc, value) => {
-      return acc + value.quantity;
+    const totalQuantity = this.state.ownedStock.reduce((acc, value, i) => {
+      return this.state.ownedStock[i].transaction == 'bought'
+        ? acc + value.quantity
+        : acc - value.quantity;
     }, 0);
-    const totalPrice = this.state.ownedStock.reduce((acc, value) => {
-      return acc + value.price;
+    const totalPrice = this.state.ownedStock.reduce((acc, value, i) => {
+      return this.state.ownedStock[i].transaction == 'bought'
+        ? acc + value.price * value.quantity
+        : acc - value.price * value.quantity;
+      //return ;
     }, 0);
 
     await this.setState({ totalQuantity, totalPrice });
