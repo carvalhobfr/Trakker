@@ -1,27 +1,43 @@
 @import url('https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css');
 
 .tab-nav-container {
-  align-self: center;
-  background-color: RGB(220, 67, 96);
-  display: flex;
-  font-size: larger;
-  justify-items: center;
-  justify-content: space-between;
-  width: 100vw;
-  max-height: 50px;
-  // position: -webkit-sticky;
-  position: fixed;
-  bottom: 0;
+	align-self: center;
+	background-color: RGB(220, 67, 96);
+	display: flex;
+	font-size: 1.5em;
+	// justify-items: center;
+	justify-content: space-between;
+	width: 100vw;
+	max-height: 50px;
+	padding: 0 1em;
+	// position: -webkit-sticky;
+	position: fixed;
+	bottom: 0;
 }
 
-.linkIcon {
-  align-self: center;
-  font-size: larger;
-  color: RGB(220, 67, 96);
-  background-color: white;
-  border-radius: 100%;
-  display: flex;
-  font-size: larger;
-  justify-items: center;
-  justify-content: space-between;
+.linkIcon,
+.linkIconSelect {
+	align-self: center;
+	position: relative;
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	display: flex;
+	// font-size: 1em;
+	align-items: center;
+	justify-content: center;
+	// justify-content: space-between;
+}
+.linkIconSelect {
+	color: RGB(220, 67, 96);
+	background-color: white;
+	animation: pulse 0.9s ease-in;
+}
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0.3em rgba(255, 255, 255, 1);
+	}
+	100% {
+		box-shadow: 0 0 0 0em rgba(255, 255, 255, 0);
+	}
 }
