@@ -15,4 +15,15 @@ const loadDailyInfo = () =>
       .catch(reject);
   });
 
-export { loadDailyInfo };
+const loadSingleInfo = name =>
+  new Promise((resolve, reject) => {
+    instance
+      .post(`/daily-data/${name}`)
+      .then(result => {
+        const singleInfo = result.data;
+        resolve(singleInfo);
+      })
+      .catch(reject);
+  });
+
+export { loadDailyInfo, loadSingleInfo };

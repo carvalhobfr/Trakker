@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import { loadAllStockInformation, loadWalletInformation } from './../../services/addstocks';
-import { loadDailyInfo } from './../../services/graphdata';
+import {
+  loadUniqueStockInformation,
+  loadWalletInformation,
+  loadAllStockInformation
+} from './../../services/addstocks';
+import { loadDailyInfo, loadSingleInfo } from './../../services/graphdata';
 import TabBar from '../../components/TabBar';
-import LineGraph from '../../components/DashboardGraph';
+import DashboardGraph from '../../components/DashboardGraph';
 
 import './style.scss';
 
@@ -11,31 +15,55 @@ class DashboardView extends Component {
     super(props);
     this.state = {
       wallet: this.props.wallet,
+      uniqueStocks: [],
       stocks: [],
       totalQuantity: 0,
       totalBalance: 0,
-      graphDaily: {}
+      graphQuantity: [],
+      graphPrices: [],
+      graphLabels: []
     };
   }
 
   async componentDidMount() {
     await this.fetchData();
-    this.setState({ graphDaily: this.state.graphDaily });
+    //await this.graphInfo();
+    /* console.log(
+      'GRAPH INFO',
+      this.state.graphQuantity,
+      this.state.graphPrices,
+      this.state.graphLabels
+    ); */
   }
 
   async fetchData() {
+    const uniqueStocks = await loadUniqueStockInformation(this.props.wallet);
     const stocks = await loadAllStockInformation(this.props.wallet);
-    this.setState({ stocks });
+    this.setState({ uniqueStocks, stocks });
     const wallet = await loadWalletInformation(this.props.wallet);
-    const graphDaily = await loadDailyInfo();
+    //const graphDaily = await loadDailyInfo();
     const totalQuantity = wallet.number_of_stocks;
-    const totalBalance = wallet.starting_balance * wallet.number_of_stocks;
+    const totalBalance = wallet.starting_balance - wallet.sold_balance;
     this.setState({
       totalQuantity,
-      totalBalance,
-      graphDaily
+      totalBalance
     });
   }
+
+  /* async graphInfo() {
+    const graphQuantity = [];
+    const graphPrices = [];
+    const graphLabels = [];
+    this.state.uniqueStocks.map(async element => {
+      const info = await loadSingleInfo(element.name);
+      console.log('INFO NAME', info.name);
+      graphLabels.push(info.name);
+      graphQuantity.push(info.totalQuantity);
+      graphPrices.push(info.totalPrice);
+    });
+
+    this.setState({ graphQuantity, graphPrices, graphLabels });
+  } */
 
   render() {
     return (
@@ -46,9 +74,9 @@ class DashboardView extends Component {
         <h4>
           <strong>{this.state.totalBalance} USD</strong>
         </h4>
-        {/* <LineGraph data={this.state.graphDaily} /> */}
+        <DashboardGraph wallet={this.props.wallet} />
 
-        <h4>Number of companies you've invested in: {this.state.stocks.length}</h4>
+        <h4>Number of companies you've invested in: {this.state.uniqueStocks.length}</h4>
 
         <form action="/add-stock">
           <button className="button__add-stock">Add to Wallet</button>

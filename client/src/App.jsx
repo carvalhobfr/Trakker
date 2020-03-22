@@ -122,9 +122,9 @@ class App extends Component {
           />
 
           <ProtectedRoute
-            path="/singlestock"
+            path="/singlestock/:name"
             authorized={this.state.user}
-            redirect={'/singlestock'}
+            redirect={'/wallet'}
             render={props => (
               <SingleOwnedStockView
                 {...props}

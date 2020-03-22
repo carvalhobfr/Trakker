@@ -10,7 +10,7 @@ class OwnedStock extends Component {
     super(props);
     this.state = {
       wallet: this.props.user.wallet,
-      name: this.props.location.state.name,
+      name: this.props.match.params.name,
       dailyData: [],
       ownedStock: [],
       totalQuantity: 0,
@@ -45,7 +45,6 @@ class OwnedStock extends Component {
       return this.state.ownedStock[i].transaction == 'bought'
         ? acc + value.price * value.quantity
         : acc - value.price * value.quantity;
-      //return ;
     }, 0);
 
     await this.setState({ totalQuantity, totalPrice });
@@ -86,7 +85,7 @@ class OwnedStock extends Component {
               <p> Quantity: {stock.quantity}</p>
               <p> Bought for: {stock.price} USD</p>
               <p>
-                Current value :
+                Current value : {}
                 <span
                   className={
                     stock.price < this.state.currentValue ? 'price__increase' : 'price__decrease'
@@ -95,14 +94,6 @@ class OwnedStock extends Component {
                   {Number(this.state.currentValue).toFixed(2)}
                 </span>
               </p>
-              <p>
-                {' '}
-                Profit margin:{' '}
-                <span className={profit_margin > 0 ? 'price__increase' : 'price__decrease'}>
-                  {profit_margin} %{' '}
-                </span>
-              </p>
-
               <hr />
             </section>
           );
@@ -113,7 +104,7 @@ class OwnedStock extends Component {
               <p> Quantity: {stock.quantity}</p>
               <p> Sold for: {stock.price} USD</p>
               <p>
-                Current value :
+                Current value : {}
                 <span
                   className={
                     stock.price < this.state.currentValue ? 'price__increase' : 'price__decrease'
@@ -122,14 +113,6 @@ class OwnedStock extends Component {
                   {Number(this.state.currentValue).toFixed(2)}
                 </span>
               </p>
-              <p>
-                {' '}
-                Profit margin:{' '}
-                <span className={profit_margin > 0 ? 'price__increase' : 'price__decrease'}>
-                  {profit_margin} %{' '}
-                </span>
-              </p>
-
               <hr />
             </section>
           );

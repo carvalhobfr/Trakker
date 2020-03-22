@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { loadAllStockInformation, loadStockInformation } from './../../services/addstocks';
+import { loadUniqueStockInformation } from './../../services/addstocks';
 import TabBar from '../../components/TabBar';
 import SingleStock from '../../components/SingleStock';
 import SearchWallet from '../../components/SearchWallet';
@@ -24,7 +24,7 @@ class Wallet extends Component {
   }
 
   async fetchData() {
-    const stocks = await loadAllStockInformation(this.state.wallet);
+    const stocks = await loadUniqueStockInformation(this.state.wallet);
     this.setState({ stocks });
   }
 

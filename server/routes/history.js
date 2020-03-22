@@ -1,5 +1,6 @@
 'use strict';
 const axios = require('axios');
+const moment = require('moment');
 require('dotenv').config();
 
 /* const instance = axios.create({
@@ -47,6 +48,14 @@ router.post('/add-daily', async (req, res, next) => {
         dailyClosingPrices
       });
       res.json({ history });
+    } else if (exists) {
+      let lastDate = moment(req.body.currentDate).subtract(1, 'days');
+      //.toDate();
+      const history = await History.findOne({ name: name });
+      if (history.dailyClosingPrices[0] !== lastDate) {
+        const updatedClosingPrices = await NewrequestDaily(name);
+        History.findOneAndUpdate({ name }, { dailyClosingPrices: updatedClosingPrices });
+      }
     }
   } catch (error) {
     console.log(error);

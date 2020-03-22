@@ -14,7 +14,7 @@ const removeStock = async data => {
   console.log(data);
 };
 
-const loadAllStockInformation = id =>
+const loadUniqueStockInformation = id =>
   new Promise((resolve, reject) => {
     instance
       .get(`/allstocks/${id}`)
@@ -22,6 +22,17 @@ const loadAllStockInformation = id =>
         const stocks = result.data.stocks;
         let unique = _.uniqBy(stocks, 'name');
         resolve(unique);
+      })
+      .catch(reject);
+  });
+
+const loadAllStockInformation = id =>
+  new Promise((resolve, reject) => {
+    instance
+      .get(`/allstocks/${id}`)
+      .then(result => {
+        const stocks = result.data.stocks;
+        resolve(stocks);
       })
       .catch(reject);
   });
@@ -53,6 +64,7 @@ export {
   addStock,
   removeStock,
   loadStockInformation,
+  loadUniqueStockInformation,
   loadAllStockInformation,
   loadWalletInformation
 };

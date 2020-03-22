@@ -1,45 +1,76 @@
 import React, { Component } from 'react';
 import Chart from 'chart.js';
-import { loadDailyInfo } from './../../services/graphdata';
+import { loadDailyInfo, loadSingleInfo } from './../../services/graphdata';
+import { loadUniqueStockInformation } from './../../services/addstocks';
 //import classes from "./LineGraph.module.css";
 
-class LineGraph extends Component {
+class DashboardGraph extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      graphDaily: {}
+      uniqueStocks: [],
+      graphQuantity: [],
+      graphPrices: [],
+      graphLabels: []
     };
   }
   chartRef = React.createRef();
 
   async componentDidMount() {
-    await this.updateData();
+    await this.graphInfo();
+
     const myChartRef = this.chartRef.current.getContext('2d');
 
     new Chart(myChartRef, {
-      type: 'line',
+      type: 'doughnut',
       data: {
         //Bring in data
-        labels: this.state.graphDaily.labels, //['Jan', 'Feb', 'March'],
+        //['Jan', 'Feb', 'March'],
+        labels: [...this.state.graphLabels],
         datasets: [
           {
             label: 'Amount invested',
-            data: [...this.state.graphDaily.data].join(',')
+            data: [...this.state.graphPrices],
+            backgroundColor: '#ff0000',
+            borderColor: '#D46A6A'
+          },
+          {
+            label: 'Amount invested',
+            data: [...this.state.graphQuantity],
+            backgroundColor: '#ff0000',
+            borderColor: '#D46A6A'
           }
         ]
       },
+
       options: {
         //Customize chart options
       }
     });
-    console.log(this.state.graphDaily);
+    console.log('GRAPH STATE', this.state);
   }
 
-  async updateData() {
+  async graphInfo() {
+    const uniqueStocks = await loadUniqueStockInformation(this.props.wallet);
+    const graphQuantity = [];
+    const graphPrices = [];
+    const graphLabels = [];
+    await uniqueStocks.map(async element => {
+      const info = await loadSingleInfo(element.name);
+      console.log('INFO NAME', info.name);
+      graphLabels.push(info.name);
+      graphQuantity.push(info.totalQuantity);
+      graphPrices.push(info.totalPrice);
+    });
+
+    this.setState({ uniqueStocks, graphQuantity, graphPrices, graphLabels });
+  }
+
+  /*   async updateData() {
     const graphDaily = await loadDailyInfo();
     this.setState({ graphDaily });
     console.log(this.state.graphDaily);
-  }
+  }  */
 
   render() {
     return (
@@ -50,4 +81,4 @@ class LineGraph extends Component {
   }
 }
 
-export default LineGraph;
+export default DashboardGraph;

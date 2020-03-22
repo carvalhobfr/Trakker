@@ -7,6 +7,23 @@ const Wallet = require('./../models/wallet');
 const User = require('./../models/user');
 const Mongoose = require('mongoose');
 
+/* const getTotals = async name => 
+  new Promise((resolve, reject) => {
+    const ownedStock = await Stock.find({name: name});
+    const totalQuantity = ownedStock.reduce((acc, value, i) => {
+    return ownedStock[i].transaction == 'bought'
+      ? acc + value.quantity
+      : acc - value.quantity;
+  }, 0);
+  const totalPrice = ownedStock.reduce((acc, value, i) => {
+    return this.state.ownedStock[i].transaction == 'bought'
+      ? acc + value.price * value.quantity
+      : acc - value.price * value.quantity;
+  }, 0);
+  resolve({totalQuantity, totalPrice})
+  .catch(reject)
+  }); */
+
 router.route('/daily-data').post((req, res, next) => {
   let startDate = moment(req.body.currentDate)
     .startOf('month')
@@ -54,6 +71,25 @@ router.route('/daily-data').post((req, res, next) => {
       res.status(200).send(set);
     }
   });
+});
+
+router.route('/daily-data/:name').post(async (req, res, next) => {
+  try {
+    let name = req.params.name;
+    let stocks = await Stock.find({ name: name });
+    const totalQuantity = stocks.reduce((acc, value, i) => {
+      return stocks[i].transaction == 'bought' ? acc + value.quantity : acc - value.quantity;
+    }, 0);
+    const totalPrice = stocks.reduce((acc, value, i) => {
+      return stocks[i].transaction == 'bought'
+        ? acc + value.price * value.quantity
+        : acc - value.price * value.quantity;
+    }, 0);
+    res.json({ totalQuantity, totalPrice, name });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
 });
 
 module.exports = router;

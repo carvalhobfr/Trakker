@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.scss';
 
 const SearchWallet = props => {
   const filterList = event => {
@@ -7,7 +8,7 @@ const SearchWallet = props => {
   };
 
   return (
-    <form>
+    <form className="searchbar__wallet">
       <input type="text" placeholder="Search" value={props.searchquery} onChange={filterList} />
     </form>
   );

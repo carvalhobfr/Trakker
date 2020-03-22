@@ -52,12 +52,13 @@ class SingleStock extends Component {
     return (
       <Link
         to={{
-          pathname: '/singlestock',
+          pathname: `/singlestock/${this.state.name}`,
           state: {
             wallet: this.state.wallet,
             name: this.state.name
           }
         }}
+        params={this.state.name}
       >
         <section className="stock__single-button">
           <div className="stock__symbol">
