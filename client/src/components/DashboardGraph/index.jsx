@@ -18,28 +18,28 @@ class DashboardGraph extends Component {
 
   async componentDidMount() {
     await this.graphInfo();
-
+    console.log('GRAPH STATE', this.state);
     const myChartRef = this.chartRef.current.getContext('2d');
 
     new Chart(myChartRef, {
-      type: 'doughnut',
+      type: 'bar',
       data: {
         //Bring in data
         //['Jan', 'Feb', 'March'],
-        labels: [...this.state.graphLabels],
+        labels: this.state.graphLabels,
         datasets: [
           {
-            label: 'Amount invested',
-            data: [...this.state.graphPrices],
+            label: 'Current',
+            data: this.state.graphPrices,
             backgroundColor: '#ff0000',
             borderColor: '#D46A6A'
-          },
-          {
+          }
+          /* {
             label: 'Amount invested',
             data: [...this.state.graphQuantity],
             backgroundColor: '#ff0000',
             borderColor: '#D46A6A'
-          }
+          } */
         ]
       },
 
@@ -47,7 +47,6 @@ class DashboardGraph extends Component {
         //Customize chart options
       }
     });
-    console.log('GRAPH STATE', this.state);
   }
 
   async graphInfo() {
