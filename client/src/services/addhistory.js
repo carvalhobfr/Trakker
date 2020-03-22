@@ -8,6 +8,18 @@ const addDailyHistory = async name => {
   await instance.post('/add-daily', { name });
 };
 
+const loadAllDailyHistory = () =>
+  new Promise((resolve, reject) => {
+    instance
+      .get(`/daily/all`)
+      .then(result => {
+        const daily = result.data.historyAllDaily;
+        console.log('DAILY ALL RESULT', daily);
+        resolve(daily);
+      })
+      .catch(reject);
+  });
+
 const loadDailyHistory = async name =>
   new Promise((resolve, reject) => {
     instance
@@ -19,4 +31,4 @@ const loadDailyHistory = async name =>
       .catch(reject);
   });
 
-export { addDailyHistory, loadDailyHistory };
+export { addDailyHistory, loadDailyHistory, loadAllDailyHistory };
