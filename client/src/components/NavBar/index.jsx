@@ -24,14 +24,14 @@ const NavBar = props => {
         {(props.user && (
           <Fragment>
             <span>{props.user.name}</span>
-            <Link to="/add-stock">Add to Wallet</Link>
+            <Link className="addStock" to="/add-stock">Add to Wallet</Link>
           </Fragment>
         )) || (
-          <Fragment>
-            <Link to="/sign-in">Sign In</Link>
-            <Link to="/sign-up">Sign Up</Link>
-          </Fragment>
-        )}
+            <Fragment>
+              <Link to="/sign-in">Sign In</Link>
+              <Link to="/sign-up">Sign Up</Link>
+            </Fragment>
+          )}
       </div>
     </nav>
   );
