@@ -26,21 +26,21 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-  expressSession({
-    secret: process.env.SESSION_SECRET,
-    resave: true,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 60 * 60 * 60 * 24 * 15,
-      sameSite: 'lax',
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production'
-    },
-    store: new (connectMongo(expressSession))({
-      mongooseConnection: mongoose.connection,
-      ttl: 60 * 60 * 60 * 24
-    })
-  })
+	expressSession({
+		secret: process.env.SESSION_SECRET,
+		resave: true,
+		saveUninitialized: false,
+		cookie: {
+			maxAge: 60 * 60 * 60 * 24 * 15,
+			sameSite: 'lax',
+			httpOnly: true,
+			secure: process.env.NODE_ENV === 'deploy'
+		},
+		store: new (connectMongo(expressSession))({
+			mongooseConnection: mongoose.connection,
+			ttl: 60 * 60 * 60 * 24
+		})
+	})
 );
 app.use(basicAuthenticationDeserializer);
 app.use(bindUserToViewLocals);
@@ -52,18 +52,18 @@ app.use('/api/graph', graphDataRouter);
 app.use('/api/history', historyRouter);
 
 app.get('*', (req, res, next) => {
-  res.sendFile(join(__dirname, './../client/build/index.html'));
+	res.sendFile(join(__dirname, './../client/build/index.html'));
 });
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
-  next(createError(404));
+	next(createError(404));
 });
 
 // Catch all error handler
 app.use((error, req, res, next) => {
-  res.status(error.status || 500);
-  res.json({ type: 'error', error: { message: error.message } });
+	res.status(error.status || 500);
+	res.json({ type: 'error', error: { message: error.message } });
 });
 
 module.exports = app;
