@@ -1,12 +1,6 @@
-//General imports
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
-//Component imports
-import NavBar from './components/NavBar';
-
-import ProtectedRoute from './components/ProtectedRoute';
-//Views imports
 import SignInView from './views/SignInView';
 import SignUpView from './views/SignUpView';
 import HomePageView from './views/HomePageView';
@@ -17,9 +11,9 @@ import SettingsView from './views/SettingsView';
 import WalletView from './views/WalletView';
 import AllStocksView from './views/AllStocksView';
 import RemoveStockView from './views/RemoveStockView';
-
-//Services imports
 import { loadUserInformation } from './services/authentication';
+import ProtectedRoute from './components/ProtectedRoute';
+import NavBar from './components/NavBar';
 
 class App extends Component {
   constructor() {
