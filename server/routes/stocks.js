@@ -12,7 +12,7 @@ router.post('/add-stock', async (req, res, next) => {
   const { name, transaction, type, quantity, price, currency, date, wallet } = req.body.data;
   try {
     const stock = await Stock.create({
-      name,
+      name : name.toUpperCase(),
       transaction,
       type,
       quantity,
