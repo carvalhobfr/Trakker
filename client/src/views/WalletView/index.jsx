@@ -31,7 +31,7 @@ class Wallet extends Component {
     return (
       <section className="page__wallet">
         <div className="walletViewContent">
-          <img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "8vw" }} />
+          <img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} />
           <h4>Your current positions:</h4>
           <SearchWallet searchquery={this.state.searchquery} updateSearch={this.updateSearch} />
           {this.state.stocks

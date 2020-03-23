@@ -31,7 +31,7 @@ export class AllStocksView extends Component {
   render() {
     return (
       <section className="page__allstocks">
-        <img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "8vw" }} />
+        <img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} />
 
         <SearchWallet searchquery={this.state.searchquery} updateSearch={this.updateSearch} />
         {this.state.stocks

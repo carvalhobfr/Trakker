@@ -28,7 +28,7 @@ class Settings extends Component {
           @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
         </style>
         <div className="logo-navbar">
-          <Link to="/"><img src="/img01.png" alt="logo" /></Link>
+          <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>
         </div>
         <div className="settings">
           {this.props.user && (
