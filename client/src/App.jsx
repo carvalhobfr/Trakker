@@ -18,7 +18,7 @@ import AllStocksView from './views/AllStocksView';
 import RemoveStockView from './views/RemoveStockView';
 import { loadUserInformation } from './services/authentication';
 import ProtectedRoute from './components/ProtectedRoute';
-import NavBar from './components/NavBar';
+import NavBarLogin from './components/NavBarLogin';
 
 class App extends Component {
   constructor() {
