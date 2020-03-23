@@ -9,6 +9,7 @@
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 400;
 	max-width: 100vw;
+	max-height: 80px;
 	border-radius: 0.1em;
 	/*   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px; */
@@ -19,6 +20,7 @@
 	}
 	img {
 		width: 8em;
+		max-width: 125px;
 		height: 3.5em;
 		margin: 0;
 	}

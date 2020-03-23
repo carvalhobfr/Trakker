@@ -5,9 +5,11 @@
 		font-weight: 200;
 		font-family: 'Noto Sans', sans-serif;
 	}
-	img{
+	img {
 		width: 25vw;
-		margin: 8vw ;
+		// margin: 3vw;
+		max-width: 125px;
+		align-self: center;
 	}
 }
 
@@ -24,7 +26,6 @@
 	margin-bottom: 4vw;
 	margin-top: 3em;
 }
-
 
 .button__remove-stock {
 	font-size: 1em;

@@ -62,7 +62,11 @@ class DashboardView extends Component {
   render() {
     return (
       <section className="page__dashboard">
-        <h1>Trakker</h1>
+        <img
+          src="/img01.png"
+          alt="logo"
+          style={{ width: '25vw', margin: '3vw', 'max-width': '125px' }}
+        />
         <h4>Good afternoon, {this.props.user.name}!</h4>
         <h4>Here's the summary of your account:</h4>
         <h4>

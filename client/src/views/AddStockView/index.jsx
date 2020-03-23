@@ -55,7 +55,7 @@ class AddStockView extends Component {
     return (
       <div className="page-and-tab-bar">
         <section className="page__add-stock">
-          <img src="/img01.png" alt="logo" />
+          <img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} />
           <h4>Add an asset to your wallet</h4>
           <form className="form__add-stock" onSubmit={this.handleFormSubmission}>
             <label htmlFor="name">Name:</label>
