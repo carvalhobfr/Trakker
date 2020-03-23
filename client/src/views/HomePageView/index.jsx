@@ -51,7 +51,7 @@ class HomePageView extends Component {
           </div>
         </section>
         <footer>
-          Trakker
+          <h3>Trakker</h3>
           <ul>
             <li>❔ Help Center</li>
             <li>💬About Us</li>
@@ -60,6 +60,7 @@ class HomePageView extends Component {
             <li>🤝Accessibility</li>
             <li>📜Terms</li>
           </ul>
+          <p>Trakker Copyright © 2020</p>
         </footer>
       </body>
     );
