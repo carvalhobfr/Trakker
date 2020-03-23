@@ -1,0 +1,54 @@
+.stock__single-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+  a {
+    color: black;
+  }
+
+  .stock__symbol {
+    background-color: #7bb6ff;
+    color: white;
+    width: 10em;
+    height: 3em;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stock__change-negative {
+    background-color: #eff2f4;
+    color: red;
+    width: 10em;
+    height: 3em;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stock__change-positive {
+    background-color: #eff2f4;
+    color: green;
+    width: 10em;
+    height: 3em;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .stock__total-price {
+    flex-basis: 100%;
+    color: #777b80;
+    font-size: 0.8em;
+    font-weight: 100;
+  }
+  hr {
+    width: 90vw;
+    color: #777b80;
+    border: 0.05em solid #777b80;
+  }
+}
