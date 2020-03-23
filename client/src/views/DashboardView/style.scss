@@ -1,35 +1,35 @@
 .page__dashboard {
-  h1,
-  h4,
-  h6 {
-    font-weight: 200;
-    font-family: 'Noto Sans', sans-serif;
-  }
+	h1,
+	h4,
+	h6 {
+		font-weight: 200;
+		font-family: 'Noto Sans', sans-serif;
+	}
 }
 
 .button__add-stock {
-  font-size: 1em;
-  white-space: nowrap;
-  width: 12em;
-  font-size: 1em;
-  padding: 0.2em;
-  background-color: RGB(89, 192, 120);
-  border: 1px solid RGB(89, 192, 120);
-  border-radius: 2em;
-  color: white;
-  margin-bottom: 3vw;
-  margin-top: 3em;
+	font-size: 1em;
+	white-space: nowrap;
+	width: 12em;
+	font-size: 1em;
+	padding: 0.2em;
+	background-color: RGB(89, 192, 120);
+	border: 1px solid RGB(89, 192, 120);
+	border-radius: 2em;
+	color: white;
+	margin-bottom: 4vw;
+	margin-top: 3em;
 }
 
 .button__remove-stock {
-  font-size: 1em;
-  white-space: nowrap;
-  width: 12em;
-  padding: 0.2em;
-  background-color: RGB(243, 69, 63);
-  border: 1px solid RGB(243, 69, 63);
-  border-radius: 2em;
-  color: white;
-  margin-top: 1em;
-  margin-bottom: 5em;
+	font-size: 1em;
+	white-space: nowrap;
+	width: 12em;
+	padding: 0.2em;
+	background-color: RGB(243, 69, 63);
+	border: 1px solid RGB(243, 69, 63);
+	border-radius: 2em;
+	color: white;
+	margin-top: 1em;
+	margin-bottom: 5em;
 }

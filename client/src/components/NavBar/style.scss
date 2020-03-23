@@ -4,7 +4,7 @@
 	align-items: center;
 	padding: 2.5vh 1.5vw;
 	font-size: small;
-	background-color: rgba(220, 67, 96);
+	background-color: rgba(220, 67, 96,1);
 	color: white;
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 400;
@@ -30,7 +30,7 @@ a:-webkit-any-link {
 	border: solid 0.04em;
 	border-radius: 1em;
 	padding: 0.4em;
-	color: RGB(220, 67, 96);
+	color: rgba(220, 67, 96,1);
 	background-color: white;
 	border-color: black;
 }

@@ -65,7 +65,7 @@ class AddStockView extends Component {
               type="text"
               placeholder="...AMZN, GOOGL, TSLA"
               onChange={this.handleInputChange}
-              value={this.state.name}
+              value={this.state.name.toUpperCase()}
             />
             <label htmlFor="type">Type:</label>
             <select

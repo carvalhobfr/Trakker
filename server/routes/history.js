@@ -44,7 +44,7 @@ router.post('/add-daily', async (req, res, next) => {
 		if (!exists) {
 			const dailyClosingPrices = await NewrequestDaily(name);
 			const history = await History.create({
-				name: name.toUpperCase(),
+				name,
 				dailyClosingPrices
 			});
 			res.json({ history });
