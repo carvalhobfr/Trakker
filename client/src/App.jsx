@@ -4,8 +4,13 @@ import './App.css';
 import SignInView from './views/SignInView';
 import SignUpView from './views/SignUpView';
 import HomePageView from './views/HomePageView';
-import AddStockView from './views/AddStockView';
+import AboutView from './views/AboutUs';
+import CareersView from './views/Careers';
+import HelpView from './views/Help';
+import PrivacyView from './views/Privacy';
 import SingleOwnedStockView from './views/SingleOwnedStockView';
+import AddStockView from './views/AddStockView';
+import TermsView from './views/Terms';
 import DashboardView from './views/DashboardView';
 import SettingsView from './views/SettingsView';
 import WalletView from './views/WalletView';
@@ -49,6 +54,11 @@ class App extends Component {
       <div className="App">
         <NavBar user={this.state.user} updateUserInformation={this.updateUserInformation} />
         <Switch>
+          <Route path="/about" exact component={AboutView} />
+          <Route path="/privacy" exact component={PrivacyView} />
+          <Route path="/help" exact component={HelpView} />
+          <Route path="/careers" exact component={CareersView} />
+          <Route path="/terms" exact component={TermsView} />
           {/* <Route path="/" exact component={HomePageView} /> */}
           <ProtectedRoute
             path="/"
