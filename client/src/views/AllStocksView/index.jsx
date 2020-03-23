@@ -36,7 +36,7 @@ export class AllStocksView extends Component {
         <SearchWallet searchquery={this.state.searchquery} updateSearch={this.updateSearch} />
         {this.state.stocks
           .filter(search =>
-            search.name.toLowerCase().includes(this.state.searchquery.toLowerCase())
+            search.name.toUpperCase().includes(this.state.searchquery.toUpperCase())
           )
           .map(element => {
             //console.log('ELEMENT', element);

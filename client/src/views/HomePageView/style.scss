@@ -64,6 +64,7 @@ header {
 .mockup2 {
 	display: flex;
 	flex-direction: column;
+	flex-wrap: wrap;
 	justify-items: center;
 	align-items: center;
 	padding: 1vw;
@@ -114,7 +115,7 @@ footer {
 	align-items: flex-start;
 	color: white;
 	background-color: black;
-	padding: 5vh 5vw;
+	padding: 1vh 2vw;
 	width: 100%;
 	ul {
 		display: flex;
@@ -129,5 +130,8 @@ footer {
 	li {
 		display: flex;
 		align-self: flex-start;
+	}
+	p {
+		font-size: xx-small;
 	}
 }
