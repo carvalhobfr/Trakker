@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
-<<<<<<< HEAD
-=======
-//Component imports
-import NavBar from './components/NavBar';
-require('dotenv').config();
-
-
-import ProtectedRoute from './components/ProtectedRoute';
-//Views imports
->>>>>>> 6c79306dc0eb4ee5b04ef00b61c1daf8c39874cb
 import SignInView from './views/SignInView';
 import SignUpView from './views/SignUpView';
 import HomePageView from './views/HomePageView';
