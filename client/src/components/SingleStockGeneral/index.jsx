@@ -23,7 +23,7 @@ class SingleStockGeneral extends Component {
       > */
       <section className="stock__single-button">
         <div className="stock__symbol">
-          <h4>{this.props.single.name}</h4>
+          <h4>{this.props.single.name.toUpperCase}</h4>
         </div>
         <div
           className={this.props.margin < 0 ? 'stock__change-negative' : 'stock__change-positive'}
