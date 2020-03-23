@@ -28,7 +28,7 @@ class SingleStock extends Component {
     const currentPrice = dailyData[0].dailyClosingPrices[0][1];
     const oldPrice = dailyData[0].dailyClosingPrices[1][1];
     const changeMargin = ((currentPrice - oldPrice) / oldPrice) * 100;
-    this.setState({ ownedStock, changeMargin });
+    this.setState({ changeMargin, ownedStock });
   }
 
   async getTotals() {
