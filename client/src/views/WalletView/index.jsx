@@ -27,14 +27,12 @@ class Wallet extends Component {
     const stocks = await loadUniqueStockInformation(this.state.wallet);
     this.setState({ stocks });
   }
-
   render() {
     return (
       <section className="page__wallet">
-        <div className="walletViewContent" style="margin-bottom: 2em">
+        <div className="walletViewContent">
           <h2>Trakker</h2>
           <h4>Your current positions:</h4>
-
           <SearchWallet searchquery={this.state.searchquery} updateSearch={this.updateSearch} />
           {this.state.stocks
             .filter(search =>
