@@ -47,7 +47,7 @@ class AddStockView extends Component {
   handleInputChange(event) {
     const { value, name } = event.target;
     this.setState({
-      [name]: value
+      [name]: value.toUpperCase()
     });
   }
 
@@ -65,7 +65,7 @@ class AddStockView extends Component {
               type="text"
               placeholder="...AMZN, GOOGL, TSLA"
               onChange={this.handleInputChange}
-              value={this.state.name.toUpperCase()}
+              value={this.state.name}
             />
             <label htmlFor="type">Type:</label>
             <select
