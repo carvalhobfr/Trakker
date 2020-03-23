@@ -18,7 +18,6 @@ class Privacy extends Component {
           <h2>Trakker</h2>
           <p>We’re still writing the terms - they’ll be available soon.</p>
         </div>
-        <TabBar {...this.props} />
       </section>
     );
   }
