@@ -21,17 +21,11 @@ const NavBar = props => {
         <Link to="/"><img src="/img02.png" alt="Trakker's logo" /></Link>
       </div>
       <div className="menu-navbar">
-        {(props.user && (
-          <Fragment>
-            <span>{props.user.name}</span>
-            <Link className="addStock" to="/add-stock">Add to Wallet</Link>
-          </Fragment>
-        )) || (
-            <Fragment>
-              <Link to="/sign-in">Sign In</Link>
-              <Link to="/sign-up">Sign Up</Link>
-            </Fragment>
-          )}
+        <Fragment>
+          <Link to="/sign-in">Sign In</Link>
+          <Link to="/sign-up">Sign Up</Link>
+        </Fragment>
+          
       </div>
     </nav>
   );

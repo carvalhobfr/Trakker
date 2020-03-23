@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
+import NavBar from './../../components/NavBar';
+
 
 class HomePageView extends Component {
   render() {
     return (
       <body>
+        <NavBar />
         <header>
           <div>
             <h1>
