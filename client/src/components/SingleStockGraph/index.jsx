@@ -24,11 +24,11 @@ class SingleStockGraph extends Component {
       type: 'line',
       data: {
         //Bring in data
-        labels: this.state.dailyLabels, //['Jan', 'Feb', 'March'],
+        labels: this.state.dailyLabels.slice(93), //['Jan', 'Feb', 'March'],
         datasets: [
           {
             label: `${this.state.name}`,
-            data: this.state.dailyPrices,
+            data: this.state.dailyPrices.slice(93),
             fill: false,
             backgroundColor: '#ff0000',
             borderColor: '#D46A6A'

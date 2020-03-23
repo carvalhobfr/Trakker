@@ -13,21 +13,46 @@ class DashboardGraph extends Component {
       graphPrices: [],
       graphLabels: []
     };
+    this.buildchart = this.buildchart.bind(this);
   }
   chartRef = React.createRef();
 
   async componentDidMount() {
-    await this.graphInfo();
-    const myChartRef = await this.chartRef.current.getContext('2d');
+    this.buildchart();
+    console.log('GRAPH DATA', this.props);
+    //await this.graphInfo();
+    /* const myChartRef = await this.chartRef.current.getContext('2d');
 
     new Chart(myChartRef, {
-      type: 'bar',
+      type: 'pie',
       data: {
-        labels: this.state.graphLabels,
+        labels: this.props.data.graphLabels,
         datasets: [
           {
             label: 'Current investments',
-            data: this.state.graphPrices,
+            data: this.props.data.graphPrices,
+            fill: false,
+            backgroundColor: '#59c078',
+            borderColor: '#D46A6A'
+          }
+        ]
+      },
+
+      options: {}
+    }); */
+  }
+
+  buildchart() {
+    const myChartRef = this.chartRef.current.getContext('2d');
+
+    new Chart(myChartRef, {
+      type: 'pie',
+      data: {
+        labels: this.props.data.graphLabels,
+        datasets: [
+          {
+            label: 'Current investments',
+            data: this.props.data.graphPrices,
             fill: false,
             backgroundColor: '#59c078',
             borderColor: '#D46A6A'
@@ -39,7 +64,11 @@ class DashboardGraph extends Component {
     });
   }
 
-  async graphInfo() {
+  componentDidUpdate() {
+    console.log('UPDATED GRAPH', this.props);
+    this.buildchart();
+  }
+  /* async graphInfo() {
     const uniqueStocks = await loadUniqueStockInformation(this.props.wallet);
     const graphQuantity = [];
     const graphPrices = [];
@@ -53,7 +82,7 @@ class DashboardGraph extends Component {
 
     this.setState({ uniqueStocks, graphQuantity, graphPrices, graphLabels });
   }
-
+ */
   render() {
     return (
       <div>

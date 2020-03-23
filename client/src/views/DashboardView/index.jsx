@@ -27,12 +27,13 @@ class DashboardView extends Component {
 
   async componentDidMount() {
     await this.fetchData();
+    await this.graphInfo();
   }
 
   async fetchData() {
-    const uniqueStocks = await loadUniqueStockInformation(this.props.wallet);
+    //const uniqueStocks = await loadUniqueStockInformation(this.props.wallet);
     const stocks = await loadAllStockInformation(this.props.wallet);
-    this.setState({ uniqueStocks, stocks });
+    this.setState({ stocks });
     const wallet = await loadWalletInformation(this.props.wallet);
     //const graphDaily = await loadDailyInfo();
     const totalQuantity = wallet.number_of_stocks;
@@ -41,6 +42,21 @@ class DashboardView extends Component {
       totalQuantity,
       totalBalance
     });
+  }
+
+  async graphInfo() {
+    const uniqueStocks = await loadUniqueStockInformation(this.props.wallet);
+    const graphQuantity = [];
+    const graphPrices = [];
+    const graphLabels = [];
+    await uniqueStocks.map(async element => {
+      const info = await loadSingleInfo(element.name);
+      graphLabels.push(info.name);
+      graphQuantity.push(info.totalQuantity);
+      graphPrices.push(info.totalPrice);
+    });
+
+    this.setState({ uniqueStocks, graphQuantity, graphPrices, graphLabels });
   }
 
   /* async graphInfo() {
@@ -67,7 +83,7 @@ class DashboardView extends Component {
         <h4>
           <strong>{this.state.totalBalance} USD</strong>
         </h4>
-        <DashboardGraph wallet={this.props.wallet} />
+        <DashboardGraph wallet={this.props.wallet} data={this.state} />
 
         <h4>Number of companies you've invested in: {this.state.uniqueStocks.length}</h4>
 
