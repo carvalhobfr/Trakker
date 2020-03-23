@@ -52,7 +52,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar user={this.state.user} updateUserInformation={this.updateUserInformation} />
+        <NavBarLogin user={this.state.user} updateUserInformation={this.updateUserInformation} />
         <Switch>
           <Route path="/about" exact component={AboutView} />
           <Route path="/privacy" exact component={PrivacyView} />
