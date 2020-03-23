@@ -27,13 +27,6 @@ class DashboardView extends Component {
 
   async componentDidMount() {
     await this.fetchData();
-    //await this.graphInfo();
-    /* console.log(
-      'GRAPH INFO',
-      this.state.graphQuantity,
-      this.state.graphPrices,
-      this.state.graphLabels
-    ); */
   }
 
   async fetchData() {

@@ -26,7 +26,6 @@ class SingleStockGeneral extends Component {
   }
 
   render() {
-    //let totalPrice = this.props.single.price * this.props.single.quantity;
     return (
       /*  <Link
         to={{
@@ -49,9 +48,6 @@ class SingleStockGeneral extends Component {
         >
           <p>{this.state.changeMargin.toFixed(2)} % </p>
         </div>
-        {/* <div className="stock__total-price">
-            <p>Amount invested: {this.state.totalPrice.toFixed(2)} USD</p>
-          </div> */}
         <hr />
       </section>
       // </Link>
