@@ -12,13 +12,20 @@ const TabBar = props => {
           className={props.match.path === '/dashboard' ? 'linkIconSelect las la-home' : 'linkIcon las la-home'}
         ></i>
       </Link>
-
       <Link to="/wallet">
         <i
           className={props.match.path === '/wallet' ? 'linkIconSelect las la-wallet' : 'linkIcon las la-wallet'}
         ></i>
       </Link>
-
+      <Link to="/add-stock">
+        <i
+          className={
+            props.match.path === '/add-stock'
+              ? 'linkIconSelect las la-plus-circle'
+              : 'linkIcon las la-plus-circle'
+          }
+        ></i>
+      </Link>
       <Link to="/allstocks">
         <i
           className={
@@ -28,7 +35,6 @@ const TabBar = props => {
           }
         ></i>
       </Link>
-
       <Link to="/settings">
         <i className={props.match.path === '/settings' ? 'linkIconSelect las la-cog' : 'linkIcon las la-cog'}></i>
       </Link>
