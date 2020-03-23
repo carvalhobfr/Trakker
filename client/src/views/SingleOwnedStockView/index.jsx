@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { requestDaily, NewrequestDaily } from './../../services/getapidata';
 import { loadStockInformation } from './../../services/addstocks';
 import { loadDailyHistory } from './../../services/addhistory';
 import SingleStockGraph from './../../components/SingleStockGraph';
@@ -66,18 +65,7 @@ class OwnedStock extends Component {
         <SingleStockGraph name={this.state.name} />
         <p>Current Value : {this.state.currentValue}</p>
 
-        {/* <p>Average Price: {(this.state.totalPrice / this.state.totalQuantity).toFixed(2)} USD</p>*/}
-        {/*  <p>
-          Gross Profit:{' '}
-          {(this.state.currentValue * this.state.totalQuantity - this.state.totalPrice).toFixed(2)}{' '}
-          USD{' '}
-        </p> */}
-
         {this.state.ownedStock.map(stock => {
-          let profit_margin = (
-            ((Number(this.state.currentValue).toFixed(2) - stock.price) / stock.price) *
-            100
-          ).toFixed(2);
           let sectionBought = (
             <section className="stock__purchases">
               <hr />

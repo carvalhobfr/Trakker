@@ -4,7 +4,7 @@ import {
   loadWalletInformation,
   loadAllStockInformation
 } from './../../services/addstocks';
-import { loadDailyInfo, loadSingleInfo } from './../../services/graphdata';
+import { loadSingleInfo } from './../../services/graphdata';
 import TabBar from '../../components/TabBar';
 import DashboardGraph from '../../components/DashboardGraph';
 
@@ -31,11 +31,9 @@ class DashboardView extends Component {
   }
 
   async fetchData() {
-    //const uniqueStocks = await loadUniqueStockInformation(this.props.wallet);
     const stocks = await loadAllStockInformation(this.props.wallet);
     this.setState({ stocks });
     const wallet = await loadWalletInformation(this.props.wallet);
-    //const graphDaily = await loadDailyInfo();
     const totalQuantity = wallet.number_of_stocks;
     const totalBalance = wallet.starting_balance - wallet.sold_balance;
     this.setState({
@@ -65,7 +63,7 @@ class DashboardView extends Component {
         <img
           src="/img01.png"
           alt="logo"
-          style={{ width: '25vw', margin: '3vw', 'max-width': '125px' }}
+          style={{ width: '25vw', margin: '3vw', maxWidth: '125px' }}
         />
         <h4>Good afternoon, {this.props.user.name}!</h4>
         <h4>Here's the summary of your account:</h4>

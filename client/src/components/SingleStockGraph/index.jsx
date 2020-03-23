@@ -17,7 +17,6 @@ class SingleStockGraph extends Component {
   async componentDidMount() {
     await this.updateData();
     const myChartRef = this.chartRef.current.getContext('2d');
-    let color = Chart.helpers.color;
 
     new Chart(myChartRef, {
       type: 'line',

@@ -31,7 +31,11 @@ class Wallet extends Component {
     return (
       <section className="page__wallet">
         <div className="walletViewContent">
-          <img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} />
+          <img
+            src="/img01.png"
+            alt="logo"
+            style={{ width: '25vw', margin: '3vw', maxWidth: '125px' }}
+          />
           <h4>Your current positions:</h4>
           <SearchWallet searchquery={this.state.searchquery} updateSearch={this.updateSearch} />
           {this.state.stocks
@@ -39,8 +43,7 @@ class Wallet extends Component {
               search.name.toLowerCase().includes(this.state.searchquery.toLowerCase())
             )
             .map(element => {
-              //console.log('ELEMENT', element);
-              return <SingleStock single={element} {...this.props} />;
+              return <SingleStock key={element.name} single={element} {...this.props} />;
             })}
         </div>
         <TabBar {...this.props} />
