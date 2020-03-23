@@ -31,7 +31,7 @@ class Wallet extends Component {
   render() {
     return (
       <section className="page__wallet">
-        <div>
+        <div className="walletViewContent">
           <h2>Trakker</h2>
           <h4>Your current positions:</h4>
 

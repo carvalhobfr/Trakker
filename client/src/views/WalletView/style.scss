@@ -12,9 +12,6 @@
 		border: 1px solid #eff2f4;
 		border-radius: 2em;
 	}
-	div {
-		margin-bottom: 5em;
-	}
 	button {
 		width: 12em;
 		padding: 0.8em;
@@ -22,5 +19,8 @@
 		border: 1px solid RGB(0, 164, 138);
 		border-radius: 2em;
 		color: white;
+	}
+	.walletViewContent {
+		margin-bottom: 5em;
 	}
 }
