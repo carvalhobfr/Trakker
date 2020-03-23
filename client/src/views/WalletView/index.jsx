@@ -31,18 +31,20 @@ class Wallet extends Component {
   render() {
     return (
       <section className="page__wallet">
-        <h2>Trakker</h2>
-        <h4>Your current positions:</h4>
+        <div className="walletViewContent">
+          <h2>Trakker</h2>
+          <h4>Your current positions:</h4>
 
-        <SearchWallet searchquery={this.state.searchquery} updateSearch={this.updateSearch} />
-        {this.state.stocks
-          .filter(search =>
-            search.name.toLowerCase().includes(this.state.searchquery.toLowerCase())
-          )
-          .map(element => {
-            //console.log('ELEMENT', element);
-            return <SingleStock single={element} {...this.props} />;
-          })}
+          <SearchWallet searchquery={this.state.searchquery} updateSearch={this.updateSearch} />
+          {this.state.stocks
+            .filter(search =>
+              search.name.toLowerCase().includes(this.state.searchquery.toLowerCase())
+            )
+            .map(element => {
+              //console.log('ELEMENT', element);
+              return <SingleStock single={element} {...this.props} />;
+            })}
+        </div>
         <TabBar {...this.props} />
       </section>
     );
