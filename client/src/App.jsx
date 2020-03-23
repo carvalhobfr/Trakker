@@ -4,6 +4,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 //Component imports
 import NavBar from './components/NavBar';
+require('dotenv').config();
+
 
 import ProtectedRoute from './components/ProtectedRoute';
 //Views imports
