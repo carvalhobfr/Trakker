@@ -21,6 +21,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
+app.use(express.static(join(__dirname, './../client/build')));
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(express.json());
