@@ -14,9 +14,12 @@ class Privacy extends Component {
   render() {
     return (
       <section className="page__wallet">
-        <div className="walletViewContent" style="margin-bottom: 2em">
-          <h2>Trakker</h2>
-          <p>We’re still writing the terms - they’ll be available soon.</p>
+        <div className="walletViewContent" >
+          <h2>Privacy</h2>
+          <p>Our privacy policy was created to affirm Trakker’s commitment with security, transparency and privacy. We follow the EU GDPR guidelines and won’t disclose either your personal data and your investments data.
+          1.We collect your data with the sole purpose of identification and authentication.
+          2.By signing up to our services, you agree that we collect and treat your personal data necessary for us to provide you a better service.
+3.You authorize Trakker to store and keep your information to guarantee our quality measures, as well as complying with legal demands from financial authorities.</p>
         </div>
       </section>
     );

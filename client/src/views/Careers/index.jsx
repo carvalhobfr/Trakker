@@ -14,9 +14,9 @@ class Carrers extends Component {
   render() {
     return (
       <section className="page__wallet">
-        <div className="walletViewContent" style="margin-bottom: 2em">
-          <h2>Trakker</h2>
-          <p>We’re still writing the terms - they’ll be available soon.</p>
+        <div className="walletViewContent" >
+          <h2>Carrers</h2>
+          <p>We saved a seat for you as we are always after nice and skilled people to contribute to our projects. If you have interest in coding and financial markets, please contact us through trakkerwallet@gmail.com with your best cv, LinkedIn profile or anything really - be creative!</p>
         </div>
       </section>
     );
