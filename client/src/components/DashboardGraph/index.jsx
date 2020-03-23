@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
 import Chart from 'chart.js';
+import { Pie } from 'react-chartjs-2';
 import { loadDailyInfo, loadSingleInfo } from './../../services/graphdata';
 import { loadUniqueStockInformation } from './../../services/addstocks';
-//import classes from "./LineGraph.module.css";
 
 class DashboardGraph extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      uniqueStocks: [],
-      graphQuantity: [],
-      graphPrices: [],
-      graphLabels: []
+      data: []
     };
-    this.buildchart = this.buildchart.bind(this);
+    // this.buildchart = this.buildchart.bind(this);
+    this.chartRef = React.createRef();
   }
-  chartRef = React.createRef();
 
-  async componentDidMount() {
-    this.buildchart();
+  componentDidMount() {
+    // this.buildchart();
     console.log('GRAPH DATA', this.props);
+    const { graphLabels, graphPrices } = this.props.data;
+    const data = [
+      {
+        labels: graphLabels,
+        datasets: [
+          {
+            label: 'Current investments',
+            data: graphPrices,
+            fill: false,
+            backgroundColor: '#59c078',
+            borderColor: '#D46A6A'
+          }
+        ]
+      }
+    ];
+
+    this.setState({ data });
+
     //await this.graphInfo();
     /* const myChartRef = await this.chartRef.current.getContext('2d');
 
@@ -42,17 +57,19 @@ class DashboardGraph extends Component {
     }); */
   }
 
-  buildchart() {
+  /*  buildchart() {
     const myChartRef = this.chartRef.current.getContext('2d');
+    const { graphLabels, graphPrices } = this.props.data;
+    if (typeof myChart !== 'undefined') myChart.destroy();
 
-    new Chart(myChartRef, {
-      type: 'pie',
+    myChart = new Chart(myChartRef, {
+      type: 'bar',
       data: {
-        labels: this.props.data.graphLabels,
+        labels: graphLabels,
         datasets: [
           {
             label: 'Current investments',
-            data: this.props.data.graphPrices,
+            data: graphPrices,
             fill: false,
             backgroundColor: '#59c078',
             borderColor: '#D46A6A'
@@ -62,12 +79,12 @@ class DashboardGraph extends Component {
 
       options: {}
     });
-  }
+  } */
 
-  componentDidUpdate() {
+  /*  componentDidUpdate() {
     console.log('UPDATED GRAPH', this.props);
     this.buildchart();
-  }
+  } */
   /* async graphInfo() {
     const uniqueStocks = await loadUniqueStockInformation(this.props.wallet);
     const graphQuantity = [];
@@ -86,7 +103,8 @@ class DashboardGraph extends Component {
   render() {
     return (
       <div>
-        <canvas id="myChart" ref={this.chartRef} />
+        <Pie data={this.state.data} width={100} height={50} />
+        {/* <canvas id="myChart" ref={this.chartRef} /> */}
       </div>
     );
   }

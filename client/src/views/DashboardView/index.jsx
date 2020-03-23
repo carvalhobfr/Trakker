@@ -78,7 +78,7 @@ class DashboardView extends Component {
     return (
       <section className="page__dashboard">
         <h1>Trakker</h1>
-        <h4>Good afternoon, {props.user.name}!</h4>
+        <h4>Good afternoon, {this.props.user.name}!</h4>
         <h4>Here's the summary of your account:</h4>
         <h4>
           <strong>{this.state.totalBalance} USD</strong>
