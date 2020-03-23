@@ -15,7 +15,7 @@ class HelpCenter extends Component {
     return (
       <section className="page__wallet">
         <div className="walletViewContent" >
-          <h2>Trakker</h2>
+          <img src="/img01.png" alt="logo" />
           <p>We’re still writing the terms - they’ll be available soon.</p>
         </div>
       </section>

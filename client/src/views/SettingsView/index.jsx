@@ -28,21 +28,20 @@ class Settings extends Component {
           @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
         </style>
         <div className="logo-navbar">
-          <Link to="/">Trakker</Link>
+          <Link to="/"><img src="/img01.png" alt="logo" /></Link>
         </div>
-        <div>Trakker</div>
-        <div className="menu-navbar">
+        <div className="settings">
           {this.props.user && (
             <Fragment>
-              {/*  <span>{this.props.user.name}</span> */}
+              <span>{this.props.user.name}, to delete your account send us a e-mail:trakkerwallet@gmail.com </span>
               <button className="signout" onClick={this.handleSignOut}>
-                Sign Out
+              Sign Out
               </button>
             </Fragment>
           )}
-          <TabBar {...this.props} />
+        <TabBar {...this.props} />
         </div>
-      </nav>
+      </nav >
     );
   }
 }
