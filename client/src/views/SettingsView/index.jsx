@@ -33,13 +33,13 @@ class Settings extends Component {
         <div className="settings">
           {this.props.user && (
             <Fragment>
-              <span>{this.props.user.name}, to delete your account send us a e-mail:trakkerwallet@gmail.com </span>
+              <span>{this.props.user.name},if you'd like to delete your account, please send an email to trakkerwallet@gmail.com </span>
               <button className="signout" onClick={this.handleSignOut}>
-              Sign Out
+                Sign Out
               </button>
             </Fragment>
           )}
-        <TabBar {...this.props} />
+          <TabBar {...this.props} />
         </div>
       </nav >
     );
