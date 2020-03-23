@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TabBar from '../../components/TabBar';
 import SearchWallet from '../../components/SearchWallet';
 import SingleStockGeneral from '../../components/SingleStockGeneral';
-import { loadAllDailyHistory } from '../../services/addhistory';
+import { loadAllDailyHistory, loadD } from '../../services/addhistory';
 
 export class AllStocksView extends Component {
   constructor(props) {
@@ -39,7 +39,11 @@ export class AllStocksView extends Component {
             search.name.toLowerCase().includes(this.state.searchquery.toLowerCase())
           )
           .map(element => {
-            return <SingleStockGeneral single={element} {...this.props} />;
+            //console.log('ELEMENT', element);
+            const currentPrice = element.dailyClosingPrices[0][1];
+            const oldPrice = element.dailyClosingPrices[1][1];
+            const changeMargin = ((currentPrice - oldPrice) / oldPrice) * 100;
+            return <SingleStockGeneral single={element} margin={changeMargin} {...this.props} />;
           })}
 
         <TabBar {...this.props} />

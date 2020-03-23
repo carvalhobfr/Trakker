@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { loadUniqueStockInformation } from './../../services/addstocks';
+import { loadDailyHistory } from './../../services/addhistory';
 import TabBar from '../../components/TabBar';
 import SingleStock from '../../components/SingleStock';
 import SearchWallet from '../../components/SearchWallet';
@@ -41,7 +42,12 @@ class Wallet extends Component {
           )
           .map(element => {
             //console.log('ELEMENT', element);
-            return <SingleStock single={element} {...this.props} />;
+            /*  const history = loadDailyHistory(element.name);
+            console.log(history);
+            const currentPrice = history.dailyClosingPrices[0][1];
+            const oldPrice = history.dailyClosingPrices[1][1];
+            const changeMargin = ((currentPrice - oldPrice) / oldPrice) * 100; */
+            return <SingleStock single={element} /* margin={changeMargin}  */ {...this.props} />;
           })}
         <TabBar {...this.props} />
       </section>
