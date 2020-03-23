@@ -18,7 +18,8 @@ import AllStocksView from './views/AllStocksView';
 import RemoveStockView from './views/RemoveStockView';
 import { loadUserInformation } from './services/authentication';
 import ProtectedRoute from './components/ProtectedRoute';
-import NavBarLogin from './components/NavBarLogin';
+// import NavBar from './components/NavBar';    <NavBar/>
+
 
 class App extends Component {
   constructor() {
@@ -52,7 +53,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBarLogin user={this.state.user} updateUserInformation={this.updateUserInformation} />
         <Switch>
           <Route path="/about" exact component={AboutView} />
           <Route path="/privacy" exact component={PrivacyView} />
