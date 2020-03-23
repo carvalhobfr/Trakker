@@ -59,29 +59,14 @@ class DashboardView extends Component {
     this.setState({ uniqueStocks, graphQuantity, graphPrices, graphLabels });
   }
 
-  /* async graphInfo() {
-    const graphQuantity = [];
-    const graphPrices = [];
-    const graphLabels = [];
-    this.state.uniqueStocks.map(async element => {
-      const info = await loadSingleInfo(element.name);
-      console.log('INFO NAME', info.name);
-      graphLabels.push(info.name);
-      graphQuantity.push(info.totalQuantity);
-      graphPrices.push(info.totalPrice);
-    });
-
-    this.setState({ graphQuantity, graphPrices, graphLabels });
-  } */
-
   render() {
     return (
       <section className="page__dashboard">
-        <img src="/img01.png" alt="logo" />
+        <h1>Trakker</h1>
         <h4>Good afternoon, {this.props.user.name}!</h4>
         <h4>Here's the summary of your account:</h4>
         <h4>
-          <strong>{this.state.totalBalance}USD</strong>
+          <strong>{this.state.totalBalance} USD</strong>
         </h4>
         <DashboardGraph wallet={this.props.wallet} data={this.state} />
 
