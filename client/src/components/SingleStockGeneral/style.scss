@@ -51,4 +51,15 @@
     color: #777b80;
     border: 0.05em solid #777b80;
   }
+
+  .add__button {
+    width: 8em;
+    padding: 0.8em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: RGB(89, 192, 120);
+    border: 1px solid RGB(89, 192, 120);
+    border-radius: 2em;
+    color: white;
+  }
 }
