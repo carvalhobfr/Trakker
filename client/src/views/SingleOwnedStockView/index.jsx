@@ -89,7 +89,7 @@ class OwnedStock extends Component {
             </section>
           );
           let sectionSold = (
-            <section className="stock__purchases">
+            <section className="stock__sold">
               <hr />
               <p> Date of Sale: {new Date(stock.date).toDateString()}</p>
               <p> Quantity: {stock.quantity}</p>

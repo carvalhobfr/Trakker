@@ -3,6 +3,8 @@ import { addStock } from './../../services/addstocks';
 import { addDailyHistory } from './../../services/addhistory';
 import './style.scss';
 import TabBar from './../../components/TabBar';
+import { Link } from 'react-router-dom';
+
 
 class AddStockView extends Component {
   constructor(props) {
@@ -55,7 +57,7 @@ class AddStockView extends Component {
     return (
       <div className="page-and-tab-bar">
         <section className="page__add-stock">
-          <img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} />
+          <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>
           <h4>Add an asset to your wallet</h4>
           <form className="form__add-stock" onSubmit={this.handleFormSubmission}>
             <label htmlFor="name">Name:</label>
