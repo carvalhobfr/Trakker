@@ -1,15 +1,20 @@
 .page__single-stock {
-  line-height: 0.5em;
+	line-height: 0.5em;
 }
 
 .stock__purchases {
-  line-height: 0.5em;
+	line-height: 0.5em;
+	background-color: rgba($color: #76ef80, $alpha: 0.2);
+}
+.stock__sold {
+	line-height: 0.5em;
+	background-color: rgba($color: #faa3a3, $alpha: 0.2);
 }
 
 .price__increase {
-  color: green;
+	color: green;
 }
 
 .price__decrease {
-  color: red;
+	color: red;
 }
