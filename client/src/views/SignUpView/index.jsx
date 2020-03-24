@@ -43,7 +43,7 @@ class SignUpView extends Component {
   render() {
     return (
       <section className="page__sign-up">
-        <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>        <h4>Create a new account</h4>
+        <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>
         <form className="form__sign-up" onSubmit={this.handleFormSubmission}>
           <input
             id="name"
