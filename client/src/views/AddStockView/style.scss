@@ -32,9 +32,13 @@
 		width: 12em;
 		padding: 0.8em;
 		margin: 0 1em;
-		background-color: RGB(89, 192, 120);
-		border: 1px solid RGB(89, 192, 120);
+		// background-color: rgb(89, 192, 120);
+		// border: 1px solid rgb(89, 192, 120);
 		border-radius: 2em;
 		color: white;
+	}
+	.addbuttonStock {
+		background-color: rgb(89, 192, 120);
+		border: 1px solid rgb(89, 192, 120);
 	}
 }

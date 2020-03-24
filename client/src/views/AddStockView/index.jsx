@@ -111,7 +111,7 @@ class AddStockView extends Component {
               id="date"
               name="date"
             ></input>
-            <button>Add to wallet</button>
+            <button className="addbuttonStock">Add to wallet</button>
           </form>
         </section>
 

@@ -19,12 +19,14 @@
 	width: 12em;
 	font-size: 1em;
 	padding: 0.2em;
-	background-color: RGB(89, 192, 120);
-	border: 1px solid RGB(89, 192, 120);
+	background-color: rgb(89, 192, 120);
+	border: 1px solid rgb(89, 192, 120);
 	border-radius: 2em;
 	color: white;
 	margin-bottom: 4vw;
-	margin-top: 3em;
+	.button__add-stock:first-child {
+		margin-top: 3em;
+	}
 }
 
 .button__remove-stock {

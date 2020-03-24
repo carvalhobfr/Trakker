@@ -57,7 +57,7 @@ class SignInView extends Component {
             onChange={this.handleInputChange}
             value={this.state.password}
           />
-          <button>Sign In</button>
+          <button className="signInbutton">Sign In</button>
         </form>
 
         <p className="or">or</p>
