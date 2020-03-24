@@ -11,11 +11,13 @@ const schema = new mongoose.Schema({
     type: Number
   },
   starting_balance: {
-    type: Number
+    type: Number,
+    default: 0
   },
 
   sold_balance: {
-    type: Number
+    type: Number,
+    default: 0
   },
   current_balance: {
     type: Number
