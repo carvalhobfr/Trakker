@@ -24,7 +24,9 @@
 	border-radius: 2em;
 	color: white;
 	margin-bottom: 4vw;
-	margin-top: 3em;
+	.button__add-stock:first-child {
+		margin-top: 3em;
+	}
 }
 
 .button__remove-stock {
