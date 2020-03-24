@@ -1,23 +1,24 @@
 button {
-	width: 6em;
-	padding: 0.3em;
-	background-color: black;
-	border: black;
-	border-radius: 2em;
-	color: white;
-	font-family: 'Noto Sans', sans-serif;
-	margin-top: 1vh;
+  width: 6em;
+  padding: 0.3em;
+  background-color: black;
+  border: black;
+  border-radius: 2em;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+  margin-top: 3em;
 }
 
 .settings {
-	display: flex;
+  padding-top: 3em;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .logo-navbar {
-	img {
-		width: 25vw;
-		margin: 8vw;
-	}
+  img {
+    width: 25vw;
+    margin: 8vw;
+  }
 }
