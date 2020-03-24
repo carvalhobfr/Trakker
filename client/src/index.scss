@@ -28,13 +28,14 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+input:focus,
 button:focus {
 	outline: 0;
 }
 
 button:active {
-	box-shadow: 0 5px rgb(168, 167, 167);
-	transform: translateY(4px);
+	box-shadow: 0 1px rgb(168, 167, 167);
+	transform: translateY(1px);
 }
 
 // @media (min-width: 600px) {
