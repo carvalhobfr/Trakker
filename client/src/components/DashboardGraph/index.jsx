@@ -25,7 +25,7 @@ class DashboardGraph extends Component {
     const { graphLabels, graphPrices } = this.props.data;
 
     this.myChart = new Chart(context, {
-      type: 'bar',
+      type: 'pie',
       data: {
         labels: graphLabels,
         datasets: [
@@ -34,7 +34,7 @@ class DashboardGraph extends Component {
             data: graphPrices,
             fill: false,
             backgroundColor: '#59c078',
-            borderColor: '#D46A6A'
+            borderColor: '#A0E871'
           }
         ]
       },
