@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { signUp } from './../../services/authentication';
 import './style.scss';
+import { Link } from 'react-router-dom';
+
 
 class SignUpView extends Component {
   constructor(props) {
@@ -41,8 +43,7 @@ class SignUpView extends Component {
   render() {
     return (
       <section className="page__sign-up">
-        <h1>Trakker</h1>
-        <h4>Create a new account</h4>
+        <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>        <h4>Create a new account</h4>
         <form className="form__sign-up" onSubmit={this.handleFormSubmission}>
           <input
             id="name"

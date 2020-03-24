@@ -39,8 +39,7 @@ class SignInView extends Component {
   render() {
     return (
       <section className="page__sign-in">
-        <h1>Trakker</h1>
-        <h4>Sign in to your account</h4>
+        <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>        <h4>Sign in to your account</h4>
         <form className="form__sign-in" onSubmit={this.handleFormSubmission}>
           <input
             id="email"
