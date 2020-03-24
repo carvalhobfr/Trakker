@@ -17,7 +17,7 @@ class HelpCenter extends Component {
     return (
       <section className="page__wallet">
         <div className="walletViewContent" >
-          <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>          <p>We’re still writing the terms - they’ll be available soon.</p>
+          <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>
           <p>We’re still writing the terms - they’ll be available soon.</p>
         </div>
       </section>
