@@ -3,6 +3,9 @@ import { loadStockInformation } from './../../services/addstocks';
 import { loadDailyHistory } from './../../services/addhistory';
 import SingleStockGraph from './../../components/SingleStockGraph';
 import './style.scss';
+import TabBar from '../../components/TabBar';
+
+
 
 class OwnedStock extends Component {
   constructor(props) {
@@ -111,6 +114,7 @@ class OwnedStock extends Component {
             return sectionSold;
           }
         })}
+        <TabBar {...this.props} />
       </section>
     );
   }
