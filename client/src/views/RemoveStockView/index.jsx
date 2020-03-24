@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { removeStock } from '../../services/addstocks';
 import './style.scss';
 import TabBar from '../../components/TabBar';
+import { Link } from 'react-router-dom';
 
 class RemoveStockView extends Component {
   constructor(props) {
@@ -56,7 +57,7 @@ class RemoveStockView extends Component {
     return (
       <div className="page-and-tab-bar">
         <section className="page__add-stock">
-          <img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} />
+          <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>
           <h4>Remove an asset from your wallet</h4>
           <form className="form__add-stock" onSubmit={this.handleFormSubmission}>
             <label htmlFor="name">Name:</label>
