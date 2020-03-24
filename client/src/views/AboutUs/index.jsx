@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 // import { loadUniqueStockInformation } from '../../services/addstocks';
 // import TabBar from '../../components/TabBar';
 // import SingleStock from '../../components/SingleStock';
@@ -15,6 +17,7 @@ class AboutUs extends Component {
     return (
       <section className="page__wallet">
         <div className="walletViewContent">
+          <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>
           <h2>About Us</h2>
           <p>We are a small team of 3 web developers based in Lisbon, Portugal. We have invested in stock markets and in cryptocurrencies for a few years now, and our project reflects what we think is one of the biggest constraints when it comes to investment: centralizing all your portfolio in one single app. Our mission with this project, which was built in MERN stack (MongoDB, Express, React and Node.js), is to give the user as few steps as possible when analyzing and controlling your portfolio. This is Trakker, inspired by your needs.
 </p>

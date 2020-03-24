@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 // import { loadUniqueStockInformation } from '../../services/addstocks';
 // import TabBar from '../../components/TabBar';
 // import SingleStock from '../../components/SingleStock';
@@ -15,7 +17,7 @@ class HelpCenter extends Component {
     return (
       <section className="page__wallet">
         <div className="walletViewContent" >
-          <img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} />
+          <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>          <p>We’re still writing the terms - they’ll be available soon.</p>
           <p>We’re still writing the terms - they’ll be available soon.</p>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 // import { loadUniqueStockInformation } from '../../services/addstocks';
 // import TabBar from '../../components/TabBar';
 // import SingleStock from '../../components/SingleStock';
@@ -15,6 +16,7 @@ class Privacy extends Component {
     return (
       <section className="page__wallet">
         <div className="walletViewContent" >
+          <Link to="/"><img src="/img01.png" alt="logo" style={{ width: "25vw", margin: "3vw", "max-width": "125px" }} /></Link>
           <h2>Privacy</h2>
           <p>Our privacy policy was created to affirm Trakker’s commitment with security, transparency and privacy. We follow the EU GDPR guidelines and won’t disclose either your personal data and your investments data.
           1.We collect your data with the sole purpose of identification and authentication.
