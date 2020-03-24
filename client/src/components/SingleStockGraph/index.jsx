@@ -27,8 +27,8 @@ class SingleStockGraph extends Component {
             label: `${this.state.name}`,
             data: this.state.dailyPrices.slice(93),
             fill: false,
-            backgroundColor: '#ff0000',
-            borderColor: '#D46A6A'
+            backgroundColor: '#475EA8',
+            borderColor: '#99A9DC'
           }
         ]
       },
