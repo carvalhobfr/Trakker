@@ -85,6 +85,7 @@ class OwnedStock extends Component {
                   {Number(this.state.currentValue).toFixed(2)}
                 </span>
               </p>
+              Profit: {(this.state.currentValue - stock.price).toFixed(2)}
               <hr />
             </section>
           );
@@ -104,6 +105,7 @@ class OwnedStock extends Component {
                   {Number(this.state.currentValue).toFixed(2)}
                 </span>
               </p>
+              Profit: {(this.state.currentValue - stock.price).toFixed(2)}
               <hr />
             </section>
           );
