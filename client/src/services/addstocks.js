@@ -11,7 +11,6 @@ const addStock = async data => {
 
 const removeStock = async data => {
   await instance.post('remove-stock', { data });
-  console.log(data);
 };
 
 const loadUniqueStockInformation = id =>
@@ -54,7 +53,6 @@ const loadWalletInformation = async id =>
       .get(`/${id}`)
       .then(result => {
         const wallet = result.data.wallet;
-        console.log(wallet);
         resolve(wallet);
       })
       .catch(reject);

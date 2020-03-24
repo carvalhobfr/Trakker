@@ -14,7 +14,6 @@ const loadAllDailyHistory = () =>
       .get(`/daily/all`)
       .then(result => {
         const daily = result.data.historyAllDaily;
-        console.log('DAILY ALL RESULT', daily);
         resolve(daily);
       })
       .catch(reject);

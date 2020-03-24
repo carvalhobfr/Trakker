@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
@@ -6,15 +6,23 @@ import './style.scss';
 
 const TabBar = props => {
   return (
-    <div class="tab-nav-container">
+    <div className="tab-nav-container">
       <Link to="/dashboard">
         <i
-          className={props.match.path === '/dashboard' ? 'linkIconSelect las la-home' : 'linkIcon las la-home'}
+          className={
+            props.match.path === '/dashboard'
+              ? 'linkIconSelect las la-home'
+              : 'linkIcon las la-home'
+          }
         ></i>
       </Link>
       <Link to="/wallet">
         <i
-          className={props.match.path === '/wallet' ? 'linkIconSelect las la-wallet' : 'linkIcon las la-wallet'}
+          className={
+            props.match.path === '/wallet'
+              ? 'linkIconSelect las la-wallet'
+              : 'linkIcon las la-wallet'
+          }
         ></i>
       </Link>
       <Link to="/add-stock">
@@ -36,7 +44,11 @@ const TabBar = props => {
         ></i>
       </Link>
       <Link to="/settings">
-        <i className={props.match.path === '/settings' ? 'linkIconSelect las la-cog' : 'linkIcon las la-cog'}></i>
+        <i
+          className={
+            props.match.path === '/settings' ? 'linkIconSelect las la-cog' : 'linkIcon las la-cog'
+          }
+        ></i>
       </Link>
     </div>
   );

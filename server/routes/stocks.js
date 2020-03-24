@@ -2,7 +2,6 @@
 
 const { Router } = require('express');
 
-//const User = require('./../models/user');
 const Wallet = require('./../models/wallet');
 const Stock = require('./../models/stock');
 

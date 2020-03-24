@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { loadDailyHistory } from './../../services/addhistory';
-import { loadStockInformation } from './../../services/addstocks';
 import './style.scss';
 
 class SingleStockGeneral extends Component {
@@ -19,16 +16,6 @@ class SingleStockGeneral extends Component {
 
   render() {
     return (
-      /*  <Link
-        to={{
-          pathname: `/singlestock/${this.state.name}`,
-          state: {
-            wallet: this.state.wallet,
-            name: this.state.name
-          }
-        }}
-        params={this.state.name}
-      > */
       <section className="stock__single-button" onClick={this.changeToggle}>
         <div className="stock__symbol">
           <h4>{this.props.single.name}</h4>
@@ -45,7 +32,6 @@ class SingleStockGeneral extends Component {
           </a>
         )}
       </section>
-      // </Link>
     );
   }
 }
