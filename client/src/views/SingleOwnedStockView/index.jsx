@@ -82,10 +82,10 @@ class OwnedStock extends Component {
                     stock.price < this.state.currentValue ? 'price__increase' : 'price__decrease'
                   }
                 >
-                  {Number(this.state.currentValue).toFixed(2)}
+                  {Number(this.state.currentValue).toFixed(2)} USD
                 </span>
               </p>
-              Profit/Loss: {((this.state.currentValue - stock.price) * stock.quantity).toFixed(2)}
+              Profit/Loss: {((this.state.currentValue - stock.price) * stock.quantity).toFixed(2)} USD
               <hr />
             </section>
           );
@@ -102,10 +102,10 @@ class OwnedStock extends Component {
                     stock.price < this.state.currentValue ? 'price__increase' : 'price__decrease'
                   }
                 >
-                  {Number(this.state.currentValue).toFixed(2)}
+                  {Number(this.state.currentValue).toFixed(2)} USD
                 </span>
               </p>
-              Profit/Loss: {((this.state.currentValue - stock.price) * stock.quantity).toFixed(2)}
+              Profit/Loss: {((this.state.currentValue - stock.price) * stock.quantity).toFixed(2)} USD
               <hr />
             </section>
           );
